@@ -1,0 +1,163 @@
+import { useEffect, useState } from 'react';
+import Grainient from '@/components/Grainient';
+import home001 from '@/assets/home/001.jpeg';
+import home002 from '@/assets/home/002.jpeg';
+import home003 from '@/assets/home/003.jpeg';
+import home004 from '@/assets/home/004.jpeg';
+import home005 from '@/assets/home/005.jpeg';
+import home006 from '@/assets/home/006.jpeg';
+import home007 from '@/assets/home/007.jpeg';
+
+const HERO_SLIDES = [
+  { src: home001, alt: 'Grupo de egresados en Bariloche 1' },
+  { src: home002, alt: 'Grupo de egresados en Bariloche 2' },
+  { src: home003, alt: 'Grupo de egresados en Bariloche 3' },
+  { src: home004, alt: 'Grupo de egresados en Bariloche 4' },
+  { src: home005, alt: 'Grupo de egresados en Bariloche 5' },
+  { src: home006, alt: 'Grupo de egresados en Bariloche 6' },
+  { src: home007, alt: 'Grupo de egresados en Bariloche 7' },
+] as const;
+
+const MARQUEE_ITEMS = [
+  { label: 'REGRESO', tone: 'orange' as const },
+  { label: 'BARILOCHE', tone: 'cyan' as const },
+  { label: 'OLD SCHOOL', tone: 'paper' as const },
+  { label: 'RETRO PREMIUM', tone: 'orange' as const },
+  { label: 'MOMENTOS WOW', tone: 'cyan' as const },
+  { label: 'EGRESADOS', tone: 'paper' as const },
+  { label: 'BARILOCHE', tone: 'cyan' as const },
+  { label: 'NO ES NOSTALGIA', tone: 'orange' as const },
+] as const;
+
+const toneClass: Record<(typeof MARQUEE_ITEMS)[number]['tone'], string> = {
+  orange: 'text-[var(--os-orange)]',
+  cyan: 'text-[var(--os-cyan)]',
+  paper: 'text-[var(--os-paper)]',
+};
+
+function MarqueeStrip() {
+  const segment = (copyId: number) => (
+    <div className="flex items-center" key={copyId}>
+      {MARQUEE_ITEMS.map((item, i) => (
+        <span key={`${copyId}-${i}-${item.label}`} className="flex items-center whitespace-nowrap">
+          <span className={`px-3 text-xs font-black uppercase tracking-[0.12em] sm:text-sm`}>
+            <span className={toneClass[item.tone]}>{item.label}</span>
+          </span>
+          <span className="text-[var(--os-cyan)] opacity-90" aria-hidden>
+            ✦
+          </span>
+        </span>
+      ))}
+    </div>
+  );
+
+  return (
+    <div
+      className="pointer-events-none absolute left-1/2 top-[70%] z-30 w-[166%] max-w-none select-none py-2.5 sm:top-[56%] sm:w-[155%] sm:py-3"
+      style={{ transform: 'translate(-50%, 0) rotate(-9deg)' }}
+      aria-hidden
+    >
+      <div className="overflow-hidden bg-black shadow-[0_2px_0_0_rgba(0,0,0,0.35)]">
+        <div className="os-hero-marquee-track flex w-max">
+          {segment(0)}
+          {segment(1)}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function HeroMediaColumn() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    if (HERO_SLIDES.length <= 1) return;
+
+    const intervalId = window.setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 4200);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
+  return (
+    <div className="pointer-events-none relative h-full min-h-[inherit] w-full overflow-hidden bg-black">
+      {/* Slide: viewport/crop equivalente al video previo para conservar encuadre */}
+
+      {/* [filter:grayscale(1)_contrast(1.08)_brightness(0.9)] */}
+      <div className="absolute inset-0 z-0 overflow-hidden" aria-hidden>
+        <div className="os-hero-media-viewport pointer-events-none">
+          {HERO_SLIDES.map((slide, index) => (
+            <img
+              key={slide.src}
+              src={slide.src}
+              alt={slide.alt}
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+                index === activeSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+              loading={index === 0 ? 'eager' : 'lazy'}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Oscuro base para legibilidad de UI encima del video */}
+      <div
+        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/50 via-black/42
+         to-[color-mix(in_srgb,var(--os-navy)_32%,black)] opacity-95 mix-blend-multiply"
+        aria-hidden
+      />
+
+      {/* React Bits Grainient (B&N + paleta muy sutil) */}
+      <div
+        className="pointer-events-none absolute inset-0 z-[2] opacity-55 mix-blend-soft-light"
+        aria-hidden
+      >
+        <Grainient
+          className="h-full w-full opacity-50"
+          grainAmount={0.085}
+          grainScale={1.55}
+          grainAnimated={false}
+          noiseScale={1.85}
+          contrast={1.28}
+          saturation={0.08}
+          gamma={1}
+          warpStrength={0.9}
+          warpFrequency={4.5}
+          warpSpeed={0}
+          warpAmplitude={46}
+          timeSpeed={0}
+          blendAngle={18}
+          blendSoftness={0.14}
+          rotationAmount={180}
+          color1="#f5f1e8"
+          color2="#121212"
+          color3="#1f2733"
+        />
+      </div>
+
+      {/* Cinta diagonal */}
+      <MarqueeStrip />
+
+      <div className="pointer-events-auto absolute bottom-5 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2.5 sm:bottom-6">
+        {HERO_SLIDES.map((slide, index) => {
+          const isActive = index === activeSlide;
+          return (
+            <button
+              key={slide.src}
+              type="button"
+              onClick={() => setActiveSlide(index)}
+              aria-label={`Mostrar imagen ${index + 1}`}
+              aria-pressed={isActive}
+              className={`h-3.5 w-3.5 rounded-full border transition-all duration-300 ${
+                isActive
+                  ? 'scale-110 border-white bg-[var(--os-cyan)] shadow-[0_0_0_2px_rgba(0,0,0,0.45)]'
+                  : 'border-white/85 bg-white/45 hover:bg-white/70'
+              }`}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
+}

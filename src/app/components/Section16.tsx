@@ -1,0 +1,215 @@
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ImageWithFallback } from './figma/ImageWithFallback';
+
+gsap.registerPlugin(ScrollTrigger);
+
+export function Section16() {
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  const numberRef = useRef(null);
+  const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const textRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (numberRef.current) {
+        gsap.from(numberRef.current, {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 92%',
+          },
+          scale: 0.3,
+          duration: 1.2,
+          ease: 'back.out(1.7)'
+        });
+      }
+
+      if (titleRef.current) {
+        gsap.from(titleRef.current, {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%',
+          },
+          x: -50,
+          duration: 0.8,
+          ease: 'power3.out',
+          delay: 0.2
+        });
+      }
+
+      imageRefs.current.filter(Boolean).forEach((img, i) => {
+        gsap.from(img, {
+          scrollTrigger: {
+            trigger: img,
+            start: 'top 93%',
+          },
+          scale: 1.1,
+          duration: 1,
+          ease: 'power3.out',
+          delay: i * 0.1
+        });
+      });
+
+      textRefs.current.filter(Boolean).forEach((text, i) => {
+        gsap.from(text, {
+          scrollTrigger: {
+            trigger: text,
+            start: 'top 93%',
+          },
+          y: 30,
+          duration: 0.7,
+          ease: 'power3.out',
+          delay: i * 0.1
+        });
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div ref={sectionRef} data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
+      <div className="os-section-head-row">
+        <div className="max-w-3xl">
+          <p className="os-section-kicker">TERRITORIO + DÍAS</p>
+          <h2 ref={titleRef} className="os-section-h2">
+            LAS EXCURSIONES<br />QUE HICIERON<br />HISTORIA
+          </h2>
+        </div>
+        <div ref={numberRef} className="os-brutal-num self-end sm:self-start">
+          16
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 border-b-4 border-black lg:grid-cols-12">
+        <aside className="flex flex-col justify-center border-b-4 border-black bg-black/[0.02] p-6 sm:p-8 lg:col-span-4 lg:border-b-0 lg:border-r-4 lg:p-10 xl:p-12">
+          <p className="os-section-title mb-2 text-[0.65rem] text-[var(--os-navy)] sm:text-xs">MISMA ENERGÍA</p>
+          <p className="text-sm font-black uppercase tracking-widest text-black/50">Old School Edition</p>
+        </aside>
+        <div className="p-6 sm:p-8 lg:col-span-8 lg:p-10 xl:p-12">
+          <p className="os-pull max-w-3xl">
+            La misma alegría.<br />
+            La misma sorpresa.<br />
+            Pero en versión <span className="text-[var(--os-orange)]">Old School</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Excursion 1: City Hall, Chico & Punto */}
+      <div className="border-b-4 border-black">
+        <div className="grid grid-cols-1 items-stretch lg:grid-cols-[1fr_2fr]">
+          <div
+            ref={el => imageRefs.current[0] = el}
+            className="os-grid-cover-cell border-b-4 border-black lg:border-b-0 lg:border-r-4"
+          >
+            <ImageWithFallback
+              src="https://images.unsplash.com/photo-1689250621633-8154146228e5?w=800&q=80"
+              alt="Circuito Chico"
+              className="os-grid-cover-img grayscale"
+            />
+          </div>
+          <div ref={el => textRefs.current[0] = el} className="p-6 sm:p-8 lg:p-10 xl:p-12">
+            <div className="border-l-4 border-[var(--os-orange)] pl-5 sm:pl-6">
+            <h3 className="mb-2 font-black uppercase tracking-tight text-[var(--os-navy)] text-xl sm:text-2xl lg:text-3xl xl:text-4xl">
+              City Hall, Chico & Punto
+            </h3>
+            <div className="space-y-4 text-base leading-relaxed lg:text-lg xl:text-xl">
+              <p>La primera gran señal de que ya llegaste.</p>
+              <p>Centro Cívico, activación de grupo, búsqueda del tesoro y después Circuito Chico entre lagos, bosques y curvas de postal.</p>
+              <p className="font-black text-lg lg:text-xl xl:text-2xl">El cierre en Punto Panorámico pega en el pecho.</p>
+              <p>Ahí sale una de las fotos más legendarias del viaje.</p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Excursion 2: Día de Campo */}
+      <div className="border-b-4 border-black">
+        <div className="grid grid-cols-1 items-stretch lg:grid-cols-[2fr_1fr]">
+          <div ref={el => textRefs.current[1] = el} className="border-b-4 border-black p-6 sm:p-8 lg:border-b-0 lg:border-r-4 lg:p-10 xl:p-12">
+            <div className="border-l-4 border-[var(--os-orange)] pl-5 sm:pl-6">
+            <h3 className="mb-2 font-black uppercase tracking-tight text-[var(--os-navy)] text-xl sm:text-2xl lg:text-3xl xl:text-4xl">
+              Día de Campo
+            </h3>
+            <div className="space-y-4 text-base leading-relaxed lg:text-lg xl:text-xl">
+              <p>Cabalgatas, juegos, competencias grupales y asado libre al pie de la montaña.</p>
+              <p className="font-black text-lg lg:text-xl xl:text-2xl">Y cuando parece que el día terminó, lo cerramos con sunset cervecero y show en vivo.</p>
+            </div>
+            </div>
+          </div>
+          <div ref={el => imageRefs.current[1] = el} className="os-grid-cover-cell">
+            <ImageWithFallback
+              src="https://images.unsplash.com/photo-1581942103398-6866d46c0f33?w=800&q=80"
+              alt="Día de Campo"
+              className="os-grid-cover-img grayscale"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Excursion 3: Old School Festival */}
+      <div className="border-b-4 border-black p-6 sm:p-8 lg:p-10 xl:p-12">
+        <div ref={el => textRefs.current[2] = el} className="max-w-4xl">
+          <div className="border-l-4 border-[var(--os-cyan)] pl-5 sm:pl-6">
+          <h3 className="mb-2 font-black uppercase tracking-tight text-[var(--os-navy)] text-xl sm:text-2xl lg:text-3xl xl:text-4xl">
+            Old School ® Festival
+          </h3>
+          <div className="space-y-4 text-base leading-relaxed lg:text-lg xl:text-xl">
+            <p className="font-black text-lg lg:text-xl xl:text-2xl">No es un show más.<br />Es un ritual colectivo en el bosque.</p>
+            <p>Propuesta gastronómica de montaña, pileta climatizada convertida en discoteca, fiesta de la espuma, DJs en vivo, happy hours, Old School Rock y cierre con Sunset We Color.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Excursion 4: Trineos */}
+      <div className="border-b-4 border-black p-6 sm:p-8 lg:p-10 xl:p-12">
+        <div ref={el => textRefs.current[3] = el} className="max-w-4xl">
+          <div className="border-l-4 border-[var(--os-orange)] pl-5 sm:pl-6">
+          <h3 className="mb-2 font-black uppercase tracking-tight text-[var(--os-navy)] text-xl sm:text-2xl lg:text-3xl xl:text-4xl">
+            Trineos Patagonia 360
+          </h3>
+          <div className="space-y-4 text-base leading-relaxed lg:text-lg xl:text-xl">
+            <p className="font-black">Adrenalina segura.</p>
+            <p>Aerosilla, charla rápida de seguridad, circuito armado, risas, montaña y diversión real.</p>
+            <p className="font-black text-lg lg:text-xl xl:text-2xl">Te subís al trineo… y arranca la bajada.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Excursion 5: Cerro Catedral */}
+      <div>
+        <div className="grid grid-cols-1 items-stretch lg:grid-cols-2">
+          <div
+            ref={el => imageRefs.current[2] = el}
+            className="os-grid-cover-cell border-b-4 border-black lg:border-b-0 lg:border-r-4"
+          >
+            <ImageWithFallback
+              src="https://images.unsplash.com/photo-1607976112788-b4f621793974?w=1200&q=80"
+              alt="Cerro Catedral Nieve"
+              className="os-grid-cover-img grayscale"
+            />
+          </div>
+          <div ref={el => textRefs.current[4] = el} className="flex flex-col justify-center p-6 sm:p-8 lg:p-10 xl:p-12">
+            <div className="border-l-4 border-black pl-5 sm:pl-6">
+            <h3 className="mb-2 font-black uppercase tracking-tight text-[var(--os-navy)] text-xl sm:text-2xl lg:text-3xl xl:text-4xl">
+              Cerro Catedral & Gruta Virgen de las Nieves
+            </h3>
+            <div className="space-y-4 text-base leading-relaxed lg:text-lg xl:text-xl">
+              <p className="font-black text-lg lg:text-xl xl:text-2xl">El día que te queda para siempre.</p>
+              <p>Montaña, nieve, aire helado en la cara y el grupo viviendo algo enorme.</p>
+              <p>Miradores, tiempo para recorrer, ski & snowboard con instructores y pases.</p>
+              <p>Y para los más cancheros todavía: After Snow con gastronomía y música en vivo en el parador exclusivo de Old School.</p>
+              <p className="pt-4 font-black text-xl lg:text-2xl xl:text-3xl">No es para todos.<br />Es para nosotros.</p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
