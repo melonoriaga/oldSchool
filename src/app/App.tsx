@@ -21,24 +21,26 @@ import { Section18 } from './components/Section18';
 import { Section19 } from './components/Section19';
 import { Section20 } from './components/Section20';
 import { Section21 } from './components/Section21';
+import { Section22 } from './components/Section22';
 import { TestimoniosBlock } from './components/TestimoniosBlock';
 import { Section23 } from './components/Section23';
 import { Section24 } from './components/Section24';
-import { Section25 } from './components/Section25';
 import { MuseoBlock } from './components/MuseoBlock';
 import { PostulacionBlock } from './components/PostulacionBlock';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { PostulacionForm } from './components/PostulacionForm';
 import { FloatingMenu } from './components/FloatingMenu';
+import { BackToTopButton } from './components/BackToTopButton';
 
 export default function App() {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [headerHidden, setHeaderHidden] = useState(false);
 
   return (
     <div className="relative z-[1] min-h-screen overflow-x-hidden">
-      <Header onPostular={() => setIsFormOpen(true)} />
-      <FloatingMenu onPostular={() => setIsFormOpen(true)} />
+      <Header onPostular={() => setIsFormOpen(true)} onHiddenChange={setHeaderHidden} />
+      <FloatingMenu onPostular={() => setIsFormOpen(true)} visible={headerHidden} />
 
       <Hero onPostular={() => setIsFormOpen(true)} />
 
@@ -84,11 +86,11 @@ export default function App() {
 
       <TestimoniosBlock />
 
-      <Section23 />
+      <Section22 />
+
+      <Section23 onPostular={() => setIsFormOpen(true)} />
 
       <Section24 onPostular={() => setIsFormOpen(true)} />
-
-      <Section25 onPostular={() => setIsFormOpen(true)} />
 
       <MuseoBlock />
 
@@ -97,6 +99,7 @@ export default function App() {
       <Footer />
 
       <WhatsAppButton />
+      <BackToTopButton visible={headerHidden} />
 
       <PostulacionForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
     </div>

@@ -1,9 +1,5 @@
 import { ArrowRight } from 'lucide-react';
 import { useEffect, useRef, type ReactNode } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface Section21Props {
   onPostular: () => void;
@@ -33,103 +29,29 @@ function OrganicMark({
 
 export function Section21({ onPostular }: Section21Props) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const numberRef = useRef<HTMLDivElement>(null);
-  const colRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const finaleRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLDivElement>(null);
-  const setColRef = (i: number) => (el: HTMLDivElement | null) => {
-    colRefs.current[i] = el;
-  };
 
   useEffect(() => {
     const root = sectionRef.current;
     if (!root) return;
 
-    const ctx = gsap.context(() => {
-      if (numberRef.current) {
-        gsap.from(numberRef.current, {
-          scrollTrigger: {
-            trigger: root,
-            start: 'top 92%',
-          },
-          scale: 0.3,
-          duration: 1.2,
-          ease: 'back.out(1.7)',
+    // Reveal organic marks (scaleX) via IntersectionObserver — no GSAP ScrollTrigger.
+    const marks = Array.from(root.querySelectorAll<HTMLElement>('[data-organic-mark]'));
+    if (!marks.length) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            (entry.target as HTMLElement).classList.add('os-organic-revealed');
+            io.unobserve(entry.target);
+          }
         });
-      }
+      },
+      { threshold: 0.2 },
+    );
 
-      if (titleRef.current) {
-        gsap.from(titleRef.current, {
-          scrollTrigger: {
-            trigger: root,
-            start: 'top 90%',
-          },
-          y: 50,
-          duration: 0.8,
-          ease: 'power3.out',
-          delay: 0.2,
-        });
-      }
-
-      colRefs.current.forEach((col) => {
-        if (!col) return;
-        gsap.from(col.querySelectorAll(':scope > .os-reveal'), {
-          scrollTrigger: {
-            trigger: col,
-            start: 'top 88%',
-          },
-          y: 22,
-          duration: 0.55,
-          stagger: 0.06,
-          ease: 'power2.out',
-        });
-      });
-
-      root.querySelectorAll('[data-organic-bg]').forEach((bg) => {
-        const mark = (bg as HTMLElement).closest('[data-organic-mark]');
-        gsap.fromTo(
-          bg,
-          { scaleX: 0, transformOrigin: 'left center' },
-          {
-            scaleX: 1,
-            duration: 0.78,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: mark ?? bg,
-              start: 'top 89%',
-            },
-          },
-        );
-      });
-
-      if (finaleRef.current) {
-        gsap.from(finaleRef.current.querySelectorAll('.os-reveal'), {
-          scrollTrigger: {
-            trigger: finaleRef.current,
-            start: 'top 90%',
-          },
-          y: 20,
-          duration: 0.6,
-          stagger: 0.07,
-          ease: 'power2.out',
-        });
-      }
-
-      if (buttonRef.current) {
-        gsap.from(buttonRef.current, {
-          scrollTrigger: {
-            trigger: buttonRef.current,
-            start: 'top 92%',
-          },
-          y: 24,
-          duration: 0.65,
-          ease: 'power3.out',
-        });
-      }
-    }, root);
-
-    return () => ctx.revert();
+    marks.forEach((el) => io.observe(el));
+    return () => io.disconnect();
   }, []);
 
   return (
@@ -144,23 +66,20 @@ export function Section21({ onPostular }: Section21Props) {
         <div className="os-section-glow-blob os-section-glow-blob--cyan-bl" />
       </div>
       <div className="relative z-[1] flex flex-col border-b-4 border-black p-8 lg:flex-row lg:items-center lg:justify-between lg:p-16">
-        <h2
-          ref={titleRef}
-          className="max-w-4xl text-4xl font-black leading-tight lg:text-6xl xl:text-7xl"
-        >
+        <h2 className="max-w-4xl text-4xl font-black leading-tight lg:text-6xl xl:text-7xl">
           <span className="text-[var(--os-navy)]">SI</span> LLEGASTE
           <br />
           HASTA <span className="text-[var(--os-orange)]">ACÁ</span>,
           <br />
           NO ES <span className="text-[var(--os-cyan)]">CASUALIDAD</span>
         </h2>
-        <div ref={numberRef} className="os-brutal-num mt-6 shrink-0 lg:mt-0">
+        <div className="os-brutal-num mt-6 shrink-0 lg:mt-0">
           21
         </div>
       </div>
 
       <div className="relative z-[1] grid grid-cols-1 divide-y-4 divide-black border-b-4 border-black lg:grid-cols-2 lg:divide-x-4 lg:divide-y-4 xl:grid-cols-4">
-        <div ref={setColRef(0)} className="p-6 sm:p-8">
+        <div className="p-6 sm:p-8">
           <p className="os-editorial-col-head os-reveal">Apertura</p>
           <div className="os-editorial-col-body">
             <p className="os-reveal">Vos no estabas buscando un viaje.</p>
@@ -182,7 +101,7 @@ export function Section21({ onPostular }: Section21Props) {
           </div>
         </div>
 
-        <div ref={setColRef(1)} className="p-6 sm:p-8">
+        <div className="p-6 sm:p-8">
           <p className="os-editorial-col-head os-editorial-col-head--cyan os-reveal">Cuerpo</p>
           <div className="os-editorial-col-body">
             <p className="os-reveal">Reírte con el cuerpo.</p>
@@ -198,7 +117,7 @@ export function Section21({ onPostular }: Section21Props) {
           <p className="os-asterisk-deco mt-8 hidden text-5xl leading-none xl:block">*</p>
         </div>
 
-        <div ref={setColRef(2)} className="os-s21-col-navy-wash p-6 sm:p-8">
+        <div className="os-s21-col-navy-wash p-6 sm:p-8">
           <p className="os-editorial-col-head os-reveal">La parte incómoda</p>
           <div className="os-editorial-col-body">
             <p className="os-reveal font-black text-base sm:text-lg">Ahora, la parte incómoda:</p>
@@ -215,7 +134,7 @@ export function Section21({ onPostular }: Section21Props) {
           </div>
         </div>
 
-        <div ref={setColRef(3)} className="p-6 sm:p-8">
+        <div className="p-6 sm:p-8">
           <p className="os-editorial-col-head os-reveal">Invitación</p>
           <div className="os-editorial-col-body">
             <p className="os-reveal">
@@ -242,7 +161,7 @@ export function Section21({ onPostular }: Section21Props) {
         </div>
       </div>
 
-      <div ref={finaleRef} className="relative z-[1] border-b-4 border-black p-8 lg:p-20 xl:p-24">
+      <div className="relative z-[1] border-b-4 border-black p-8 lg:p-20 xl:p-24">
         <div className="mx-auto max-w-3xl text-center">
           <p className="os-reveal text-xl font-black sm:text-2xl lg:text-3xl xl:text-4xl">
             El viaje de egresados se hace una sola vez en la vida.
@@ -254,7 +173,7 @@ export function Section21({ onPostular }: Section21Props) {
         </div>
       </div>
 
-      <div ref={buttonRef} className="relative z-[1] p-6 sm:p-8 lg:p-12 xl:p-16">
+      <div className="relative z-[1] p-6 sm:p-8 lg:p-12 xl:p-16">
         <button
           type="button"
           onClick={onPostular}

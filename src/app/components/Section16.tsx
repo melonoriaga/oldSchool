@@ -1,85 +1,19 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { OldSchoolWord } from './OldSchoolWord';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export function Section16() {
-  const sectionRef = useRef(null);
-  const titleRef = useRef(null);
-  const numberRef = useRef(null);
-  const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const textRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (numberRef.current) {
-        gsap.from(numberRef.current, {
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 92%',
-          },
-          scale: 0.3,
-          duration: 1.2,
-          ease: 'back.out(1.7)'
-        });
-      }
-
-      if (titleRef.current) {
-        gsap.from(titleRef.current, {
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 90%',
-          },
-          x: -50,
-          duration: 0.8,
-          ease: 'power3.out',
-          delay: 0.2
-        });
-      }
-
-      imageRefs.current.filter(Boolean).forEach((img, i) => {
-        gsap.from(img, {
-          scrollTrigger: {
-            trigger: img,
-            start: 'top 93%',
-          },
-          scale: 1.1,
-          duration: 1,
-          ease: 'power3.out',
-          delay: i * 0.1
-        });
-      });
-
-      textRefs.current.filter(Boolean).forEach((text, i) => {
-        gsap.from(text, {
-          scrollTrigger: {
-            trigger: text,
-            start: 'top 93%',
-          },
-          y: 30,
-          duration: 0.7,
-          ease: 'power3.out',
-          delay: i * 0.1
-        });
-      });
-    });
-
-    return () => ctx.revert();
-  }, []);
 
   return (
-    <div ref={sectionRef} data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
+    <div data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="os-section-head-row">
         <div className="max-w-3xl">
           <p className="os-section-kicker">TERRITORIO + DÍAS</p>
-          <h2 ref={titleRef} className="os-section-h2">
+          <h2 className="os-section-h2">
             LAS EXCURSIONES<br />QUE HICIERON<br />HISTORIA
           </h2>
         </div>
-        <div ref={numberRef} className="os-brutal-num self-end sm:self-start">
+        <div className="os-brutal-num self-end sm:self-start">
           16
         </div>
       </div>
@@ -104,7 +38,7 @@ export function Section16() {
       <div className="border-b-4 border-black">
         <div className="grid grid-cols-1 items-stretch lg:grid-cols-[1fr_2fr]">
           <div
-            ref={el => imageRefs.current[0] = el}
+
             className="os-grid-cover-cell border-b-4 border-black lg:border-b-0 lg:border-r-4"
           >
             <ImageWithFallback
@@ -113,7 +47,7 @@ export function Section16() {
               className="os-grid-cover-img grayscale"
             />
           </div>
-          <div ref={el => textRefs.current[0] = el} className="p-6 sm:p-8 lg:p-10 xl:p-12">
+          <div className="p-6 sm:p-8 lg:p-10 xl:p-12">
             <div className="border-l-4 border-[var(--os-orange)] pl-5 sm:pl-6">
             <h3 className="mb-2 font-black uppercase tracking-tight text-[var(--os-navy)] text-xl sm:text-2xl lg:text-3xl xl:text-4xl">
               City Hall, Chico & Punto
@@ -132,7 +66,7 @@ export function Section16() {
       {/* Excursion 2: Día de Campo */}
       <div className="border-b-4 border-black">
         <div className="grid grid-cols-1 items-stretch lg:grid-cols-[2fr_1fr]">
-          <div ref={el => textRefs.current[1] = el} className="border-b-4 border-black p-6 sm:p-8 lg:border-b-0 lg:border-r-4 lg:p-10 xl:p-12">
+          <div className="border-b-4 border-black p-6 sm:p-8 lg:border-b-0 lg:border-r-4 lg:p-10 xl:p-12">
             <div className="border-l-4 border-[var(--os-orange)] pl-5 sm:pl-6">
             <h3 className="mb-2 font-black uppercase tracking-tight text-[var(--os-navy)] text-xl sm:text-2xl lg:text-3xl xl:text-4xl">
               Día de Campo
@@ -143,7 +77,7 @@ export function Section16() {
             </div>
             </div>
           </div>
-          <div ref={el => imageRefs.current[1] = el} className="os-grid-cover-cell">
+          <div className="os-grid-cover-cell">
             <ImageWithFallback
               src="https://images.unsplash.com/photo-1581942103398-6866d46c0f33?w=800&q=80"
               alt="Día de Campo"
@@ -155,7 +89,7 @@ export function Section16() {
 
       {/* Excursion 3: Old School Festival */}
       <div className="border-b-4 border-black p-6 sm:p-8 lg:p-10 xl:p-12">
-        <div ref={el => textRefs.current[2] = el} className="max-w-4xl">
+        <div className="max-w-4xl">
           <div className="border-l-4 border-[var(--os-cyan)] pl-5 sm:pl-6">
           <h3 className="mb-2 font-black uppercase tracking-tight text-[var(--os-navy)] text-xl sm:text-2xl lg:text-3xl xl:text-4xl">
             <OldSchoolWord uppercase /> Festival
@@ -170,7 +104,7 @@ export function Section16() {
 
       {/* Excursion 4: Trineos */}
       <div className="border-b-4 border-black p-6 sm:p-8 lg:p-10 xl:p-12">
-        <div ref={el => textRefs.current[3] = el} className="max-w-4xl">
+        <div className="max-w-4xl">
           <div className="border-l-4 border-[var(--os-orange)] pl-5 sm:pl-6">
           <h3 className="mb-2 font-black uppercase tracking-tight text-[var(--os-navy)] text-xl sm:text-2xl lg:text-3xl xl:text-4xl">
             Trineos Patagonia 360
@@ -188,7 +122,7 @@ export function Section16() {
       <div>
         <div className="grid grid-cols-1 items-stretch lg:grid-cols-2">
           <div
-            ref={el => imageRefs.current[2] = el}
+
             className="os-grid-cover-cell border-b-4 border-black lg:border-b-0 lg:border-r-4"
           >
             <ImageWithFallback
@@ -197,7 +131,7 @@ export function Section16() {
               className="os-grid-cover-img grayscale"
             />
           </div>
-          <div ref={el => textRefs.current[4] = el} className="flex flex-col justify-center p-6 sm:p-8 lg:p-10 xl:p-12">
+          <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10 xl:p-12">
             <div className="border-l-4 border-black pl-5 sm:pl-6">
             <h3 className="mb-2 font-black uppercase tracking-tight text-[var(--os-navy)] text-xl sm:text-2xl lg:text-3xl xl:text-4xl">
               Cerro Catedral & Gruta Virgen de las Nieves

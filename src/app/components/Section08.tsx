@@ -1,66 +1,12 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 import { placeholderByIndex } from '@/data/placeholders';
 import { OsFigure } from './OsFigure';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export function Section08() {
-  const sectionRef = useRef(null);
-  const titleRef = useRef(null);
-  const numberRef = useRef(null);
-  const textRefs = useRef<(HTMLParagraphElement | null)[]>([]);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (numberRef.current) {
-        gsap.from(numberRef.current, {
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 92%',
-          },
-          scale: 0.3,
-          duration: 1.2,
-          ease: 'back.out(1.7)',
-        });
-      }
-
-      if (titleRef.current) {
-        gsap.from(titleRef.current, {
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 90%',
-          },
-          y: 50,
-          duration: 0.8,
-          ease: 'power3.out',
-          delay: 0.04,
-        });
-      }
-
-      const validTextRefs = textRefs.current.filter(Boolean);
-      if (validTextRefs.length > 0) {
-        gsap.from(validTextRefs, {
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 88%',
-          },
-          y: 30,
-          duration: 0.7,
-          stagger: 0.05,
-          ease: 'power3.out',
-          delay: 0.08,
-        });
-      }
-    });
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <div
-      ref={sectionRef}
+
       id="producto"
       data-os-read-marker
       className="os-surface relative overflow-hidden border-x-4 border-b-4 border-black"
@@ -72,13 +18,13 @@ export function Section08() {
       <div className="os-section-head-row relative z-[1]">
         <div className="max-w-3xl">
           <p className="os-section-kicker">IMPACTO + POSTVIAJE</p>
-          <h2 ref={titleRef} className="os-section-h2">
+          <h2 className="os-section-h2">
             UN VIAJE QUE
             <br />
             NO TERMINA
           </h2>
         </div>
-        <div ref={numberRef} className="os-brutal-num self-end sm:self-start">
+        <div className="os-brutal-num self-end sm:self-start">
           08
         </div>
       </div>
@@ -89,23 +35,23 @@ export function Section08() {
             *
           </div>
           <div className="max-w-3xl space-y-5 pr-8">
-            <p ref={(el) => (textRefs.current[0] = el)} className="os-slice">
+            <p className="os-slice">
               Lo importante no es solo lo que vivís allá.
             </p>
             <p
-              ref={(el) => (textRefs.current[1] = el)}
+
               className="os-pull border-l-4 border-[var(--os-orange)] pl-4 sm:pl-5"
             >
               Es lo que cambia cuando volvés.
             </p>
-            <p ref={(el) => (textRefs.current[2] = el)} className="os-slice pt-2 text-black/88">
+            <p className="os-slice pt-2 text-black/88">
               Porque hay viajes que terminan al bajar del avión.
             </p>
-            <p ref={(el) => (textRefs.current[3] = el)} className="os-slice text-black/88">
+            <p className="os-slice text-black/88">
               Y otros que se quedan adentro.
             </p>
             <p
-              ref={(el) => (textRefs.current[4] = el)}
+
               className="os-section-title border-l-4 border-black pl-4 pt-2 text-sm sm:text-base lg:text-lg"
             >
               Este es de los segundos.

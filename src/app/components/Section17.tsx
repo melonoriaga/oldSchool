@@ -1,92 +1,20 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 
-gsap.registerPlugin(ScrollTrigger);
+import { ImageWithFallback } from './figma/ImageWithFallback';
 
 /** Misma escala de padding que bloques editoriales en papel (cf. Section07 celda 10). */
 const paperPad = 'relative border-b-4 border-black p-8 sm:p-10 lg:p-12 xl:p-16';
 
 export function Section17() {
-  const sectionRef = useRef(null);
-  const titleRef = useRef(null);
-  const numberRef = useRef(null);
-  const imageRef = useRef(null);
-  const blockRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (numberRef.current) {
-        gsap.from(numberRef.current, {
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 92%',
-          },
-          scale: 0.3,
-          duration: 1.2,
-          ease: 'back.out(1.7)',
-        });
-      }
-
-      if (titleRef.current) {
-        gsap.from(titleRef.current, {
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 90%',
-          },
-          y: 50,
-          duration: 0.8,
-          ease: 'power3.out',
-          delay: 0.2,
-        });
-      }
-
-      if (imageRef.current) {
-        gsap.from(imageRef.current, {
-          scrollTrigger: {
-            trigger: imageRef.current,
-            start: 'top 92%',
-          },
-          scale: 1.06,
-          duration: 1,
-          ease: 'power3.out',
-        });
-      }
-
-      const blocks = blockRefs.current.filter(Boolean);
-      if (blocks.length > 0) {
-        gsap.from(blocks, {
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 88%',
-          },
-          y: 28,
-          duration: 0.58,
-          stagger: 0.06,
-          ease: 'power3.out',
-          delay: 0.06,
-        });
-      }
-    });
-
-    return () => ctx.revert();
-  }, []);
-
-  const setBlockRef = (i: number) => (el: HTMLDivElement | null) => {
-    blockRefs.current[i] = el;
-  };
-
   return (
     <div
-      ref={sectionRef}
+
       data-os-read-marker
       className="os-surface border-x-4 border-b-4 border-black"
     >
       <div className="os-section-head-row">
         <div className="max-w-3xl">
           <p className="os-section-kicker">NOCHE + RITMO</p>
-          <h2 ref={titleRef} className="os-section-h2">
+          <h2 className="os-section-h2">
             VOLVEMOS A DONDE
             <br />
             LA MÚSICA LO
@@ -96,7 +24,7 @@ export function Section17() {
             DONDE TODO EXPLOTA
           </h2>
         </div>
-        <div ref={numberRef} className="os-brutal-num self-end sm:self-start">
+        <div className="os-brutal-num self-end sm:self-start">
           17
         </div>
       </div>
@@ -110,7 +38,7 @@ export function Section17() {
             recuerdos reales.
           </p>
         </div>
-        <div ref={imageRef} className="os-grid-cover-cell">
+        <div className="os-grid-cover-cell">
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1657208431551-cbf415b8ef26?w=800&q=80"
             alt="Discoteca"
@@ -120,7 +48,7 @@ export function Section17() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div ref={setBlockRef(0)} className={`${paperPad} border-b-4 lg:border-r-4`}>
+        <div className={`${paperPad} border-b-4 lg:border-r-4`}>
           <div className="os-asterisk-deco absolute right-8 top-8 text-4xl font-black">*</div>
           <div className="os-brutal-num-sub mb-4">17.01</div>
           <h3 className="os-section-title mb-3 text-sm lg:text-base">Fiesta de Disfraces</h3>
@@ -133,7 +61,7 @@ export function Section17() {
           </div>
         </div>
 
-        <div ref={setBlockRef(1)} className={`${paperPad}`}>
+        <div className={`${paperPad}`}>
           <div className="os-asterisk-deco absolute right-8 top-8 text-4xl font-black">*</div>
           <div className="os-brutal-num-sub mb-4">17.02</div>
           <h3 className="os-section-title mb-3 text-sm lg:text-base">Fiesta Colegial</h3>
@@ -150,7 +78,6 @@ export function Section17() {
       </div>
 
       <div
-        ref={setBlockRef(2)}
         className="os-band-orange relative border-b-4 border-black p-8 sm:p-10 lg:p-12 xl:p-16"
       >
         <div className="os-asterisk-deco absolute right-8 top-8 text-4xl">*</div>
@@ -179,7 +106,6 @@ export function Section17() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div
-          ref={setBlockRef(3)}
           className="os-band-cyan relative border-b-4 border-black p-8 sm:p-10 lg:border-r-4 lg:border-b-0 lg:p-12 xl:p-16"
         >
           <div className="os-asterisk-deco absolute right-8 top-8 text-4xl font-black">*</div>
@@ -200,7 +126,7 @@ export function Section17() {
           </div>
         </div>
 
-        <div ref={setBlockRef(4)} className={`${paperPad} border-b-0`}>
+        <div className={`${paperPad} border-b-0`}>
           <div className="os-asterisk-deco absolute right-8 top-8 text-4xl font-black">*</div>
           <div className="os-brutal-num-sub mb-4">17.05</div>
           <h3 className="os-section-title mb-3 text-sm lg:text-base">EVENTOS ESPECIALES</h3>

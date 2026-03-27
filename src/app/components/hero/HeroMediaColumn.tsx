@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
 import Grainient from '@/components/Grainient';
 import home001 from '@/assets/home/001.jpeg';
 import home002 from '@/assets/home/002.jpeg';
@@ -7,6 +7,26 @@ import home004 from '@/assets/home/004.jpeg';
 import home005 from '@/assets/home/005.jpeg';
 import home006 from '@/assets/home/006.jpeg';
 import home007 from '@/assets/home/007.jpeg';
+
+const LG_MQ = '(min-width: 1024px)';
+
+function subscribeLg(cb: () => void) {
+  const mq = window.matchMedia(LG_MQ);
+  mq.addEventListener('change', cb);
+  return () => mq.removeEventListener('change', cb);
+}
+
+function getLgSnapshot() {
+  return window.matchMedia(LG_MQ).matches;
+}
+
+function getLgServerSnapshot() {
+  return false;
+}
+
+function useIsLgViewport() {
+  return useSyncExternalStore(subscribeLg, getLgSnapshot, getLgServerSnapshot);
+}
 
 const HERO_SLIDES = [
   { src: home001, alt: 'Grupo de egresados en Bariloche 1' },
@@ -69,6 +89,7 @@ function MarqueeStrip() {
 
 export function HeroMediaColumn() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const isLg = useIsLgViewport();
 
   useEffect(() => {
     if (HERO_SLIDES.length <= 1) return;
@@ -92,7 +113,7 @@ export function HeroMediaColumn() {
               key={slide.src}
               src={slide.src}
               alt={slide.alt}
-              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+              className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700 ${
                 index === activeSlide ? 'opacity-100' : 'opacity-0'
               }`}
               loading={index === 0 ? 'eager' : 'lazy'}
@@ -102,39 +123,46 @@ export function HeroMediaColumn() {
       </div>
 
       {/* Oscuro base para legibilidad de UI encima del video */}
-      <div
+      {/* <div
         className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/50 via-black/42
          to-[color-mix(in_srgb,var(--os-navy)_32%,black)] opacity-95 mix-blend-multiply"
         aria-hidden
-      />
+      /> */}
 
-      {/* React Bits Grainient (B&N + paleta muy sutil) */}
-      <div
-        className="pointer-events-none absolute inset-0 z-[2] opacity-55 mix-blend-soft-light"
-        aria-hidden
-      >
-        <Grainient
-          className="h-full w-full opacity-50"
-          grainAmount={0.085}
-          grainScale={1.55}
-          grainAnimated={false}
-          noiseScale={1.85}
-          contrast={1.28}
-          saturation={0.08}
-          gamma={1}
-          warpStrength={0.9}
-          warpFrequency={4.5}
-          warpSpeed={0}
-          warpAmplitude={46}
-          timeSpeed={0}
-          blendAngle={18}
-          blendSoftness={0.14}
-          rotationAmount={180}
-          color1="#f5f1e8"
-          color2="#121212"
-          color3="#1f2733"
+      {/* Grainient (WebGL): solo ≥lg; no montar en mobile evita contexto WebGL + mix-blend (muy caro al hacer scroll). */}
+      {isLg ? (
+        <div
+          className="pointer-events-none absolute inset-0 z-[2] opacity-55 mix-blend-soft-light"
+          aria-hidden
+        >
+          <Grainient
+            className="h-full w-full opacity-50"
+            grainAmount={0.085}
+            grainScale={1.55}
+            grainAnimated={false}
+            noiseScale={1.85}
+            contrast={1.28}
+            saturation={0.08}
+            gamma={1}
+            warpStrength={0.9}
+            warpFrequency={4.5}
+            warpSpeed={0}
+            warpAmplitude={46}
+            timeSpeed={0}
+            blendAngle={18}
+            blendSoftness={0.14}
+            rotationAmount={180}
+            color1="#f5f1e8"
+            color2="#121212"
+            color3="#1f2733"
+          />
+        </div>
+      ) : (
+        <div
+          className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-br from-[#f5f1e8]/25 via-transparent to-[#1f2733]/35 opacity-90"
+          aria-hidden
         />
-      </div>
+      )}
 
       {/* Cinta diagonal */}
       <MarqueeStrip />

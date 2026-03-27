@@ -1,61 +1,7 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 import { RegresadosWord } from './RegresadosWord';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export function TestimoniosBlock() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const asteriskRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const ctx = gsap.context(() => {
-      if (titleRef.current) {
-        gsap.from(titleRef.current, {
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 90%',
-          },
-          y: 30,
-          duration: 0.8,
-          ease: 'power3.out',
-        });
-      }
-
-      if (asteriskRef.current) {
-        gsap.from(asteriskRef.current, {
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 90%',
-          },
-          rotation: 360,
-          scale: 0,
-          duration: 1.2,
-          ease: 'back.out(2)',
-          delay: 0.3,
-        });
-
-        gsap.to(asteriskRef.current, {
-          rotation: 360,
-          duration: 28,
-          ease: 'none',
-          repeat: -1,
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 90%',
-            toggleActions: 'play pause resume pause',
-          },
-        });
-      }
-    }, section);
-
-    return () => ctx.revert();
-  }, []);
 
   const testimonios = [
     {
@@ -101,11 +47,11 @@ export function TestimoniosBlock() {
   ];
 
   return (
-    <div ref={sectionRef} id="testimonios" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
+    <div id="testimonios" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="relative border-b-4 border-black p-8 lg:p-16 bg-[color-mix(in_srgb,var(--os-cyan)_8%,var(--os-paper))]">
         <div className="flex items-center justify-between">
           <div>
-            <h2 ref={titleRef} className="text-3xl font-black lg:text-5xl">
+            <h2 className="text-3xl font-black lg:text-5xl">
               LOS <RegresadosWord variant="split" className="align-[0.02em]" /> DICEN
             </h2>
             <p className="mt-2 text-xs font-black uppercase tracking-[0.14em] text-[var(--os-navy)] sm:text-sm">
@@ -115,7 +61,7 @@ export function TestimoniosBlock() {
           <div className="hidden text-6xl font-black lg:block lg:text-8xl">*</div>
         </div>
         <div
-          ref={asteriskRef}
+
           className="absolute bottom-8 left-1/2 -translate-x-1/2 transform text-5xl font-black opacity-20 lg:hidden"
         >
           *

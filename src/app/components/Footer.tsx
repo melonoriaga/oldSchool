@@ -1,12 +1,8 @@
 import { Instagram, Facebook, Twitter } from 'lucide-react';
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 import logoBlancoCompleto from '../../assets/01logos/LogoBlancoCompleto.png';
 import logoHumanNegro from '../../assets/01logos/LogoHumanNegro.png';
 import { RegresadosWord } from './RegresadosWord';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const footerNav = [
   { label: 'Inicio', href: '#hero' },
@@ -18,33 +14,10 @@ const footerNav = [
 ];
 
 export function Footer() {
-  const footerRef = useRef<HTMLElement>(null);
   const footerMarqueeItems = ['EDICION_BRAND', 'BARILOCHE', 'RETRO PREMIUM'] as const;
-
-  useEffect(() => {
-    const root = footerRef.current;
-    if (!root) return;
-
-    const ctx = gsap.context(() => {
-      gsap.from(root.querySelectorAll('.os-footer-reveal'), {
-        scrollTrigger: {
-          trigger: root,
-          start: 'top 90%',
-        },
-        opacity: 0,
-        y: 28,
-        duration: 0.65,
-        stagger: 0.06,
-        ease: 'power3.out',
-      });
-    }, root);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <footer
-      ref={footerRef}
       data-os-read-marker
       className="border-x-4 border-b-4 border-black bg-[var(--os-navy)] text-white"
     >

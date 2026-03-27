@@ -6,11 +6,12 @@ import logoSticker from '../../assets/01logos/LogoStickerconReborde.png';
 
 interface HeaderProps {
   onPostular: () => void;
+  onHiddenChange?: (hidden: boolean) => void;
 }
 
 const HEADER_HIDE_Y = -100;
 
-export function Header({ onPostular }: HeaderProps) {
+export function Header({ onPostular, onHiddenChange }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
 
@@ -28,6 +29,7 @@ export function Header({ onPostular }: HeaderProps) {
       const shouldHide = hero.getBoundingClientRect().bottom < 2;
       if (lastHidden === shouldHide) return;
       lastHidden = shouldHide;
+      onHiddenChange?.(shouldHide);
       gsap.to(header, {
         y: shouldHide ? HEADER_HIDE_Y : 0,
         duration: 0.22,
@@ -66,7 +68,7 @@ export function Header({ onPostular }: HeaderProps) {
   };
 
   return (
-    <header ref={headerRef} className="fixed top-0 left-0 right-0 os-surface border-b-4 border-black z-40">
+    <header ref={headerRef} className="fixed top-0 left-0 right-0 os-surface border-b-4 border-black z-50">
       <div className="flex items-center justify-between p-4 lg:px-8">
         {/* Logo */}
         <button

@@ -136,7 +136,7 @@
 
   /** Botón hamburguesa flotante */
   .os-fab-menu {
-    @apply inline-flex items-center justify-center border-4 border-black bg-[var(--os-navy)] p-4 text-white transition-transform;
+    @apply inline-flex items-center justify-center rounded-full border-4 border-black bg-[var(--os-navy)] p-4 text-white transition-transform;
     box-shadow: 3px 3px 0 0 #000;
     min-width: 3.5rem;
     min-height: 3.5rem;
@@ -147,14 +147,15 @@
   }
 
   /** Chip fecha / vuelta al hero (junto al menú flotante) */
-  .os-fab-hero-chip {
-    @apply inline-flex flex-col items-center justify-center border-4 border-black bg-[var(--os-paper)] px-2.5 py-2 text-center text-[0.6rem] font-black uppercase tracking-wide text-black transition-transform;
+  /** FAB volver al inicio (flecha naranja, redondo) */
+  .os-fab-back-top {
+    @apply inline-flex items-center justify-center rounded-full border-4 border-black bg-[var(--os-orange)] text-white font-black text-xl leading-none transition-transform;
     box-shadow: 3px 3px 0 0 #000;
-    min-height: 3.5rem;
     min-width: 3.25rem;
+    min-height: 3.25rem;
   }
 
-  .os-fab-hero-chip:hover {
+  .os-fab-back-top:hover {
     @apply -translate-x-0.5 -translate-y-0.5;
   }
 
@@ -413,6 +414,7 @@
   }
 }
 
+/* Desktop: recorte tipo video 16:9 centrado (cover del viewport lógico). */
 .os-hero-media-viewport {
   position: absolute;
   top: 50%;
@@ -422,6 +424,19 @@
   min-height: 100%;
   min-width: 177.78vh;
   transform: translate(-50%, -50%);
+}
+
+/* Mobile/tablet: el min-width en vh rompe el encuadre (caja más ancha que la pantalla). Llenar el contenedor real. */
+@media (max-width: 1023px) {
+  .os-hero-media-viewport {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    transform: none;
+  }
 }
 
 .os-hero-marquee-track {

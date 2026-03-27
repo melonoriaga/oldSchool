@@ -1,0 +1,41 @@
+/**
+ * Scroll-reveal CSS helpers.
+ * Animations are driven by JS (revealSetup.ts / IntersectionObserver).
+ * These handle:
+ *   - Slow-spin decorative asterisks (pure CSS, no GSAP)
+ *   - Organic mark reveal for Section21 (CSS transition triggered by .os-organic-revealed)
+ */
+
+/* ── Decorative slow-spin (replaces GSAP repeat:-1 on asterisks) ─────────── */
+@keyframes os-spin-cw {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.os-spin-slow {
+  animation: os-spin-cw 20s linear infinite;
+  display: inline-block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .os-spin-slow {
+    animation: none;
+  }
+}
+
+/* ── Organic-mark scaleX reveal (Section21) ─────────────────────────────── */
+[data-organic-bg] {
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.72s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.os-organic-revealed [data-organic-bg] {
+  transform: scaleX(1);
+}
+
+/* Allow staggered delay for multiple marks in a block */
+.os-organic-revealed [data-organic-bg]:nth-child(1) { transition-delay: 0s; }
+.os-organic-revealed [data-organic-bg]:nth-child(2) { transition-delay: 0.12s; }
+.os-organic-revealed [data-organic-bg]:nth-child(3) { transition-delay: 0.24s; }

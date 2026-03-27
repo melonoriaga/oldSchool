@@ -62,7 +62,7 @@ export function PostulacionForm({ isOpen, onClose }: PostulacionFormProps) {
         role="dialog"
         aria-modal="true"
         aria-label="Formulario de postulación"
-        className="max-h-[92vh] w-full max-w-3xl overflow-y-auto border-4 border-black os-surface shadow-[8px_8px_0_0_#000]"
+        className="max-h-[92vh] w-full max-w-3xl overflow-y-auto rounded-3xl border-4 border-black os-surface shadow-[8px_8px_0_0_#000]"
       >
         {/* Header */}
         <div className="border-b-4 border-black">
@@ -85,14 +85,14 @@ export function PostulacionForm({ isOpen, onClose }: PostulacionFormProps) {
         {/* Content */}
         <div className="p-5 sm:p-8">
           {submitted ? (
-            <div className="border-4 border-black bg-[color-mix(in_srgb,var(--os-cyan)_10%,var(--os-paper))] px-6 py-12 text-center">
+            <div className="rounded-2xl border-4 border-black bg-[color-mix(in_srgb,var(--os-cyan)_10%,var(--os-paper))] px-6 py-12 text-center">
               <div className="mb-6 text-6xl font-black">✓</div>
               <h3 className="mb-4 text-3xl font-black uppercase">¡Postulación enviada!</h3>
               <p className="text-base font-medium sm:text-lg">Nos pondremos en contacto pronto.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-4 border-4 border-black bg-white/40 p-4 sm:p-6">
+              <div className="space-y-4 rounded-2xl border-4 border-black bg-white/40 p-4 sm:p-6">
                 <div>
                   <label className="mb-2 block text-[0.68rem] font-black uppercase tracking-[0.14em] sm:text-xs">
                     Nombre *
@@ -102,7 +102,7 @@ export function PostulacionForm({ isOpen, onClose }: PostulacionFormProps) {
                     required
                     value={formData.nombre}
                     onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
-                    className="w-full border-2 border-black bg-[var(--os-paper)] px-4 py-3 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--os-cyan)] focus-visible:ring-offset-2"
+                    className="w-full rounded-xl border-2 border-black bg-[var(--os-paper)] px-4 py-3 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--os-cyan)] focus-visible:ring-offset-2"
                   />
                 </div>
 
@@ -116,7 +116,7 @@ export function PostulacionForm({ isOpen, onClose }: PostulacionFormProps) {
                       required
                       value={formData.edad}
                       onChange={(e) => setFormData({ ...formData, edad: e.target.value })}
-                      className="w-full border-2 border-black bg-[var(--os-paper)] px-4 py-3 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--os-cyan)] focus-visible:ring-offset-2"
+                      className="w-full rounded-xl border-2 border-black bg-[var(--os-paper)] px-4 py-3 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--os-cyan)] focus-visible:ring-offset-2"
                     />
                   </div>
 
@@ -129,7 +129,7 @@ export function PostulacionForm({ isOpen, onClose }: PostulacionFormProps) {
                       required
                       value={formData.ciudad}
                       onChange={(e) => setFormData({ ...formData, ciudad: e.target.value })}
-                      className="w-full border-2 border-black bg-[var(--os-paper)] px-4 py-3 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--os-cyan)] focus-visible:ring-offset-2"
+                      className="w-full rounded-xl border-2 border-black bg-[var(--os-paper)] px-4 py-3 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--os-cyan)] focus-visible:ring-offset-2"
                     />
                   </div>
                 </div>
@@ -143,7 +143,7 @@ export function PostulacionForm({ isOpen, onClose }: PostulacionFormProps) {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full border-2 border-black bg-[var(--os-paper)] px-4 py-3 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--os-cyan)] focus-visible:ring-offset-2"
+                    className="w-full rounded-xl border-2 border-black bg-[var(--os-paper)] px-4 py-3 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--os-cyan)] focus-visible:ring-offset-2"
                   />
                 </div>
 
@@ -156,7 +156,7 @@ export function PostulacionForm({ isOpen, onClose }: PostulacionFormProps) {
                     required
                     value={formData.telefono}
                     onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
-                    className="w-full border-2 border-black bg-[var(--os-paper)] px-4 py-3 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--os-cyan)] focus-visible:ring-offset-2"
+                    className="w-full rounded-xl border-2 border-black bg-[var(--os-paper)] px-4 py-3 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--os-cyan)] focus-visible:ring-offset-2"
                   />
                 </div>
 
@@ -168,7 +168,7 @@ export function PostulacionForm({ isOpen, onClose }: PostulacionFormProps) {
                     rows={4}
                     value={formData.mensaje}
                     onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
-                    className="w-full resize-none border-2 border-black bg-[var(--os-paper)] px-4 py-3 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--os-cyan)] focus-visible:ring-offset-2"
+                    className="w-full resize-none rounded-xl border-2 border-black bg-[var(--os-paper)] px-4 py-3 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--os-cyan)] focus-visible:ring-offset-2"
                   />
                 </div>
               </div>
