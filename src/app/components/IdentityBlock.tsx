@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { RegresadosWord } from './RegresadosWord';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -107,7 +108,7 @@ export function IdentityBlock() {
       {/* Top Section with Number */}
       <div className="border-b-4 border-black p-8 lg:p-16 flex items-center justify-between relative">
         <h2 ref={titleRef} className="text-3xl lg:text-5xl font-black max-w-2xl leading-tight">
-          PROMO REGRESADOS 2026<br />
+          PROMO <RegresadosWord variant="split" className="align-[0.01em]" /> 2026<br />
           PRIMERA EDICIÓN
         </h2>
         <div ref={numberRef} className="text-[6rem] lg:text-[10rem] font-black leading-none hidden lg:block">
@@ -138,7 +139,7 @@ export function IdentityBlock() {
           
           <p ref={el => textRefs.current[1] = el} className="text-xl lg:text-2xl leading-relaxed">
             No de egresados.<br />
-            <strong>De regresados.</strong>
+            <strong>De <RegresadosWord variant="split" />.</strong>
           </p>
           
           <p ref={el => textRefs.current[2] = el} className="text-xl lg:text-2xl leading-relaxed">

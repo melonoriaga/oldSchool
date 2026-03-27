@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { RegresadosWord } from './RegresadosWord';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -180,7 +181,7 @@ export function Block10() {
           <div ref={contentRef} className="space-y-6 text-base lg:text-lg xl:text-xl leading-relaxed text-black">
             <p>
               Old School® no es un viaje abierto.<br />
-              Cada edición se organiza para grupos limitados de regresados.
+              Cada edición se organiza para grupos limitados de <RegresadosWord variant="split" />.
             </p>
           </div>
           <ul ref={listRef} className="space-y-3 text-base lg:text-lg xl:text-xl text-black">
@@ -271,7 +272,7 @@ export function Block11() {
               Conocemos la estética, la música, las escenas, los tiempos y el cierre.
             </p>
             <p>
-              Entendemos que REGRESADOS no es un público.<br />
+              Entendemos que <RegresadosWord variant="split" /> no es un público.<br />
               Es una identidad.
             </p>
             <p className="font-black text-2xl lg:text-3xl">

@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { HeroMediaColumn } from './hero/HeroMediaColumn';
+import { RegresadosWord } from './RegresadosWord';
 
 interface HeroProps {
   onPostular: () => void;
@@ -9,7 +10,6 @@ interface HeroProps {
 
 export function Hero({ onPostular }: HeroProps) {
   const numberRef = useRef(null);
-  const regresadosBadgeRef = useRef<HTMLImageElement>(null);
   const kickerRef = useRef(null);
   const h1Ref = useRef(null);
   const regresoRef = useRef<HTMLSpanElement>(null);
@@ -29,27 +29,6 @@ export function Hero({ onPostular }: HeroProps) {
         delay: 0.2,
       });
 
-      if (regresadosBadgeRef.current) {
-        gsap.from(regresadosBadgeRef.current, {
-          opacity: 0,
-          scale: 0.7,
-          rotation: -8,
-          y: -20,
-          duration: 0.9,
-          ease: 'back.out(1.7)',
-          delay: 0.45,
-        });
-
-        gsap.to(regresadosBadgeRef.current, {
-          y: '+=8',
-          rotation: '+=2',
-          duration: 2.2,
-          ease: 'sine.inOut',
-          repeat: -1,
-          yoyo: true,
-        });
-      }
-
       const blocks = [kickerRef.current, h1Ref.current, leadRef.current, ctaRef.current];
       gsap.from(blocks, {
         opacity: 0,
@@ -61,16 +40,13 @@ export function Hero({ onPostular }: HeroProps) {
       });
 
       if (regresoRef.current && regresoLineRef.current) {
-        gsap.fromTo(
-          regresoRef.current,
-          { color: 'var(--os-navy)' },
-          {
-            color: 'var(--os-orange)',
-            duration: 0.45,
-            ease: 'power2.out',
-            delay: 0.92,
-          },
-        );
+        gsap.from(regresoRef.current, {
+          opacity: 0,
+          y: 10,
+          duration: 0.5,
+          ease: 'power2.out',
+          delay: 0.9,
+        });
 
         const pathLength = regresoLineRef.current.getTotalLength();
         gsap.set(regresoLineRef.current, {
@@ -139,7 +115,7 @@ export function Hero({ onPostular }: HeroProps) {
               <br />
               ES UN{' '}
               <span ref={regresoRef} className="relative inline-block">
-                REGRESO
+                <RegresadosWord />
                 <svg
                   className="pointer-events-none absolute -bottom-[0.22em] left-0 h-[0.46em] w-full"
                   viewBox="0 0 256 52"

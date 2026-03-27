@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import logoBlancoCompleto from '../../assets/01logos/LogoBlancoCompleto.png';
 import logoHumanNegro from '../../assets/01logos/LogoHumanNegro.png';
+import { RegresadosWord } from './RegresadosWord';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,7 +19,7 @@ const footerNav = [
 
 export function Footer() {
   const footerRef = useRef<HTMLElement>(null);
-  const footerMarqueeItems = ['EDICIÓN REGRESADOS', 'BARILOCHE', 'RETRO PREMIUM'] as const;
+  const footerMarqueeItems = ['EDICION_BRAND', 'BARILOCHE', 'RETRO PREMIUM'] as const;
 
   useEffect(() => {
     const root = footerRef.current;
@@ -55,9 +56,7 @@ export function Footer() {
                 {Array.from({ length: 6 }).flatMap((_, repeatIdx) =>
                   footerMarqueeItems.map((label, itemIdx) => {
                     const toneClass =
-                      label === 'EDICIÓN REGRESADOS'
-                        ? 'text-[var(--os-orange)]'
-                        : label === 'BARILOCHE'
+                      label === 'BARILOCHE'
                           ? 'text-[var(--os-cyan)]'
                           : 'text-[var(--os-paper)]';
                     return (
@@ -65,7 +64,13 @@ export function Footer() {
                         <span
                           className={`px-3 text-[0.65rem] font-black uppercase tracking-[0.16em] ${toneClass} sm:text-xs`}
                         >
-                          {label}
+                          {label === 'EDICION_BRAND' ? (
+                            <span className="inline-flex items-center gap-1">
+                              EDICIÓN <RegresadosWord variant="split" className="text-[0.75em] align-[0.02em]" />
+                            </span>
+                          ) : (
+                            label
+                          )}
                         </span>
                         <span className="text-[var(--os-cyan)]" aria-hidden>
                           ✦
@@ -199,7 +204,7 @@ export function Footer() {
       <div className="os-footer-reveal border-t-4 border-black bg-black px-5 py-6 sm:px-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-white/55 sm:text-left">
-            © {new Date().getFullYear()} Old School® — Regresados
+            © {new Date().getFullYear()} Old School® — <RegresadosWord variant="split" className="text-[0.9em]" />
           </p>
           <p className="text-center text-xs text-white/45 sm:text-right">
             Buenos Aires · Bariloche · Experiencia registrada

@@ -100,7 +100,7 @@ export function PostulacionBlock({ onPostular }: PostulacionBlockProps) {
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="flex flex-col justify-center space-y-10 border-b-4 border-black p-8 lg:border-b-0 lg:border-r-4 lg:p-16 xl:p-20">
           <div ref={numberRef} className="os-brutal-num">
-            27
+            26
           </div>
 
           <div className="space-y-6">

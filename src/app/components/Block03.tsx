@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ReAccentWord } from './ReAccentWord';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,16 +65,22 @@ export function Block03() {
           
           <h2 ref={titleRef} className="text-3xl lg:text-4xl xl:text-5xl font-black leading-tight text-black">
             NO ES NOSTALGIA,<br />
-            ES RECONEXIÓN.
+            ES <ReAccentWord word="RECONEXIÓN" tone="orange" />.
           </h2>
 
           <div ref={contentRef} className="space-y-4 text-base lg:text-lg xl:text-xl leading-relaxed text-black">
             <p>Old School no está hecho para mirar el pasado desde afuera.</p>
             <p>Está hecho para volver a entrar.</p>
-            <p>No es recordar.</p>
-            <p>Es reactivar.</p>
+            <p>
+              No es <ReAccentWord word="recordar" tone="orange" />.
+            </p>
+            <p>
+              Es <ReAccentWord word="reactivar" tone="cyan" />.
+            </p>
             <p>No es mirar lo que fue.</p>
-            <p className="font-black">Es volver a sentirlo en tiempo real.</p>
+            <p className="font-black">
+              Es volver a sentirlo en tiempo <ReAccentWord word="real" tone="cyan" />.
+            </p>
           </div>
         </div>
       </div>

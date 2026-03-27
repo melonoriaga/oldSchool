@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { RegresadosWord } from './RegresadosWord';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -109,7 +110,7 @@ export function Section10() {
             }}
             className="mt-4 text-base font-medium leading-relaxed sm:text-lg lg:max-w-md"
           >
-            Cada edición se organiza para grupos limitados de regresados.
+            Cada edición se organiza para grupos limitados de <RegresadosWord variant="split" />.
           </p>
 
           <div className="mt-8 border-2 border-black">

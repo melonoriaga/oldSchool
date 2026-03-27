@@ -8,7 +8,9 @@
 		"dev": "vite",
 		"typecheck": "tsc --noEmit",
 		"lint": "eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"deploy": "npm run build && npx firebase deploy --only hosting",
+		"deploy:preview": "npm run build && npx firebase emulators:start --only hosting"
 	},
 	"dependencies": {
 		"@emotion/react": "11.14.0",

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { RegresadosWord } from './RegresadosWord';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,7 +63,7 @@ export function Block07Generaciones() {
         {/* Título y subtítulo */}
         <div className="lg:col-span-9 border-b-4 border-black p-8 lg:p-12 xl:p-16 space-y-6">
           <h2 ref={titleRef} className="text-3xl lg:text-4xl xl:text-5xl font-black leading-tight text-black">
-            REGRESADOS
+            <RegresadosWord className="h-[0.8em] align-[-0.04em]" />
           </h2>
           
           <p ref={introRef} className="text-2xl lg:text-3xl font-black leading-tight text-black">

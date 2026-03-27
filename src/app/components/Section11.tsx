@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CountUp from '@/components/CountUp';
+import { RegresadosWord } from './RegresadosWord';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -145,7 +146,7 @@ export function Section11() {
               }}
               className="text-sm font-bold uppercase tracking-wide text-black/80 sm:text-base"
             >
-              Entendemos que REGRESADOS no es un público.
+              Entendemos que <RegresadosWord variant="split" /> no es un público.
             </p>
             <p
               ref={(el) => {

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { RegresadosWord } from './RegresadosWord';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -105,7 +106,7 @@ export function TestimoniosBlock() {
         <div className="flex items-center justify-between">
           <div>
             <h2 ref={titleRef} className="text-3xl font-black lg:text-5xl">
-              LOS <span className="text-[var(--os-orange)]">REGRESADOS</span> DICEN
+              LOS <RegresadosWord variant="split" className="align-[0.02em]" /> DICEN
             </h2>
             <p className="mt-2 text-xs font-black uppercase tracking-[0.14em] text-[var(--os-navy)] sm:text-sm">
               &quot;No pensé que esto me iba a pasar&quot;

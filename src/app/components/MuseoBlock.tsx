@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { OldSchoolWord } from './OldSchoolWord';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,7 +26,7 @@ export function MuseoBlock() {
         },
         scale: 0.5,
         duration: 1,
-        ease: 'back.out(1.7)'
+        ease: 'back.out(1.7)',
       });
 
       // Animación del título
@@ -37,7 +38,7 @@ export function MuseoBlock() {
         y: 30,
         duration: 0.8,
         ease: 'power3.out',
-        delay: 0.2
+        delay: 0.2,
       });
 
       // Animación de textos
@@ -50,7 +51,7 @@ export function MuseoBlock() {
         duration: 0.6,
         stagger: 0.15,
         ease: 'power3.out',
-        delay: 0.4
+        delay: 0.4,
       });
 
       // Animación de imagen
@@ -61,7 +62,7 @@ export function MuseoBlock() {
         },
         scale: 1.2,
         duration: 1.2,
-        ease: 'power3.out'
+        ease: 'power3.out',
       });
 
       // Animación del overlay
@@ -72,7 +73,7 @@ export function MuseoBlock() {
         },
         y: 30,
         duration: 0.8,
-        ease: 'power3.out'
+        ease: 'power3.out',
       });
 
       // Animación de asteriscos
@@ -86,7 +87,7 @@ export function MuseoBlock() {
         duration: 1.2,
         stagger: 0.3,
         ease: 'back.out(2)',
-        delay: 0.6
+        delay: 0.6,
       });
 
       // Rotación continua de asteriscos
@@ -98,8 +99,8 @@ export function MuseoBlock() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 70%',
-          toggleActions: 'play pause resume pause'
-        }
+          toggleActions: 'play pause resume pause',
+        },
       });
     });
 
@@ -114,20 +115,28 @@ export function MuseoBlock() {
           <div ref={asterisk1Ref} className="absolute top-8 right-8 text-5xl font-black opacity-25">
             *
           </div>
-          <div ref={numberRef} className="text-[8rem] font-black leading-none">06</div>
-          
+          <div ref={numberRef} className="text-[8rem] font-black leading-none">
+            25
+          </div>
+
           <h2 ref={titleRef} className="text-4xl lg:text-5xl font-black leading-tight">
-            MUSEO<br />
-            OLD SCHOOL
+            MUSEO
+            <br />
+            <OldSchoolWord uppercase registered={false} />
           </h2>
 
-          <p ref={el => textRefs.current[0] = el} className="text-2xl lg:text-3xl leading-relaxed">
-            Fotos, recuerdos,<br />
+          <p
+            ref={(el) => (textRefs.current[0] = el)}
+            className="text-2xl lg:text-3xl leading-relaxed"
+          >
+            Fotos, recuerdos,
+            <br />
             objetos, historias.
           </p>
 
-          <p ref={el => textRefs.current[1] = el} className="text-xl leading-relaxed">
-            Todo lo que alguna vez guardaste…<br />
+          <p ref={(el) => (textRefs.current[1] = el)} className="text-xl leading-relaxed">
+            Todo lo que alguna vez guardaste…
+            <br />
             <strong className="font-bold">vuelve a tener sentido.</strong>
           </p>
         </div>
@@ -140,16 +149,19 @@ export function MuseoBlock() {
             alt="Museo Old School"
             className="w-full h-full object-cover grayscale"
           />
-          
+
           <div ref={asterisk2Ref} className="absolute top-8 left-8 text-6xl font-black opacity-20">
             *
           </div>
-          
+
           {/* Overlay Text */}
-          <div ref={overlayRef} className="absolute bottom-0 right-0 os-surface p-6 border-t-4 border-l-4 border-black max-w-md">
+          <div
+            ref={overlayRef}
+            className="absolute bottom-0 right-0 os-surface p-6 border-t-4 border-l-4 border-black max-w-md"
+          >
             <p className="text-sm leading-relaxed">
-              Un espacio dedicado a revivir los recuerdos de aquella época. 
-              Traé tus fotos, tus historias, tus objetos guardados.
+              Un espacio dedicado a revivir los recuerdos de aquella época. Traé tus fotos, tus
+              historias, tus objetos guardados.
             </p>
           </div>
         </div>

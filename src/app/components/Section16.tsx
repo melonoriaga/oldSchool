@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { OldSchoolWord } from './OldSchoolWord';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -86,13 +87,15 @@ export function Section16() {
       <div className="grid grid-cols-1 border-b-4 border-black lg:grid-cols-12">
         <aside className="flex flex-col justify-center border-b-4 border-black bg-black/[0.02] p-6 sm:p-8 lg:col-span-4 lg:border-b-0 lg:border-r-4 lg:p-10 xl:p-12">
           <p className="os-section-title mb-2 text-[0.65rem] text-[var(--os-navy)] sm:text-xs">MISMA ENERGÍA</p>
-          <p className="text-sm font-black uppercase tracking-widest text-black/50">Old School Edition</p>
+          <p className="text-sm font-black uppercase tracking-widest text-black/50">
+            <OldSchoolWord registered={false} /> Edition
+          </p>
         </aside>
         <div className="p-6 sm:p-8 lg:col-span-8 lg:p-10 xl:p-12">
           <p className="os-pull max-w-3xl">
             La misma alegría.<br />
             La misma sorpresa.<br />
-            Pero en versión <span className="text-[var(--os-orange)]">Old School</span>.
+            Pero en versión <OldSchoolWord registered={false} />.
           </p>
         </div>
       </div>
@@ -155,11 +158,11 @@ export function Section16() {
         <div ref={el => textRefs.current[2] = el} className="max-w-4xl">
           <div className="border-l-4 border-[var(--os-cyan)] pl-5 sm:pl-6">
           <h3 className="mb-2 font-black uppercase tracking-tight text-[var(--os-navy)] text-xl sm:text-2xl lg:text-3xl xl:text-4xl">
-            Old School ® Festival
+            <OldSchoolWord uppercase /> Festival
           </h3>
           <div className="space-y-4 text-base leading-relaxed lg:text-lg xl:text-xl">
             <p className="font-black text-lg lg:text-xl xl:text-2xl">No es un show más.<br />Es un ritual colectivo en el bosque.</p>
-            <p>Propuesta gastronómica de montaña, pileta climatizada convertida en discoteca, fiesta de la espuma, DJs en vivo, happy hours, Old School Rock y cierre con Sunset We Color.</p>
+            <p>Propuesta gastronómica de montaña, pileta climatizada convertida en discoteca, fiesta de la espuma, DJs en vivo, happy hours, <OldSchoolWord registered={false} /> Rock y cierre con Sunset We Color.</p>
           </div>
           </div>
         </div>
@@ -203,7 +206,7 @@ export function Section16() {
               <p className="font-black text-lg lg:text-xl xl:text-2xl">El día que te queda para siempre.</p>
               <p>Montaña, nieve, aire helado en la cara y el grupo viviendo algo enorme.</p>
               <p>Miradores, tiempo para recorrer, ski & snowboard con instructores y pases.</p>
-              <p>Y para los más cancheros todavía: After Snow con gastronomía y música en vivo en el parador exclusivo de Old School.</p>
+              <p>Y para los más cancheros todavía: After Snow con gastronomía y música en vivo en el parador exclusivo de <OldSchoolWord registered={false} />.</p>
               <p className="pt-4 font-black text-xl lg:text-2xl xl:text-3xl">No es para todos.<br />Es para nosotros.</p>
             </div>
             </div>

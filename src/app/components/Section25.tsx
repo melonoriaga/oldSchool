@@ -27,7 +27,7 @@ export function Section25({ onPostular }: Section25Props) {
           },
           scale: 0.3,
           duration: 1.2,
-          ease: 'back.out(1.7)'
+          ease: 'back.out(1.7)',
         });
       }
 
@@ -40,7 +40,7 @@ export function Section25({ onPostular }: Section25Props) {
           y: 50,
           duration: 0.8,
           ease: 'power3.out',
-          delay: 0.2
+          delay: 0.2,
         });
       }
 
@@ -53,7 +53,7 @@ export function Section25({ onPostular }: Section25Props) {
           y: 30,
           duration: 0.7,
           ease: 'power3.out',
-          delay: 0.4
+          delay: 0.4,
         });
       }
 
@@ -65,7 +65,7 @@ export function Section25({ onPostular }: Section25Props) {
           },
           y: 30,
           duration: 0.8,
-          ease: 'power3.out'
+          ease: 'power3.out',
         });
       }
 
@@ -78,7 +78,7 @@ export function Section25({ onPostular }: Section25Props) {
           rotation: -180,
           scale: 0,
           duration: 1.3,
-          ease: 'back.out(2)'
+          ease: 'back.out(2)',
         });
       }
     });
@@ -87,7 +87,11 @@ export function Section25({ onPostular }: Section25Props) {
   }, []);
 
   return (
-    <div ref={sectionRef} data-os-read-marker className="border-x-4 border-b-4 border-black bg-[var(--os-navy)] text-white">
+    <div
+      ref={sectionRef}
+      data-os-read-marker
+      className="border-x-4 border-b-4 border-black bg-[var(--os-navy)] text-white"
+    >
       {/* Header */}
       <div className="relative flex items-center justify-between border-b-4 border-white p-4 sm:p-8 lg:p-16">
         <div
@@ -96,11 +100,16 @@ export function Section25({ onPostular }: Section25Props) {
         >
           *
         </div>
-        <h2 ref={titleRef} className="max-w-[85%] text-3xl font-black leading-[1.05] sm:text-5xl sm:max-w-none lg:text-7xl xl:text-8xl">
-          PRIMERA<br />EDICIÓN
+        <h2
+          ref={titleRef}
+          className="max-w-[85%] text-3xl font-black leading-[1.05] sm:text-5xl sm:max-w-none lg:text-7xl xl:text-8xl"
+        >
+          PRIMERA
+          <br />
+          EDICIÓN
         </h2>
         <div ref={numberRef} className="os-brutal-num os-brutal-num--on-dark">
-          25
+          24
         </div>
       </div>
 

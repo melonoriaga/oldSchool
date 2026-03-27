@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { OldSchoolWord } from './OldSchoolWord';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -133,7 +134,7 @@ export function Section04() {
           </p>
 
           <p ref={(el) => (textRefs.current[2] = el)} className="os-pull max-w-2xl border-l-4 border-[var(--os-cyan)] pl-4 sm:pl-5">
-            Old School® nació para eso.
+            <OldSchoolWord /> nació para eso.
           </p>
 
           <p ref={(el) => (textRefs.current[3] = el)} className="os-slice max-w-2xl">

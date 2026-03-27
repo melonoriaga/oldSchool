@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { placeholderByIndex } from '@/data/placeholders';
 import { OsFigure } from './OsFigure';
+import { RegresadosWord } from './RegresadosWord';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -93,7 +94,7 @@ export function Section07Generaciones() {
       <div className="relative flex flex-col items-start justify-between gap-5 border-b-4 border-black p-5 sm:gap-6 sm:p-8 lg:flex-row lg:items-start lg:p-16">
         <div className="max-w-3xl space-y-4">
           <h2 ref={titleRef} className="os-section-h2">
-            REGRESADOS
+            <RegresadosWord className="h-[0.8em] align-[-0.04em]" />
           </h2>
           <p
             ref={subtitleRef}

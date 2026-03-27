@@ -93,7 +93,7 @@ export function Section23() {
           </h2>
         </div>
         <div ref={numberRef} className="os-brutal-num self-end sm:self-auto">
-          23
+          22
         </div>
       </div>
 
@@ -108,7 +108,9 @@ export function Section23() {
           <div className="mt-10 font-black tabular-nums text-5xl leading-none text-[var(--os-cyan)] opacity-90">
             {String(faqs.length).padStart(2, '0')}
           </div>
-          <p className="mt-2 text-xs font-bold uppercase tracking-widest text-white/50">preguntas</p>
+          <p className="mt-2 text-xs font-bold uppercase tracking-widest text-white/50">
+            preguntas
+          </p>
         </div>
 
         <div className="border-black lg:border-0">
@@ -157,7 +159,9 @@ export function Section23() {
                   >
                     <div className="min-h-0 overflow-hidden">
                       <div className="border-t-4 border-black bg-[var(--os-cyan)]/12 px-4 py-5 sm:px-8 sm:py-7 sm:pl-[4.25rem] lg:px-10 lg:py-8 lg:pl-[6.5rem]">
-                        <p className="text-sm leading-relaxed sm:text-base lg:text-lg">{faq.answer}</p>
+                        <p className="text-sm leading-relaxed sm:text-base lg:text-lg">
+                          {faq.answer}
+                        </p>
                       </div>
                     </div>
                   </div>

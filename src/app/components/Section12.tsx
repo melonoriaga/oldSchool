@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { OldSchoolWord } from './OldSchoolWord';
+import { RegresadosWord } from './RegresadosWord';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -137,7 +139,7 @@ export function Section12() {
           </p>
 
           <p ref={el => textRefs.current[4] = el} className="os-slice max-w-2xl pt-2 text-black/80">
-            Operamos con compañías aéreas de línea regular a Bariloche y, en la experiencia premium, también con vuelos charter exclusivos para Regresados Old School®.
+            Operamos con compañías aéreas de línea regular a Bariloche y, en la experiencia premium, también con vuelos charter exclusivos para <RegresadosWord variant="split" /> <OldSchoolWord />.
           </p>
 
           <p ref={el => textRefs.current[5] = el} className="os-pull max-w-2xl border-l-4 border-[var(--os-cyan)] pl-5 pt-2 sm:pl-6">
