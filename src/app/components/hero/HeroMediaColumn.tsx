@@ -1,12 +1,19 @@
 import { useEffect, useState, useSyncExternalStore } from 'react';
 import Grainient from '@/components/Grainient';
-import home001 from '@/assets/home/001.jpeg';
-import home002 from '@/assets/home/002.jpeg';
-import home003 from '@/assets/home/003.jpeg';
-import home004 from '@/assets/home/004.jpeg';
-import home005 from '@/assets/home/005.jpeg';
-import home006 from '@/assets/home/006.jpeg';
-import home007 from '@/assets/home/007.jpeg';
+import s01d1 from '@/assets/imageBySections/Section01/OldSchool-IMG-HomeSliderDesktop1.jpg';
+import s01d2 from '@/assets/imageBySections/Section01/OldSchool-IMG-HomeSliderDesktop2.jpg';
+import s01d3 from '@/assets/imageBySections/Section01/OldSchool-IMG-HomeSliderDesktop3.jpg';
+import s01d4 from '@/assets/imageBySections/Section01/OldSchool-IMG-HomeSliderDesktop4.jpg';
+import s01d5 from '@/assets/imageBySections/Section01/OldSchool-IMG-HomeSliderDesktop5.jpg';
+import s01d6 from '@/assets/imageBySections/Section01/OldSchool-IMG-HomeSliderDesktop6.jpg';
+import s01d7 from '@/assets/imageBySections/Section01/OldSchool-IMG-HomeSliderDesktop7.jpg';
+import s01m1 from '@/assets/imageBySections/Section01/OldSchool-IMG-HomeSliderMobile1.jpg';
+import s01m2 from '@/assets/imageBySections/Section01/OldSchool-IMG-HomeSliderMobile2.jpg';
+import s01m3 from '@/assets/imageBySections/Section01/OldSchool-IMG-HomeSliderMobile3.jpg';
+import s01m4 from '@/assets/imageBySections/Section01/OldSchool-IMG-HomeSliderMobile4.jpg';
+import s01m5 from '@/assets/imageBySections/Section01/OldSchool-IMG-HomeSliderMobile5.jpg';
+import s01m6 from '@/assets/imageBySections/Section01/OldSchool-IMG-HomeSliderMobile6.jpg';
+import s01m7 from '@/assets/imageBySections/Section01/OldSchool-IMG-HomeSliderMobile7.jpg';
 
 const LG_MQ = '(min-width: 1024px)';
 
@@ -29,14 +36,14 @@ function useIsLgViewport() {
 }
 
 const HERO_SLIDES = [
-  { src: home001, alt: 'Grupo de egresados en Bariloche 1' },
-  { src: home002, alt: 'Grupo de egresados en Bariloche 2' },
-  { src: home003, alt: 'Grupo de egresados en Bariloche 3' },
-  { src: home004, alt: 'Grupo de egresados en Bariloche 4' },
-  { src: home005, alt: 'Grupo de egresados en Bariloche 5' },
-  { src: home006, alt: 'Grupo de egresados en Bariloche 6' },
-  { src: home007, alt: 'Grupo de egresados en Bariloche 7' },
-] as const;
+  { desktop: s01d1, mobile: s01m1, alt: 'Old School Regresados en Bariloche 1' },
+  { desktop: s01d2, mobile: s01m2, alt: 'Old School Regresados en Bariloche 2' },
+  { desktop: s01d3, mobile: s01m3, alt: 'Old School Regresados en Bariloche 3' },
+  { desktop: s01d4, mobile: s01m4, alt: 'Old School Regresados en Bariloche 4' },
+  { desktop: s01d5, mobile: s01m5, alt: 'Old School Regresados en Bariloche 5' },
+  { desktop: s01d6, mobile: s01m6, alt: 'Old School Regresados en Bariloche 6' },
+  { desktop: s01d7, mobile: s01m7, alt: 'Old School Regresados en Bariloche 7' },
+];
 
 const MARQUEE_ITEMS = [
   { label: 'REGRESO', tone: 'orange' as const },
@@ -109,15 +116,22 @@ export function HeroMediaColumn() {
       <div className="absolute inset-0 z-0 overflow-hidden" aria-hidden>
         <div className="os-hero-media-viewport pointer-events-none">
           {HERO_SLIDES.map((slide, index) => (
-            <img
-              key={slide.src}
-              src={slide.src}
-              alt={slide.alt}
-              className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700 ${
+            <div
+              key={slide.desktop}
+              className={`absolute inset-0 transition-opacity duration-700 ${
                 index === activeSlide ? 'opacity-100' : 'opacity-0'
               }`}
-              loading={index === 0 ? 'eager' : 'lazy'}
-            />
+            >
+              <picture>
+                <source media="(min-width: 1024px)" srcSet={slide.desktop} />
+                <img
+                  src={slide.mobile}
+                  alt={slide.alt}
+                  className="absolute inset-0 h-full w-full object-cover object-center"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                />
+              </picture>
+            </div>
           ))}
         </div>
       </div>
@@ -172,7 +186,7 @@ export function HeroMediaColumn() {
           const isActive = index === activeSlide;
           return (
             <button
-              key={slide.src}
+              key={slide.desktop}
               type="button"
               onClick={() => setActiveSlide(index)}
               aria-label={`Mostrar imagen ${index + 1}`}

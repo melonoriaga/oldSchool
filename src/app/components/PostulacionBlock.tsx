@@ -1,7 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-
-import { placeholderByIndex } from '@/data/placeholders';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import retroVideo from '@/assets/videos/retroVideo.mp4';
 
 interface PostulacionBlockProps {
   onPostular: () => void;
@@ -45,7 +43,7 @@ export function PostulacionBlock({ onPostular }: PostulacionBlockProps) {
               POSTULARME AHORA <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
             </button>
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/5491128935992"
               target="_blank"
               rel="noopener noreferrer"
               className="os-btn-secondary"
@@ -55,12 +53,15 @@ export function PostulacionBlock({ onPostular }: PostulacionBlockProps) {
           </div>
         </div>
 
-        <div className="relative min-h-[45vh] lg:min-h-[80vh]">
-          <ImageWithFallback
-
-            src={placeholderByIndex(10)}
-            alt=""
-            className="h-full w-full object-cover grayscale"
+        <div className="relative min-h-[45vh] lg:min-h-[80vh] overflow-hidden">
+          <video
+            src={retroVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 h-full w-full object-cover"
+            aria-hidden
           />
         </div>
       </div>

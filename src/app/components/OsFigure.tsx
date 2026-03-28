@@ -15,7 +15,7 @@ export function OsFigure({ src, alt, className = '', style }: Props) {
       <ImageWithFallback
         src={src}
         alt={alt}
-        className="h-full w-full object-cover grayscale"
+        className="h-full w-full object-cover"
         loading="lazy"
         style={style}
       />

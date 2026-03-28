@@ -1,6 +1,6 @@
-
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { OldSchoolWord } from './OldSchoolWord';
+import sec4d from '@/assets/imageBySections/Section04/OldSchool-IMG-Sec4-Desktop1.jpg';
+import sec4m from '@/assets/imageBySections/Section04/OldSchool-IMG-Sec4-Mobile1.jpg';
 
 export function Section04() {
 
@@ -23,11 +23,10 @@ export function Section04() {
 
           className="os-grid-cover-cell border-b-4 border-black lg:border-b-0 lg:border-r-4"
         >
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80"
-            alt="Montaña Bariloche"
-            className="os-grid-cover-img grayscale"
-          />
+          <picture>
+            <source media="(min-width: 1024px)" srcSet={sec4d} />
+            <img src={sec4m} alt="Bariloche" className="os-grid-cover-img" />
+          </picture>
         </div>
 
         <div className="relative flex flex-col justify-center space-y-5 p-6 sm:p-8 lg:p-10 xl:p-12">

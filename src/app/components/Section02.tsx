@@ -1,6 +1,7 @@
-
-import { placeholderByIndex } from '@/data/placeholders';
-import { OsFigure } from './OsFigure';
+import sec2img1d from '@/assets/imageBySections/Section02/OldSchool-IMG-Sec2-01-Desktop.jpg';
+import sec2img1m from '@/assets/imageBySections/Section02/OldSchool-IMG-Sec2-01-Mobile.jpg';
+import sec2img2d from '@/assets/imageBySections/Section02/OldSchool-IMG--Sec2-02-Desktop2.jpg';
+import sec2img2m from '@/assets/imageBySections/Section02/OldSchool-IMG-Sec2-02-Mobile2.jpg';
 
 export function Section02() {
 
@@ -73,12 +74,18 @@ export function Section02() {
         </div>
 
         <div className="grid grid-rows-2">
-          <OsFigure
-            src={placeholderByIndex(2)}
-            alt=""
-            className="min-h-[14rem] border-b-4 border-black lg:min-h-[50%]"
-          />
-          <OsFigure src={placeholderByIndex(3)} alt="" className="min-h-[14rem] lg:min-h-[50%]" />
+          <div className="os-grid-cover-cell min-h-[14rem] border-b-4 border-black lg:min-h-[50%]">
+            <picture>
+              <source media="(min-width: 1024px)" srcSet={sec2img1d} />
+              <img src={sec2img1m} alt="Old School Regresados" className="os-grid-cover-img" />
+            </picture>
+          </div>
+          <div className="os-grid-cover-cell min-h-[14rem] lg:min-h-[50%]">
+            <picture>
+              <source media="(min-width: 1024px)" srcSet={sec2img2d} />
+              <img src={sec2img2m} alt="Old School Regresados" className="os-grid-cover-img" />
+            </picture>
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,7 @@
-
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import sec6img1d from '@/assets/imageBySections/Section06/OldSchool-IMG-Sec6-01-Desktop1.jpg';
+import sec6img1m from '@/assets/imageBySections/Section06/OldSchool-IMG-Sec6-01-Mobile1.jpg';
+import sec6img2d from '@/assets/imageBySections/Section06/OldSchool-IMG-Sec6-02-Desktop1.jpg';
+import sec6img2m from '@/assets/imageBySections/Section06/OldSchool-IMG-Sec6-02-Mobile1.jpg';
 
 export function Section06() {
 
@@ -24,11 +26,10 @@ export function Section06() {
 
           className="os-grid-cover-cell border-b-4 border-black lg:border-b-0 lg:border-r-4"
         >
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1653327611476-c55e75e6fbd4?w=800&q=80"
-            alt="Lago Bariloche"
-            className="os-grid-cover-img grayscale"
-          />
+          <picture>
+            <source media="(min-width: 1024px)" srcSet={sec6img1d} />
+            <img src={sec6img1m} alt="Lago Bariloche" className="os-grid-cover-img" />
+          </picture>
         </div>
 
         <div className="relative flex flex-col justify-center space-y-5 border-b-4 border-black p-6 sm:p-8 lg:border-b-0 lg:border-r-4 lg:p-10 xl:p-12">
@@ -62,11 +63,10 @@ export function Section06() {
         </div>
 
         <div className="os-grid-cover-cell">
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1505832018823-50331d70d237?w=800&q=80"
-            alt="Montaña nevada"
-            className="os-grid-cover-img grayscale"
-          />
+          <picture>
+            <source media="(min-width: 1024px)" srcSet={sec6img2d} />
+            <img src={sec6img2m} alt="Montaña nevada" className="os-grid-cover-img" />
+          </picture>
         </div>
       </div>
     </div>

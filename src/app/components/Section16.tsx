@@ -1,6 +1,10 @@
-
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { OldSchoolWord } from './OldSchoolWord';
+import sec16img1d from '@/assets/imageBySections/Section16/OldSchool-IMG-Sec16-Desktop1.jpg';
+import sec16img1m from '@/assets/imageBySections/Section16/OldSchool-IMG-Sec16-Mobile1.jpg';
+import sec16img2d from '@/assets/imageBySections/Section16/OldSchool-IMG-Sec16-Desktop2.jpg';
+import sec16img2m from '@/assets/imageBySections/Section16/OldSchool-IMG-Sec16-Mobile2.jpg';
+import sec16img3d from '@/assets/imageBySections/Section16/OldSchool-IMG-Sec16-Desktop3.jpg';
+import sec16img3m from '@/assets/imageBySections/Section16/OldSchool-IMG-Sec16-Mobile3.jpg';
 
 export function Section16() {
 
@@ -41,11 +45,10 @@ export function Section16() {
 
             className="os-grid-cover-cell border-b-4 border-black lg:border-b-0 lg:border-r-4"
           >
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1689250621633-8154146228e5?w=800&q=80"
-              alt="Circuito Chico"
-              className="os-grid-cover-img grayscale"
-            />
+            <picture>
+              <source media="(min-width: 1024px)" srcSet={sec16img1d} />
+              <img src={sec16img1m} alt="Circuito Chico Bariloche" className="os-grid-cover-img" />
+            </picture>
           </div>
           <div className="p-6 sm:p-8 lg:p-10 xl:p-12">
             <div className="border-l-4 border-[var(--os-orange)] pl-5 sm:pl-6">
@@ -78,11 +81,10 @@ export function Section16() {
             </div>
           </div>
           <div className="os-grid-cover-cell">
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1581942103398-6866d46c0f33?w=800&q=80"
-              alt="Día de Campo"
-              className="os-grid-cover-img grayscale"
-            />
+            <picture>
+              <source media="(min-width: 1024px)" srcSet={sec16img2d} />
+              <img src={sec16img2m} alt="Día de Campo Old School" className="os-grid-cover-img" />
+            </picture>
           </div>
         </div>
       </div>
@@ -125,11 +127,10 @@ export function Section16() {
 
             className="os-grid-cover-cell border-b-4 border-black lg:border-b-0 lg:border-r-4"
           >
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1607976112788-b4f621793974?w=1200&q=80"
-              alt="Cerro Catedral Nieve"
-              className="os-grid-cover-img grayscale"
-            />
+            <picture>
+              <source media="(min-width: 1024px)" srcSet={sec16img3d} />
+              <img src={sec16img3m} alt="Cerro Catedral Bariloche" className="os-grid-cover-img" />
+            </picture>
           </div>
           <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10 xl:p-12">
             <div className="border-l-4 border-black pl-5 sm:pl-6">

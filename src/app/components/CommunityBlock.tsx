@@ -40,7 +40,7 @@ export function CommunityBlock() {
 
             src="https://images.unsplash.com/photo-1576149324567-4fd5627ee73d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbW90aW9uYWwlMjByZXVuaW9uJTIwZnJpZW5kcyUyMHRvZ2V0aGVyfGVufDF8fHx8MTc3Mzc5ODczMXww&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Comunidad"
-            className="w-full h-full object-cover grayscale"
+            className="w-full h-full object-cover"
           />
         </div>
       </div>

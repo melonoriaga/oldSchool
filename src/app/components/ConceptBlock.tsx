@@ -38,7 +38,7 @@ export function ConceptBlock() {
 
             src="https://images.unsplash.com/photo-1757143137392-0b1e1a27a7de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxub3N0YWxnaWMlMjBzY2hvb2wlMjBncmFkdWF0aW9uJTIwY2VsZWJyYXRpb258ZW58MXx8fHwxNzczNzk4NzI5fDA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Concepto"
-            className="w-full h-full object-cover grayscale"
+            className="w-full h-full object-cover"
           />
         </div>
       </div>

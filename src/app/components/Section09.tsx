@@ -1,5 +1,5 @@
-
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import sec9d from '@/assets/imageBySections/Section09/OldSchool-IMG-Sec9-Desktop3.jpg';
+import sec9m from '@/assets/imageBySections/Section09/OldSchool-IMG-Sec9-Mobile3.jpg';
 
 export function Section09() {
 
@@ -52,11 +52,10 @@ export function Section09() {
         </div>
 
         <div className="os-grid-cover-cell">
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1577801599358-90f87d7555d7?w=800&q=80"
-            alt="Viaje Bariloche"
-            className="os-grid-cover-img grayscale"
-          />
+          <picture>
+            <source media="(min-width: 1024px)" srcSet={sec9d} />
+            <img src={sec9m} alt="Viaje Bariloche" className="os-grid-cover-img" />
+          </picture>
         </div>
       </div>
     </div>

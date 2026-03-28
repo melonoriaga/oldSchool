@@ -1,5 +1,5 @@
-
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import sec15d from '@/assets/imageBySections/Section15/OldSchool-IMG-Sec15-Desktop1.jpg';
+import sec15m from '@/assets/imageBySections/Section15/OldSchool-IMG-Sec15-Mobile1.jpg';
 
 export function Section15() {
 
@@ -24,11 +24,10 @@ export function Section15() {
 
           className="os-grid-cover-cell border-b-4 border-black lg:border-b-0 lg:border-r-4"
         >
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1771837602933-c1cc6293702b?w=1200&q=80"
-            alt="Comida grupo"
-            className="os-grid-cover-img grayscale"
-          />
+          <picture>
+            <source media="(min-width: 1024px)" srcSet={sec15d} />
+            <img src={sec15m} alt="Grupo Old School comida" className="os-grid-cover-img" />
+          </picture>
         </div>
 
         {/* Text content */}

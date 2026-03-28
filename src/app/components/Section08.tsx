@@ -1,6 +1,5 @@
-
-import { placeholderByIndex } from '@/data/placeholders';
-import { OsFigure } from './OsFigure';
+import sec8d from '@/assets/imageBySections/Section08/OldSchool-IMG-Sec8-01-Desktop1.jpg';
+import sec8m from '@/assets/imageBySections/Section08/OldSchool-IMG-Sec8-01-Mobile2.jpg';
 
 export function Section08() {
 
@@ -66,7 +65,10 @@ export function Section08() {
             </p>
           </div>
           <div className="os-grid-cover-cell border-b-4 border-black lg:border-b-0">
-            <OsFigure src={placeholderByIndex(6)} alt="" className="h-full !min-h-0 border-0" />
+            <picture>
+              <source media="(min-width: 1024px)" srcSet={sec8d} />
+              <img src={sec8m} alt="Old School post-viaje" className="os-grid-cover-img" />
+            </picture>
           </div>
         </div>
       </div>

@@ -28,7 +28,7 @@ export function IdentityBlock() {
 
             src="https://images.unsplash.com/photo-1770564512491-e88eb93d48a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMHBlb3BsZSUyMGFkdmVudHVyZSUyMGFjdGl2aXR5fGVufDF8fHx8MTc3Mzc5ODczMHww&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Nueva generación"
-            className="w-full h-full object-cover grayscale"
+            className="w-full h-full object-cover"
           />
         </div>
 

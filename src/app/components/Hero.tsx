@@ -153,7 +153,7 @@ export function Hero({ onPostular }: HeroProps) {
               POSTULARME <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
             </button>
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/5491128935992"
               target="_blank"
               rel="noopener noreferrer"
               className="os-btn-secondary"

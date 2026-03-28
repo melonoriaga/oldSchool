@@ -1,5 +1,5 @@
-
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import sec17d from '@/assets/imageBySections/Section17/OldSchool-IMG-Sec17-Desktop1.jpg';
+import sec17m from '@/assets/imageBySections/Section17/OldSchool-IMG-Sec17-Mobile1.jpg';
 
 /** Misma escala de padding que bloques editoriales en papel (cf. Section07 celda 10). */
 const paperPad = 'relative border-b-4 border-black p-8 sm:p-10 lg:p-12 xl:p-16';
@@ -39,11 +39,10 @@ export function Section17() {
           </p>
         </div>
         <div className="os-grid-cover-cell">
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1657208431551-cbf415b8ef26?w=800&q=80"
-            alt="Discoteca"
-            className="os-grid-cover-img grayscale"
-          />
+          <picture>
+            <source media="(min-width: 1024px)" srcSet={sec17d} />
+            <img src={sec17m} alt="Noche Old School Bariloche" className="os-grid-cover-img" />
+          </picture>
         </div>
       </div>
 

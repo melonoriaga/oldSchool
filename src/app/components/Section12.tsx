@@ -1,7 +1,7 @@
-
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { OldSchoolWord } from './OldSchoolWord';
 import { RegresadosWord } from './RegresadosWord';
+import sec12d from '@/assets/imageBySections/Section12/OldSchool-IMG-Sec12-Desktop1.jpg';
+import sec12m from '@/assets/imageBySections/Section12/OldSchool-IMG-Sec12-Mobile1.jpg';
 
 export function Section12() {
 
@@ -26,11 +26,10 @@ export function Section12() {
 
           className="os-grid-cover-cell border-b-4 border-black lg:border-b-0 lg:border-r-4"
         >
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1609765685592-703a97c877ba?w=1200&q=80"
-            alt="Avión viaje"
-            className="os-grid-cover-img grayscale"
-          />
+          <picture>
+            <source media="(min-width: 1024px)" srcSet={sec12d} />
+            <img src={sec12m} alt="Avión viaje Old School" className="os-grid-cover-img" />
+          </picture>
         </div>
 
         {/* Text content */}

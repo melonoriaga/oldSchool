@@ -1,6 +1,6 @@
-
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { OldSchoolWord } from './OldSchoolWord';
+import museod from '@/assets/imageBySections/Section25/OldSchool-IMG-SecMuseo-Desktop1.jpg';
+import museom from '@/assets/imageBySections/Section25/OldSchool-IMG-SecMuseo-Mobile1.jpg';
 
 export function MuseoBlock() {
 
@@ -40,12 +40,10 @@ export function MuseoBlock() {
 
         {/* Right - Image */}
         <div className="lg:col-span-3 relative h-[50vh] lg:h-[70vh]">
-          <ImageWithFallback
-
-            src="https://images.unsplash.com/photo-1767395563816-613ab1d5ea8f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aW50YWdlJTIwcmV0cm8lMjBvYmplY3RzJTIwbWVtb3JpZXN8ZW58MXx8fHwxNzczNzk4NzMxfDA&ixlib=rb-4.1.0&q=80&w=1080"
-            alt="Museo Old School"
-            className="w-full h-full object-cover grayscale"
-          />
+          <picture>
+            <source media="(min-width: 1024px)" srcSet={museod} />
+            <img src={museom} alt="Museo Old School" className="w-full h-full object-cover" />
+          </picture>
 
           <div className="absolute top-8 left-8 text-6xl font-black opacity-20">
             *

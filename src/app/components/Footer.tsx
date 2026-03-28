@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Twitter } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 
 import logoBlancoCompleto from '../../assets/01logos/LogoBlancoCompleto.png';
 import logoHumanNegro from '../../assets/01logos/LogoHumanNegro.png';
@@ -126,18 +126,12 @@ export function Footer() {
             </h3>
             <div className="space-y-2 text-sm font-medium text-white/85">
               <a
-                href="mailto:info@oldschoolregresados.com"
-                className="block transition-opacity hover:text-white"
-              >
-                info@oldschoolregresados.com
-              </a>
-              <a
-                href="https://wa.me/1234567890"
+                href="https://wa.me/5491128935992"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block font-black text-[var(--os-cyan)] transition-opacity hover:text-white"
               >
-                WhatsApp → +54 9 11 1234-5678
+                WhatsApp → +54 9 11 2893-5992
               </a>
             </div>
 
@@ -147,25 +141,13 @@ export function Footer() {
               </h3>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/oldschool.regresados/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex h-12 w-12 items-center justify-center border-2 border-white/80 text-white transition-colors hover:border-white hover:bg-white hover:text-[var(--os-navy)]"
                   aria-label="Instagram"
                 >
                   <Instagram className="h-5 w-5" strokeWidth={2.25} />
-                </a>
-                <a
-                  href="#"
-                  className="flex h-12 w-12 items-center justify-center border-2 border-white/80 text-white transition-colors hover:border-white hover:bg-white hover:text-[var(--os-navy)]"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="h-5 w-5" strokeWidth={2.25} />
-                </a>
-                <a
-                  href="#"
-                  className="flex h-12 w-12 items-center justify-center border-2 border-white/80 text-white transition-colors hover:border-white hover:bg-white hover:text-[var(--os-navy)]"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="h-5 w-5" strokeWidth={2.25} />
                 </a>
               </div>
             </div>

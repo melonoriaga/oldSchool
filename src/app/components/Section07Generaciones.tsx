@@ -1,7 +1,8 @@
-
-import { placeholderByIndex } from '@/data/placeholders';
-import { OsFigure } from './OsFigure';
 import { RegresadosWord } from './RegresadosWord';
+import sec7img1d from '@/assets/imageBySections/Section07/OldSchool-IMG-Sec7-01-Desktop1.jpg';
+import sec7img1m from '@/assets/imageBySections/Section07/OldSchool-IMG-Sec7-01-Mobile1.jpg';
+import sec7img2d from '@/assets/imageBySections/Section07/OldSchool-IMG-Sec7-01-Desktop2.jpg';
+import sec7img2m from '@/assets/imageBySections/Section07/OldSchool-IMG-Sec7-01-Mobile2.jpg';
 
 export function Section07Generaciones() {
 
@@ -51,18 +52,16 @@ export function Section07Generaciones() {
           </div>
           <div className="grid min-h-[20rem] grid-rows-2 lg:h-full lg:min-h-0">
             <div className="relative min-h-[10rem] overflow-hidden border-b-4 border-black lg:min-h-0">
-              <OsFigure
-                src={placeholderByIndex(7)}
-                alt=""
-                className="absolute inset-0 h-full !min-h-0 border-0"
-              />
+              <picture>
+                <source media="(min-width: 1024px)" srcSet={sec7img1d} />
+                <img src={sec7img1m} alt="Old School Regresados" className="absolute inset-0 h-full w-full object-cover object-center" />
+              </picture>
             </div>
             <div className="relative min-h-[10rem] overflow-hidden lg:min-h-0">
-              <OsFigure
-                src={placeholderByIndex(8)}
-                alt=""
-                className="absolute inset-0 h-full !min-h-0 border-0"
-              />
+              <picture>
+                <source media="(min-width: 1024px)" srcSet={sec7img2d} />
+                <img src={sec7img2m} alt="Old School Regresados" className="absolute inset-0 h-full w-full object-cover object-center" />
+              </picture>
             </div>
           </div>
         </div>
@@ -149,7 +148,12 @@ export function Section07Generaciones() {
               Para ellos diseñamos experiencias que vuelven a activar esa intensidad.
             </p>
           </div>
-          <OsFigure src={placeholderByIndex(9)} alt="" className="min-h-[200px] lg:min-h-full" />
+          <div className="os-grid-cover-cell min-h-[200px] lg:min-h-full">
+            <picture>
+              <source media="(min-width: 1024px)" srcSet={sec7img1d} />
+              <img src={sec7img1m} alt="Old School Regresados" className="os-grid-cover-img" />
+            </picture>
+          </div>
         </div>
       </div>
     </div>

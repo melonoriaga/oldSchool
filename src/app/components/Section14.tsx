@@ -1,5 +1,5 @@
-
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import sec14d from '@/assets/imageBySections/Section14/OldSchool-IMG-Sec14-Desktop.jpg';
+import sec14m from '@/assets/imageBySections/Section14/OldSchool-IMG-Sec14-Mobile1.jpg';
 
 export function Section14() {
 
@@ -24,11 +24,10 @@ export function Section14() {
 
           className="os-grid-cover-cell border-b-4 border-black lg:border-b-0 lg:border-r-4"
         >
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1726708627786-f6f606aef332?w=800&q=80"
-            alt="Hotel Bariloche"
-            className="os-grid-cover-img grayscale"
-          />
+          <picture>
+            <source media="(min-width: 1024px)" srcSet={sec14d} />
+            <img src={sec14m} alt="Hotel Bariloche Old School" className="os-grid-cover-img" />
+          </picture>
         </div>
 
         {/* Text content */}
