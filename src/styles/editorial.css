@@ -149,14 +149,14 @@
   /** Chip fecha / vuelta al hero (junto al menú flotante) */
   /** FAB volver al inicio (flecha naranja, redondo) */
   .os-fab-back-top {
-    @apply inline-flex items-center justify-center rounded-full border-4 border-black bg-[var(--os-orange)] text-white font-black text-xl leading-none transition-transform;
+    @apply inline-flex cursor-pointer items-center justify-center rounded-full border-4 border-black bg-[var(--os-orange)] text-white font-black text-xl leading-none transition-transform;
     box-shadow: 3px 3px 0 0 #000;
     min-width: 3.25rem;
     min-height: 3.25rem;
   }
 
   .os-fab-back-top:hover {
-    @apply -translate-x-0.5 -translate-y-0.5;
+    @apply -translate-y-1 cursor-pointer;
   }
 
   /** FAB WhatsApp (paleta) */

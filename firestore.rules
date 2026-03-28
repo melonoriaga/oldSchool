@@ -1,18 +1,59 @@
-rules_version='2'
+rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /{document=**} {
-      // This rule allows anyone with your database reference to view, edit,
-      // and delete all data in your database. It is useful for getting
-      // started, but it is configured to expire after 30 days because it
-      // leaves your app open to attackers. At that time, all client
-      // requests to your database will be denied.
-      //
-      // Make sure to write security rules for your app before that time, or
-      // else all client requests to your database will be denied until you
-      // update your rules.
-      allow read, write: if request.time < timestamp.date(2026, 4, 26);
+
+    function isRoot() {
+      return request.auth != null && request.auth.token.email == 'melonoriaga@gmail.com';
+    }
+
+    function isSubAdmin() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    function isAnyAdmin() {
+      return isRoot() || isSubAdmin();
+    }
+
+    // Leads: anyone can CREATE (public form).
+    // Any admin can read and update.
+    // Only root can delete.
+    match /leads/{leadId} {
+      allow create: if true;
+      allow read, update: if isAnyAdmin();
+      allow delete: if isRoot();
+    }
+
+    // Admins: any admin can read the list.
+    // Root can write anything.
+    // A newly authenticated user can create their own document (self-registration via invite).
+    match /admins/{userId} {
+      allow read: if isAnyAdmin();
+      allow write: if isRoot();
+      allow create: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Invites: anyone can READ (to validate the token).
+    // Root can create and delete.
+    // An unauthenticated user can mark an unused invite as used
+    // (only touching isUsed, usedAt, usedBy fields).
+    match /invites/{inviteId} {
+      allow read: if true;
+      allow create, delete: if isRoot();
+      allow update: if isRoot()
+        || (
+          resource.data.isUsed == false
+          && request.resource.data.isUsed == true
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['isUsed', 'usedAt', 'usedBy'])
+        );
+    }
+
+    // Settings: anyone can read (for public-facing messages).
+    // Only root can write.
+    match /settings/{docId} {
+      allow read: if true;
+      allow write: if isRoot();
     }
   }
 }
