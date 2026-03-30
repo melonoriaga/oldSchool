@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { sectionNavLabel } from '../siteNav';
 import { SectionEyebrow } from './SectionEyebrow';
-import retroVideo from '@/assets/videos/retroVideo.mp4';
+import retroVideo from '@/assets/videos/retroVideo.mov';
 
 interface PostulacionBlockProps {
   onPostular: () => void;
