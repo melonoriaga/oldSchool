@@ -36,7 +36,7 @@ export function ToastContainer({ toasts, dismiss }: ToastContainerProps) {
   if (toasts.length === 0) return null;
 
   return (
-    <div className="fixed bottom-5 right-5 z-[90] flex flex-col gap-2">
+    <div className="fixed bottom-4 right-3 z-[90] flex w-[min(calc(100vw-1.5rem),20rem)] flex-col gap-2">
       {toasts.map((toast) => (
         <ToastCard key={toast.id} toast={toast} onDismiss={() => dismiss(toast.id)} />
       ))}
@@ -57,8 +57,8 @@ function ToastCard({ toast, onDismiss }: { toast: ToastItem; onDismiss: () => vo
 
   return (
     <div
-      className={`flex min-w-[260px] max-w-xs items-center gap-3 rounded-xl border px-4 py-3 shadow-lg transition-all duration-300 ${
-        visible ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
+      className={`flex w-full items-center gap-3 rounded-xl border px-4 py-3 shadow-lg transition-all duration-300 ${
+        visible ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
       } ${
         isSuccess
           ? 'border-green-200 bg-white'

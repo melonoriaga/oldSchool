@@ -19,21 +19,21 @@ export function Block03() {
           
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-black leading-tight text-black">
             NO ES NOSTALGIA,<br />
-            ES <ReAccentWord word="RECONEXIÓN" tone="orange" />.
+            ES <ReAccentWord word="RECONEXIÓN" />.
           </h2>
 
           <div className="space-y-4 text-base lg:text-lg xl:text-xl leading-relaxed text-black">
             <p>Old School no está hecho para mirar el pasado desde afuera.</p>
             <p>Está hecho para volver a entrar.</p>
             <p>
-              No es <ReAccentWord word="recordar" tone="orange" />.
+              No es <ReAccentWord word="recordar" />.
             </p>
             <p>
-              Es <ReAccentWord word="reactivar" tone="cyan" />.
+              Es <ReAccentWord word="reactivar" />.
             </p>
             <p>No es mirar lo que fue.</p>
             <p className="font-black">
-              Es volver a sentirlo en tiempo <ReAccentWord word="real" tone="cyan" />.
+              Es volver a sentirlo en tiempo <ReAccentWord word="real" />.
             </p>
           </div>
         </div>

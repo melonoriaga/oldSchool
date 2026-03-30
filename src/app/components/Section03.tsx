@@ -6,12 +6,12 @@ export function Section03() {
       <div className="os-section-head-row">
         <div className="max-w-3xl">
           <p className="os-section-kicker">
-            <ReAccentWord word="RETRO" tone="cyan" /> + PRESENCIA
+            <ReAccentWord word="RETRO" /> + PRESENCIA
           </p>
           <h2 className="os-section-h2">
             NO ES NOSTALGIA,
             <br />
-            ES <ReAccentWord word="RECONEXIÓN" tone="orange" />.
+            ES <ReAccentWord word="RECONEXIÓN" />.
           </h2>
         </div>
         <div className="os-brutal-num self-end sm:self-start">
@@ -27,11 +27,10 @@ export function Section03() {
               Está hecho para volver a entrar.
             </p>
             <p className="os-slice text-black/88">
-              No es <ReAccentWord word="recordar" tone="orange" />. Es{' '}
-              <ReAccentWord word="reactivar" tone="cyan" />. No es mirar lo que fue.
+              No es <ReAccentWord word="recordar" />. Es <ReAccentWord word="reactivar" />. No es mirar lo que fue.
             </p>
             <p className="os-section-title border-l-4 border-black pl-4 pt-2 text-sm sm:text-base lg:text-lg">
-              Es volver a sentirlo en tiempo <ReAccentWord word="real" tone="cyan" />.
+              Es volver a sentirlo en tiempo <ReAccentWord word="real" />.
             </p>
           </div>
         </div>
@@ -41,8 +40,7 @@ export function Section03() {
           <div className="max-w-xs border-l-4 border-black pl-4">
             <p className="os-section-title text-xs sm:text-sm">NO ES NOSTALGIA</p>
             <p className="os-body mt-2 text-black/88">
-              Es una <ReAccentWord word="reconexión" tone="orange" />{' '}
-              <ReAccentWord word="real" tone="cyan" /> con una versión de vos que sigue viva.
+              Es una <ReAccentWord word="reconexión" /> <ReAccentWord word="real" /> con una versión de vos que sigue viva.
             </p>
           </div>
         </div>

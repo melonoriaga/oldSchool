@@ -12,7 +12,7 @@ export function MuseoBlock() {
           <div className="os-spin-slow absolute top-8 right-8 text-5xl font-black opacity-25">
             *
           </div>
-          <div className="text-[8rem] font-black leading-none">
+          <div className="hidden text-[8rem] font-black leading-none">
             25
           </div>
 

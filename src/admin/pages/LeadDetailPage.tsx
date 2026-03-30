@@ -112,7 +112,7 @@ export function LeadDetailPage() {
   const currentStatusCfg = findStatus(lead.status);
 
   return (
-    <div className="mx-auto max-w-3xl p-6 lg:p-8">
+    <div className="mx-auto max-w-3xl p-4 lg:p-8">
       <button onClick={() => navigate('/admin/leads')}
         className="mb-6 flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900">
         ← Volver a Leads
@@ -206,7 +206,7 @@ export function LeadDetailPage() {
               </div>
             ))}
           </div>
-          <div className="flex gap-3">
+          <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
             <textarea
               rows={2}
               placeholder="Agregar una nota…"
@@ -215,7 +215,7 @@ export function LeadDetailPage() {
               className="flex-1 resize-none rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
             />
             <button onClick={addNote} disabled={addingNote || !noteText.trim()}
-              className="flex items-center gap-2 rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-700 disabled:opacity-40">
+              className="flex items-center justify-center gap-2 rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-700 disabled:opacity-40 sm:self-end">
               {addingNote ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Agregar'}
             </button>
           </div>

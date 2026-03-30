@@ -2,7 +2,6 @@ import { ArrowRight } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { HeroMediaColumn } from './hero/HeroMediaColumn';
-import { RegresadosWord } from './RegresadosWord';
 
 interface HeroProps {
   onPostular: () => void;
@@ -13,7 +12,6 @@ export function Hero({ onPostular }: HeroProps) {
   const kickerRef = useRef(null);
   const h1Ref = useRef(null);
   const regresoRef = useRef<HTMLSpanElement>(null);
-  const regresoLineRef = useRef<SVGPathElement>(null);
   const leadRef = useRef(null);
   const ctaRef = useRef(null);
   const buttonsRef = useRef(null);
@@ -39,27 +37,13 @@ export function Hero({ onPostular }: HeroProps) {
         delay: 0.35,
       });
 
-      if (regresoRef.current && regresoLineRef.current) {
+      if (regresoRef.current) {
         gsap.from(regresoRef.current, {
           opacity: 0,
           y: 10,
           duration: 0.5,
           ease: 'power2.out',
           delay: 0.9,
-        });
-
-        const pathLength = regresoLineRef.current.getTotalLength();
-        gsap.set(regresoLineRef.current, {
-          strokeDasharray: pathLength,
-          strokeDashoffset: pathLength,
-          opacity: 0.95,
-        });
-
-        gsap.to(regresoLineRef.current, {
-          strokeDashoffset: 0,
-          duration: 0.9,
-          ease: 'power2.out',
-          delay: 1.0,
         });
       }
 
@@ -114,23 +98,8 @@ export function Hero({ onPostular }: HeroProps) {
               NO ES UN VIAJE,
               <br />
               ES UN{' '}
-              <span ref={regresoRef} className="relative inline-block">
-                <RegresadosWord />
-                <svg
-                  className="pointer-events-none absolute -bottom-[0.22em] left-0 h-[0.46em] w-full"
-                  viewBox="0 0 256 52"
-                  preserveAspectRatio="none"
-                  aria-hidden
-                >
-                  <path
-                    ref={regresoLineRef}
-                    d="M6 34 C 36 52, 70 20, 102 34 S 172 48, 250 30"
-                    fill="none"
-                    stroke="var(--os-orange)"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                  />
-                </svg>
+              <span ref={regresoRef} className="inline-block text-[var(--os-navy)]">
+                REGRESO
               </span>
               .
             </h1>

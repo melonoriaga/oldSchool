@@ -137,7 +137,7 @@ export function LeadsPage() {
   };
 
   return (
-    <div className="p-6 lg:p-8">
+    <div className="p-4 lg:p-8">
       {/* Header */}
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <div>
@@ -188,8 +188,86 @@ export function LeadsPage() {
         </select>
       </div>
 
-      {/* Table */}
-      <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+      {/* ── Mobile card list (< lg) ──────────────────────────── */}
+      <div className="lg:hidden space-y-2">
+        {loading ? (
+          <div className="flex justify-center py-16">
+            <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-600 border-t-transparent" />
+          </div>
+        ) : paginated.length === 0 ? (
+          <p className="py-16 text-center text-sm text-gray-400">No hay leads.</p>
+        ) : paginated.map((lead) => {
+          const noteCount = lead.notes?.length ?? 0;
+          const statusCfg = findStatus(lead.status);
+          return (
+            <div
+              key={lead.id}
+              className={`rounded-xl border border-gray-200 bg-white p-4 shadow-sm ${lead.isNew ? 'border-blue-300 bg-blue-50/30' : ''}`}
+            >
+              {/* Top row */}
+              <div className="flex items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2">
+                    {lead.isNew && <span className="h-2 w-2 shrink-0 rounded-full bg-blue-500" />}
+                    <p className="truncate font-semibold text-gray-900">{lead.nombre || '—'}</p>
+                  </div>
+                  <p className="mt-0.5 truncate text-xs text-gray-500">{lead.email || '—'}</p>
+                  {lead.telefono && <p className="text-xs text-gray-400">{lead.telefono}</p>}
+                </div>
+                <div onClick={(e) => e.stopPropagation()} className="shrink-0">
+                  <select
+                    value={lead.status ?? ''}
+                    onChange={(e) => changeStatus(lead.id, e.target.value)}
+                    className="rounded-full border px-2 py-1 text-xs font-semibold focus:outline-none"
+                    style={{
+                      color: statusCfg.color,
+                      borderColor: `${statusCfg.color}50`,
+                      backgroundColor: `${statusCfg.color}14`,
+                    }}
+                  >
+                    {statuses.map((s) => <option key={s.id} value={s.id}>{s.label}</option>)}
+                  </select>
+                </div>
+              </div>
+
+              {/* Bottom row */}
+              <div className="mt-3 flex items-center justify-between gap-2">
+                <div className="flex items-center gap-3">
+                  <span className="text-xs text-gray-400">{fmt(lead.createdAt)}</span>
+                  {lead.ciudad && <span className="text-xs text-gray-400">{lead.ciudad}</span>}
+                  {noteCount > 0 && (
+                    <button
+                      onClick={(e) => { e.stopPropagation(); setNotesLead(lead); }}
+                      className="flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-xs font-semibold text-amber-700"
+                    >
+                      <MessageSquare className="h-3 w-3" />{noteCount}
+                    </button>
+                  )}
+                </div>
+                <div className="flex items-center gap-2">
+                  {isRoot && (
+                    <button
+                      onClick={(e) => { e.stopPropagation(); setConfirmId(lead.id); }}
+                      className="text-xs text-red-400 hover:text-red-600"
+                    >
+                      Eliminar
+                    </button>
+                  )}
+                  <button
+                    onClick={() => { markRead(lead); navigate(`/admin/leads/${lead.id}`); }}
+                    className="rounded-lg bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white"
+                  >
+                    Ver →
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* ── Desktop table (≥ lg) ─────────────────────────────── */}
+      <div className="hidden lg:block overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         {loading ? (
           <div className="flex justify-center py-16">
             <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-600 border-t-transparent" />
@@ -293,7 +371,7 @@ export function LeadsPage() {
 
       {/* Pagination */}
       {totalPages > 1 && (
-        <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-sm text-gray-600">
           <span>Página {page + 1} de {totalPages} — {filtered.length} leads</span>
           <div className="flex gap-2">
             <button disabled={page === 0} onClick={() => setPage((p) => p - 1)}

@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
 import './app/gsapSetup';
 import './app/revealSetup';
 import App from './app/App';
+import { UnderConstructionPage } from './app/UnderConstructionPage';
 import './styles/index.css';
 
 // Admin
@@ -25,6 +26,8 @@ createRoot(rootElement).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
+        <Route path="/en-construccion/*" element={<UnderConstructionPage />} />
+
         {/* Landing */}
         <Route path="/" element={<App />} />
 

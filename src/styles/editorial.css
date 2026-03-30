@@ -22,6 +22,7 @@
   /** Índice de sección — un solo estilo, dígitos muy pegados */
   .os-brutal-num {
     @apply font-black leading-none text-black;
+    display: none;
     font-variant-numeric: tabular-nums;
     letter-spacing: -0.16em;
     font-size: clamp(3rem, 12vw, 7.25rem);
@@ -34,6 +35,7 @@
   /** Sub-números (décadas en generaciones): mismo tracking, más chico */
   .os-brutal-num-sub {
     @apply font-black leading-none text-black;
+    display: none;
     font-variant-numeric: tabular-nums;
     letter-spacing: -0.16em;
     font-size: clamp(2.25rem, 9vw, 5.25rem);
@@ -188,6 +190,7 @@
 
   .os-asterisk-deco {
     @apply select-none font-black text-black/25;
+    display: none;
   }
 
   .os-grid-border {

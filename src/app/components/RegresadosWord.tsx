@@ -9,8 +9,7 @@ export function RegresadosWord({ variant = 'image', className = '' }: Regresados
   if (variant === 'split') {
     return (
       <span className={`inline-block font-black uppercase leading-none tracking-tight ${className}`}>
-        <span className="text-[var(--os-orange)]">RE</span>
-        <span className="text-[var(--os-cyan)]">GRESADOS</span>
+        REGRESADOS
       </span>
     );
   }

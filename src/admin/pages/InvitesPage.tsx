@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import {
   collection,
   query,
@@ -21,9 +21,9 @@ function inviteUrl(token: string) {
   return `${window.location.origin}/r/${token}`;
 }
 
-function status(inv: Invite): 'used' | 'expired' | 'active' {
+function status(inv: Invite, now: number): 'used' | 'expired' | 'active' {
   if (inv.isUsed) return 'used';
-  if (inv.expiresAt?.toDate() < new Date()) return 'expired';
+  if ((inv.expiresAt?.toDate().getTime() ?? 0) < now) return 'expired';
   return 'active';
 }
 
@@ -35,6 +35,28 @@ const STATUS_STYLES = {
 
 const STATUS_LABELS = { active: 'Activo', used: '✓ Usado', expired: 'Expirado' };
 
+function countdown(expiresAt: Timestamp | undefined, now: number): { text: string; urgency: 'ok' | 'warn' | 'critical' } {
+  if (!expiresAt?.toDate) return { text: '—', urgency: 'ok' };
+  const diff = expiresAt.toDate().getTime() - now;
+  if (diff <= 0) return { text: 'Expirado', urgency: 'critical' };
+  const h = Math.floor(diff / 3_600_000);
+  const m = Math.floor((diff % 3_600_000) / 60_000);
+  const s = Math.floor((diff % 60_000) / 1_000);
+  const text = h > 0
+    ? `${h}h ${String(m).padStart(2, '0')}m ${String(s).padStart(2, '0')}s`
+    : m > 0
+    ? `${m}m ${String(s).padStart(2, '0')}s`
+    : `${s}s`;
+  const urgency = diff < 3_600_000 ? 'critical' : diff < 6 * 3_600_000 ? 'warn' : 'ok';
+  return { text, urgency };
+}
+
+const COUNTDOWN_STYLES = {
+  ok:       'text-green-700 bg-green-50 border-green-200',
+  warn:     'text-amber-700 bg-amber-50 border-amber-200',
+  critical: 'text-red-700 bg-red-50 border-red-200',
+};
+
 export function InvitesPage() {
   const [invites, setInvites] = useState<Invite[]>([]);
   const [loading, setLoading] = useState(true);
@@ -43,7 +65,14 @@ export function InvitesPage() {
   const [copied, setCopied] = useState<string | null>(null);
   const [confirmId, setConfirmId] = useState<string | null>(null);
   const [deleteLoading, setDeleteLoading] = useState(false);
+  const [now, setNow] = useState(Date.now());
   const { toasts, showToast, dismiss } = useToast();
+
+  const tickRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  useEffect(() => {
+    tickRef.current = setInterval(() => setNow(Date.now()), 1000);
+    return () => { if (tickRef.current) clearInterval(tickRef.current); };
+  }, []);
 
   const fetch = useCallback(async () => {
     setLoading(true);
@@ -100,7 +129,7 @@ export function InvitesPage() {
   };
 
   return (
-    <div className="p-6 lg:p-8">
+    <div className="p-4 lg:p-8">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-gray-900">Invitaciones</h1>
         <p className="mt-0.5 text-sm text-gray-500">Links de un solo uso · válidos 24 h</p>
@@ -127,8 +156,72 @@ export function InvitesPage() {
         </button>
       </div>
 
-      {/* List */}
-      <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+      {/* ── Mobile card list (< lg) ──────────────────────────── */}
+      <div className="lg:hidden space-y-2">
+        {loading ? (
+          <div className="flex justify-center py-16">
+            <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-600 border-t-transparent" />
+          </div>
+        ) : invites.length === 0 ? (
+          <p className="py-16 text-center text-sm text-gray-400">No hay invitaciones generadas.</p>
+        ) : invites.map((inv) => {
+          const st = status(inv, now);
+          const cd = st === 'active' ? countdown(inv.expiresAt, now) : null;
+          return (
+            <div
+              key={inv.id}
+              className={`rounded-xl border border-gray-200 bg-white p-4 shadow-sm ${st === 'used' ? 'border-blue-200 bg-blue-50/30' : ''}`}
+            >
+              <div className="flex items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <p className="truncate font-semibold text-gray-900">{inv.label}</p>
+                  {inv.usedBy && (
+                    <p className="mt-0.5 truncate text-xs font-medium text-blue-700">{inv.usedBy}</p>
+                  )}
+                </div>
+                <span className={`shrink-0 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${STATUS_STYLES[st]}`}>
+                  {STATUS_LABELS[st]}
+                </span>
+              </div>
+
+              {cd && (
+                <div className={`mt-2 inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-xs font-mono font-semibold ${COUNTDOWN_STYLES[cd.urgency]}`}>
+                  ⏱ {cd.text}
+                </div>
+              )}
+
+              <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-gray-400">
+                <span>Creado: {fmt(inv.createdAt)}</span>
+                <span>
+                  {st === 'used'
+                    ? <span className="text-blue-700">Usado: {fmt(inv.usedAt)}</span>
+                    : `Expira: ${fmt(inv.expiresAt)}`}
+                </span>
+              </div>
+
+              <div className="mt-3 flex items-center gap-2">
+                {st === 'active' && (
+                  <button
+                    onClick={() => copy(inv.token)}
+                    className="rounded-lg border border-blue-200 px-3 py-1.5 text-xs font-medium text-blue-600 hover:bg-blue-50"
+                  >
+                    {copied === inv.token ? '✓ Copiado' : 'Copiar link'}
+                  </button>
+                )}
+                <button
+                  onClick={() => setConfirmId(inv.id)}
+                  className="rounded-lg border border-red-200 px-3 py-1.5 text-xs font-medium text-red-400 hover:bg-red-50 hover:text-red-600"
+                >
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* ── Desktop table (≥ lg) ─────────────────────────────── */}
+      <div className="hidden lg:block overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         {loading ? (
           <div className="flex justify-center py-16">
             <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-600 border-t-transparent" />
@@ -148,7 +241,8 @@ export function InvitesPage() {
             </thead>
             <tbody className="divide-y divide-gray-100">
               {invites.map((inv) => {
-                const st = status(inv);
+                const st = status(inv, now);
+                const cd = st === 'active' ? countdown(inv.expiresAt, now) : null;
                 return (
                   <tr
                     key={inv.id}
@@ -164,12 +258,19 @@ export function InvitesPage() {
 
                     <td className="px-4 py-3 text-gray-500">{fmt(inv.createdAt)}</td>
 
-                    {/* Context-aware date column */}
+                    {/* Context-aware date + countdown column */}
                     <td className="px-4 py-3">
                       {st === 'used' ? (
-                        <span className="text-blue-700 font-medium">{fmt(inv.usedAt)}</span>
+                        <span className="font-medium text-blue-700">{fmt(inv.usedAt)}</span>
                       ) : (
-                        <span className="text-gray-500">{fmt(inv.expiresAt)}</span>
+                        <div className="flex flex-col gap-1">
+                          <span className="text-xs text-gray-400">{fmt(inv.expiresAt)}</span>
+                          {cd && (
+                            <span className={`inline-flex w-fit items-center gap-1 rounded border px-2 py-0.5 font-mono text-xs font-semibold ${COUNTDOWN_STYLES[cd.urgency]}`}>
+                              ⏱ {cd.text}
+                            </span>
+                          )}
+                        </div>
                       )}
                     </td>
 

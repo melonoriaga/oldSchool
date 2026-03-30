@@ -30,6 +30,16 @@
     <meta name="twitter:title"       content="Old School Regresados" />
     <meta name="twitter:description" content="El viaje de egresados se hace una sola vez en la vida. Hasta ahora." />
     <meta name="twitter:image"       content="https://oldschool.ar/og-image.png" />
+
+    <script>
+      (function () {
+        var isRootPath = window.location.pathname === '/';
+        var viewSite = new URLSearchParams(window.location.search).get('viewSite') === 'true';
+        if (isRootPath && !viewSite) {
+          window.location.replace('/en-construccion/');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
