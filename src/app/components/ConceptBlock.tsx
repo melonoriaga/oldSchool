@@ -7,7 +7,7 @@ export function ConceptBlock() {
     <div id="concepto" className="os-surface border-x-4 border-b-4 border-black">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Left - Content */}
-        <div className="p-8 lg:p-20 flex flex-col justify-center space-y-8 border-b-4 lg:border-b-0 lg:border-r-4 border-black relative">
+        <div className="p-8 lg:p-20 flex flex-col justify-center space-y-8 border-b-2 lg:border-b-0 lg:border-r-2 border-black relative">
           <div className="os-spin-slow absolute top-8 left-8 text-5xl font-black opacity-20 hidden lg:block">
             *
           </div>

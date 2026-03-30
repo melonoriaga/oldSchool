@@ -1,4 +1,6 @@
+import { sectionNavLabel } from '../siteNav';
 import { OldSchoolWord } from './OldSchoolWord';
+import { SectionEyebrow } from './SectionEyebrow';
 import { RegresadosWord } from './RegresadosWord';
 import sec12d from '@/assets/imageBySections/Section12/OldSchool-IMG-Sec12-Desktop1.jpg';
 import sec12m from '@/assets/imageBySections/Section12/OldSchool-IMG-Sec12-Mobile1.jpg';
@@ -6,16 +8,13 @@ import sec12m from '@/assets/imageBySections/Section12/OldSchool-IMG-Sec12-Mobil
 export function Section12() {
 
   return (
-    <div data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
-      <div className="os-section-head-row">
-        <div className="max-w-3xl">
-          <p className="os-section-kicker">RUTA + CÁPSULA</p>
+    <div id="sec-12" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
+      <div className="os-section-head-row os-section-head--navy">
+        <div className="max-w-3xl min-w-0 flex-1">
+          <SectionEyebrow index={12} label={sectionNavLabel(12)} tone="light" />
           <h2 className="os-section-h2">
             LA CÁPSULA<br />DEL TIEMPO<br />ARRANCA EN<br />EL AVIÓN
           </h2>
-        </div>
-        <div className="os-brutal-num self-end sm:self-start">
-          12
         </div>
       </div>
 
@@ -24,7 +23,7 @@ export function Section12() {
         {/* Image */}
         <div
 
-          className="os-grid-cover-cell border-b-4 border-black lg:border-b-0 lg:border-r-4"
+          className="os-grid-cover-cell border-b-2 border-black lg:border-b-0 lg:border-r-2"
         >
           <picture>
             <source media="(min-width: 1024px)" srcSet={sec12d} />
@@ -60,7 +59,7 @@ export function Section12() {
             Operamos con compañías aéreas de línea regular a Bariloche y, en la experiencia premium, también con vuelos charter exclusivos para <RegresadosWord variant="split" /> <OldSchoolWord />.
           </p>
 
-          <p className="os-pull max-w-2xl border-l-4 border-[var(--os-cyan)] pl-5 pt-2 sm:pl-6">
+          <p className="os-pull max-w-2xl border-l-2 border-[var(--os-cyan)] pl-5 pt-2 sm:pl-6">
             En dos horas entrás en una cápsula del tiempo.
           </p>
         </div>

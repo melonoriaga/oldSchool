@@ -128,10 +128,10 @@ export function PostulacionForm({ isOpen, onClose }: PostulacionFormProps) {
         role="dialog"
         aria-modal="true"
         aria-label="Formulario de postulación"
-        className="max-h-[92vh] w-full max-w-3xl overflow-y-auto rounded-3xl border-4 border-black os-surface shadow-[8px_8px_0_0_#000]"
+        className="max-h-[92vh] w-full max-w-3xl overflow-y-auto rounded-3xl border-2 border-black os-surface shadow-[8px_8px_0_0_#000]"
       >
         {/* Header */}
-        <div className="border-b-4 border-black">
+        <div className="border-b-2 border-black">
           <div className="flex items-start justify-between gap-4 p-4 sm:p-6">
             <div>
               <p className="os-section-kicker">POSTULACIÓN + CUPO</p>
@@ -139,7 +139,7 @@ export function PostulacionForm({ isOpen, onClose }: PostulacionFormProps) {
             </div>
             <button type="button" onClick={onClose} className="os-modal-close" aria-label="Cerrar">×</button>
           </div>
-          <div className="os-band-cyan border-t-4 border-black px-4 py-2 sm:px-6">
+          <div className="os-band-cyan border-t-2 border-black px-4 py-2 sm:px-6">
             <p className="text-[0.68rem] font-black uppercase tracking-[0.12em] text-black sm:text-xs">
               Esto no es inscripción. Es postulación.
             </p>
@@ -149,9 +149,9 @@ export function PostulacionForm({ isOpen, onClose }: PostulacionFormProps) {
         {/* Content */}
         <div className="p-5 sm:p-8">
           {submitted ? (
-            <div className="rounded-2xl border-4 border-black bg-[color-mix(in_srgb,var(--os-cyan)_10%,var(--os-paper))] px-6 py-14 text-center">
+            <div className="rounded-2xl border-2 border-black bg-[color-mix(in_srgb,var(--os-cyan)_10%,var(--os-paper))] px-6 py-14 text-center">
               <div className="mb-4 flex justify-center">
-                <span className="flex h-16 w-16 items-center justify-center rounded-full border-4 border-black bg-[var(--os-cyan)] text-3xl text-black shadow-[4px_4px_0_0_#000]">✓</span>
+                <span className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-black bg-[var(--os-cyan)] text-3xl text-black shadow-[4px_4px_0_0_#000]">✓</span>
               </div>
               <h3 className="mb-3 text-3xl font-black uppercase">¡Postulación enviada!</h3>
               <p className="text-base font-medium sm:text-lg">Nos pondremos en contacto pronto.</p>
@@ -178,7 +178,7 @@ export function PostulacionForm({ isOpen, onClose }: PostulacionFormProps) {
                 )}
               </div>
 
-              <div className="space-y-4 rounded-2xl border-4 border-black bg-white/40 p-4 sm:p-6">
+              <div className="space-y-4 rounded-2xl border-2 border-black bg-white/40 p-4 sm:p-6">
 
                 {/* Nombre */}
                 <div>

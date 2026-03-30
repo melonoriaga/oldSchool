@@ -77,7 +77,7 @@ function StatusScreen({ emoji, title, message, action }: {
     >
       <div className="w-full max-w-sm text-center">
         <img src={logo} alt="Old School Regresados" className="mx-auto mb-6 h-16 w-auto drop-shadow-md" />
-        <div className="rounded-3xl border-4 border-black bg-white p-8 shadow-[6px_6px_0_0_#000]">
+        <div className="rounded-3xl border-2 border-black bg-white p-8 shadow-[6px_6px_0_0_#000]">
           <div className="mb-4 text-5xl">{emoji}</div>
           <h1 className="text-xl font-black uppercase tracking-tight text-gray-900">{title}</h1>
           <p className="mt-2 text-sm text-gray-500">{message}</p>
@@ -228,7 +228,7 @@ export function RegisterPage() {
         </div>
 
         {/* Card */}
-        <div className="rounded-3xl border-4 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] sm:p-8">
+        <div className="rounded-3xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] sm:p-8">
 
           {/* Error banner */}
           <div ref={errorBannerRef}>

@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 import gsap from 'gsap';
-import { NAV_DESKTOP, NAV_FULL } from '../siteNav';
+import { NAV_DESKTOP } from '../siteNav';
+import { MobileNavScrollInner } from './MobileNavScrollInner';
 import logoSticker from '../../assets/01logos/LogoStickerconReborde.png';
 
 interface HeaderProps {
@@ -74,7 +75,7 @@ export function Header({ onPostular, onHiddenChange }: HeaderProps) {
         <button
           type="button"
           onClick={() => scrollToSection('hero')}
-          className="transition-opacity hover:opacity-70"
+          className="cursor-pointer transition-opacity hover:opacity-70"
         >
           <img
             src={logoSticker}
@@ -91,7 +92,7 @@ export function Header({ onPostular, onHiddenChange }: HeaderProps) {
               key={link.id}
               type="button"
               onClick={() => scrollToSection(link.id)}
-              className="text-[11px] font-bold tracking-wide transition-opacity hover:opacity-70 xl:text-xs"
+              className="cursor-pointer text-[11px] font-bold tracking-wide transition-opacity hover:opacity-70 xl:text-xs"
             >
               {link.label}
             </button>
@@ -120,25 +121,17 @@ export function Header({ onPostular, onHiddenChange }: HeaderProps) {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="lg:hidden max-h-[min(78vh,32rem)] border-t-4 border-black os-surface">
-          <div className="flex max-h-[min(78vh,32rem)] flex-col">
+        <div className="lg:hidden max-h-[min(88vh,40rem)] border-t-2 border-black os-surface">
+          <div className="flex max-h-[min(88vh,40rem)] flex-col">
             <nav className="flex-1 overflow-y-auto overscroll-contain">
-              <div className="flex flex-col">
-                {NAV_FULL.map((link, index) => (
-                  <button
-                    key={link.id}
-                    type="button"
-                    onClick={() => scrollToSection(link.id)}
-                    className={`flex w-full min-h-12 items-center text-left px-6 py-3 font-bold hover:bg-black/[0.06] transition-colors ${
-                      index < NAV_FULL.length - 1 ? 'border-b-2 border-black' : ''
-                    }`}
-                  >
-                    {link.label}
-                  </button>
-                ))}
-              </div>
+              <MobileNavScrollInner
+                open={isMenuOpen}
+                variant="header"
+                searchInputId="os-header-mobile-nav-search"
+                onSelectSection={scrollToSection}
+              />
             </nav>
-            <div className="border-t-4 border-black bg-[var(--os-paper)] p-4 sm:p-5">
+            <div className="border-t-2 border-black bg-[var(--os-paper)] p-4 sm:p-5">
               <button
                 type="button"
                 onClick={() => {

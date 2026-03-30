@@ -7,7 +7,7 @@ export function Block08() {
   return (
     <div className="os-surface border-x-4 border-b-4 border-black">
       <div className="grid grid-cols-1 lg:grid-cols-12">
-        <div className="lg:col-span-3 border-b-4 lg:border-b-0 lg:border-r-4 border-black p-8 lg:p-12 flex items-center justify-center">
+        <div className="lg:col-span-3 border-b-2 lg:border-b-0 lg:border-r-2 border-black p-8 lg:p-12 flex items-center justify-center">
           <div className="text-[8rem] lg:text-[12rem] font-black leading-none text-black">08</div>
         </div>
         <div className="lg:col-span-9 p-8 lg:p-12 xl:p-16 space-y-8">
@@ -33,7 +33,7 @@ export function Block09() {
   return (
     <div className="os-surface border-x-4 border-b-4 border-black">
       <div className="grid grid-cols-1 lg:grid-cols-12">
-        <div className="lg:col-span-3 border-b-4 lg:border-b-0 lg:border-r-4 border-black p-8 lg:p-12 flex items-center justify-center">
+        <div className="lg:col-span-3 border-b-2 lg:border-b-0 lg:border-r-2 border-black p-8 lg:p-12 flex items-center justify-center">
           <div className="text-[8rem] lg:text-[12rem] font-black leading-none text-black">09</div>
         </div>
         <div className="lg:col-span-9 p-8 lg:p-12 xl:p-16 space-y-8">
@@ -70,7 +70,7 @@ export function Block10() {
   return (
     <div className="os-surface border-x-4 border-b-4 border-black">
       <div className="grid grid-cols-1 lg:grid-cols-12">
-        <div className="lg:col-span-3 border-b-4 lg:border-b-0 lg:border-r-4 border-black p-8 lg:p-12 flex items-center justify-center">
+        <div className="lg:col-span-3 border-b-2 lg:border-b-0 lg:border-r-2 border-black p-8 lg:p-12 flex items-center justify-center">
           <div className="text-[8rem] lg:text-[12rem] font-black leading-none text-black">10</div>
         </div>
         <div className="lg:col-span-9 p-8 lg:p-12 xl:p-16 space-y-8">
@@ -121,7 +121,7 @@ export function Block11() {
   return (
     <div className="os-surface border-x-4 border-b-4 border-black">
       <div className="grid grid-cols-1 lg:grid-cols-12">
-        <div className="lg:col-span-3 border-b-4 lg:border-b-0 lg:border-r-4 border-black p-8 lg:p-12 flex items-center justify-center">
+        <div className="lg:col-span-3 border-b-2 lg:border-b-0 lg:border-r-2 border-black p-8 lg:p-12 flex items-center justify-center">
           <div className="text-[8rem] lg:text-[12rem] font-black leading-none text-black">11</div>
         </div>
         <div className="lg:col-span-9 p-8 lg:p-12 xl:p-16 space-y-8">

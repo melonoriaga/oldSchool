@@ -1,5 +1,6 @@
-
+import { sectionNavLabel } from '../siteNav';
 import { RegresadosWord } from './RegresadosWord';
+import { SectionEyebrow } from './SectionEyebrow';
 
 export function TestimoniosBlock() {
 
@@ -48,23 +49,15 @@ export function TestimoniosBlock() {
 
   return (
     <div id="testimonios" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
-      <div className="relative border-b-4 border-black p-8 lg:p-16 bg-[color-mix(in_srgb,var(--os-cyan)_8%,var(--os-paper))]">
-        <div className="flex items-center justify-between">
-          <div>
-            <h2 className="text-3xl font-black lg:text-5xl">
-              LOS <RegresadosWord variant="split" className="align-[0.02em]" /> DICEN
-            </h2>
-            <p className="mt-2 text-xs font-black uppercase tracking-[0.14em] text-[var(--os-navy)] sm:text-sm">
-              &quot;No pensé que esto me iba a pasar&quot;
-            </p>
-          </div>
-          <div className="hidden text-6xl font-black lg:block lg:text-8xl">*</div>
-        </div>
-        <div
-
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 transform text-5xl font-black opacity-20 lg:hidden"
-        >
-          *
+      <div className="border-b-2 border-black p-8 lg:p-16 bg-[color-mix(in_srgb,var(--os-cyan)_8%,var(--os-paper))]">
+        <div className="min-w-0">
+          <SectionEyebrow index={22} label={sectionNavLabel(22)} />
+          <h2 className="text-3xl font-black lg:text-5xl">
+            LOS <RegresadosWord variant="split" className="align-[0.02em]" /> DICEN
+          </h2>
+          <p className="mt-2 text-xs font-black uppercase tracking-[0.14em] text-[var(--os-navy)] sm:text-sm">
+            &quot;No pensé que esto me iba a pasar&quot;
+          </p>
         </div>
       </div>
 
@@ -75,7 +68,7 @@ export function TestimoniosBlock() {
             {testimonios.map((testimonio, index) => (
               <div
                 key={`${copyIdx}-${index}-${testimonio.autor}`}
-                className={`flex min-h-[300px] w-[400px] shrink-0 flex-col justify-between border-r-4 border-black p-8 lg:w-[500px] lg:p-12 ${
+                className={`flex min-h-[300px] w-[400px] shrink-0 flex-col justify-between border-r-2 border-black p-8 lg:w-[500px] lg:p-12 ${
                   index % 3 === 0
                     ? 'bg-[color-mix(in_srgb,var(--os-orange)_9%,var(--os-paper))]'
                     : index % 3 === 1

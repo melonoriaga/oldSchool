@@ -7,7 +7,7 @@ export function ManifestoBlock() {
       {/* Grid Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-3">
         {/* Left - Number */}
-        <div className="border-b-4 lg:border-b-0 lg:border-r-4 border-black p-8 lg:p-16 flex items-center justify-center relative">
+        <div className="border-b-2 lg:border-b-0 lg:border-r-2 border-black p-8 lg:p-16 flex items-center justify-center relative">
           <div className="text-[8rem] lg:text-[12rem] font-black leading-none">
             02
           </div>
@@ -17,7 +17,7 @@ export function ManifestoBlock() {
         </div>
 
         {/* Center - Title */}
-        <div className="border-b-4 lg:border-b-0 lg:border-r-4 border-black p-8 lg:p-16 flex items-center">
+        <div className="border-b-2 lg:border-b-0 lg:border-r-2 border-black p-8 lg:p-16 flex items-center">
           <h2 className="text-4xl lg:text-6xl font-black leading-tight">
             EL MOMENTO QUE NUNCA SE REPITIÓ
           </h2>

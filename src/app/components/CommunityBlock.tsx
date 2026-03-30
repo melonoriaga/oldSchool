@@ -7,7 +7,7 @@ export function CommunityBlock() {
     <div id="comunidad" className="bg-black text-white border-x-4 border-b-4 border-black">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Left - Content */}
-        <div className="p-8 lg:p-20 flex flex-col justify-center space-y-12 border-b-4 lg:border-b-0 lg:border-r-4 border-white">
+        <div className="p-8 lg:p-20 flex flex-col justify-center space-y-12 border-b-2 lg:border-b-0 lg:border-r-2 border-white">
           <div className="text-[8rem] lg:text-[12rem] font-black leading-none">
             05
           </div>

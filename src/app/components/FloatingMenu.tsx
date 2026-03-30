@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NAV_FULL } from '../siteNav';
+import { MobileNavScrollInner } from './MobileNavScrollInner';
 
 interface FloatingMenuProps {
   onPostular: () => void;
@@ -56,29 +56,23 @@ export function FloatingMenu({ onPostular, visible }: FloatingMenuProps) {
 
       {/* Dropdown: absolute inside FAB anchor → always below the button */}
       <div
-        className={`absolute right-0 top-full mt-2 w-[min(80vw,300px)] overflow-hidden border-4 border-black os-surface shadow-[4px_4px_0_0_#000] transition-[opacity,transform] duration-200 ease-out ${
+        className={`absolute right-0 top-full mt-2 w-[min(92vw,340px)] overflow-hidden border-2 border-black os-surface shadow-[4px_4px_0_0_#000] transition-[opacity,transform] duration-200 ease-out ${
           isOpen
             ? 'opacity-100 translate-y-0 pointer-events-auto'
             : 'opacity-0 -translate-y-2 pointer-events-none'
         }`}
         aria-hidden={!isOpen}
       >
-        <div className="flex max-h-[min(70vh,520px)] flex-col">
+        <div className="flex max-h-[min(78vh,580px)] flex-col">
           <nav className="flex-1 overflow-y-auto overscroll-contain">
-            {NAV_FULL.map((link, index) => (
-              <button
-                key={link.id}
-                type="button"
-                onClick={() => scrollToSection(link.id)}
-                className={`flex w-full min-h-11 items-center px-5 py-2.5 text-left text-sm font-bold transition-colors hover:bg-black/[0.06] sm:px-6 sm:py-3 ${
-                  index < NAV_FULL.length - 1 ? 'border-b-2 border-black' : ''
-                }`}
-              >
-                {link.label}
-              </button>
-            ))}
+            <MobileNavScrollInner
+              open={isOpen}
+              variant="fab"
+              searchInputId="os-floating-nav-search"
+              onSelectSection={scrollToSection}
+            />
           </nav>
-          <div className="border-t-4 border-black bg-[var(--os-paper)] p-3">
+          <div className="border-t-2 border-black bg-[var(--os-paper)] p-3">
             <button
               type="button"
               onClick={() => {

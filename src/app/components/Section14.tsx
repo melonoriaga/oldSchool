@@ -1,19 +1,18 @@
+import { sectionNavLabel } from '../siteNav';
+import { SectionEyebrow } from './SectionEyebrow';
 import sec14d from '@/assets/imageBySections/Section14/OldSchool-IMG-Sec14-Desktop.jpg';
 import sec14m from '@/assets/imageBySections/Section14/OldSchool-IMG-Sec14-Mobile1.jpg';
 
 export function Section14() {
 
   return (
-    <div data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
+    <div id="sec-14" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="os-section-head-row">
-        <div className="max-w-3xl">
-          <p className="os-section-kicker">BASE + CORAZÓN</p>
+        <div className="max-w-3xl min-w-0 flex-1">
+          <SectionEyebrow index={14} label={sectionNavLabel(14)} />
           <h2 className="os-section-h2">
             DONDE EMPIEZA<br />TODO
           </h2>
-        </div>
-        <div className="os-brutal-num self-end sm:self-start">
-          14
         </div>
       </div>
 
@@ -22,7 +21,7 @@ export function Section14() {
         {/* Image */}
         <div
 
-          className="os-grid-cover-cell border-b-4 border-black lg:border-b-0 lg:border-r-4"
+          className="os-grid-cover-cell border-b-2 border-black lg:border-b-0 lg:border-r-2"
         >
           <picture>
             <source media="(min-width: 1024px)" srcSet={sec14d} />
@@ -54,7 +53,7 @@ export function Section14() {
             Porque el hotel no es solo un lugar para dormir.
           </p>
 
-          <p className="os-pull max-w-2xl border-l-4 border-black pl-5 sm:pl-6">
+          <p className="os-pull max-w-2xl border-l-2 border-black pl-5 sm:pl-6">
             También es encuentro, charla y buenos momentos.
           </p>
 

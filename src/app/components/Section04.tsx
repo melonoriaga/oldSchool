@@ -1,27 +1,26 @@
+import { sectionNavLabel } from '../siteNav';
 import { OldSchoolWord } from './OldSchoolWord';
+import { SectionEyebrow } from './SectionEyebrow';
 import sec4d from '@/assets/imageBySections/Section04/OldSchool-IMG-Sec4-Desktop1.jpg';
 import sec4m from '@/assets/imageBySections/Section04/OldSchool-IMG-Sec4-Mobile1.jpg';
 
 export function Section04() {
 
   return (
-    <div data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
-      <div className="os-section-head-row">
-        <div className="max-w-3xl">
-          <p className="os-section-kicker">REGRESO + ANTES / DESPUÉS</p>
+    <div id="sec-04" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
+      <div className="os-section-head-row os-section-head--orange">
+        <div className="max-w-3xl min-w-0 flex-1">
+          <SectionEyebrow index={4} label={sectionNavLabel(4)} tone="light" />
           <h2 className="os-section-h2">
             VOLVÉS<br />DISTINTO
           </h2>
-        </div>
-        <div className="os-brutal-num self-end sm:self-start">
-          04
         </div>
       </div>
 
       <div className="grid grid-cols-1 items-stretch lg:grid-cols-2">
         <div
 
-          className="os-grid-cover-cell border-b-4 border-black lg:border-b-0 lg:border-r-4"
+          className="os-grid-cover-cell border-b-2 border-black lg:border-b-0 lg:border-r-2"
         >
           <picture>
             <source media="(min-width: 1024px)" srcSet={sec4d} />
@@ -50,7 +49,7 @@ export function Section04() {
             </span>
           </p>
 
-          <p className="os-pull max-w-2xl border-l-4 border-[var(--os-cyan)] pl-4 sm:pl-5">
+          <p className="os-pull max-w-2xl border-l-2 border-[var(--os-cyan)] pl-4 sm:pl-5">
             <OldSchoolWord /> nació para eso.
           </p>
 
@@ -70,7 +69,7 @@ export function Section04() {
 
           <p
 
-            className="os-section-title max-w-2xl border-l-4 border-black pl-4 pt-3 text-sm sm:text-base lg:text-lg"
+            className="os-section-title max-w-2xl border-l-2 border-black pl-4 pt-3 text-sm sm:text-base lg:text-lg"
           >
             Porque no volvés con fotos nada más.
             <br />

@@ -1,7 +1,9 @@
 import { ArrowRight } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { sectionNavLabel } from '../siteNav';
 import { HeroMediaColumn } from './hero/HeroMediaColumn';
+import { SectionEyebrow } from './SectionEyebrow';
 
 interface HeroProps {
   onPostular: () => void;
@@ -74,16 +76,14 @@ export function Hero({ onPostular }: HeroProps) {
       <div className="grid h-full min-h-screen w-full grid-cols-1 lg:grid-cols-2">
         <div
           ref={collageRef}
-          className="relative h-[48vh] min-h-[12rem] border-b-4 border-black lg:h-auto lg:min-h-screen lg:border-b-0 lg:border-r-4"
+          className="relative h-[48vh] min-h-[12rem] border-b-2 border-black lg:h-auto lg:min-h-screen lg:border-b-0 lg:border-r-2"
         >
           <HeroMediaColumn />
         </div>
 
         <div className="relative flex flex-col justify-center gap-8 p-6 lg:gap-10 lg:p-12">
-          <div className="mb-2">
-            <div ref={numberRef} className="os-brutal-num">
-              01
-            </div>
+          <div className="mb-2" ref={numberRef}>
+            <SectionEyebrow index={1} label={sectionNavLabel(1)} />
           </div>
 
           <div className="space-y-4 lg:space-y-5">

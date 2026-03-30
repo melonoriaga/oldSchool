@@ -1,4 +1,6 @@
 import CountUp from '@/components/CountUp';
+import { sectionNavLabel } from '../siteNav';
+import { SectionEyebrow } from './SectionEyebrow';
 import { RegresadosWord } from './RegresadosWord';
 
 export function Section11() {
@@ -8,12 +10,10 @@ export function Section11() {
   };
 
   return (
-    <div data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
-      <div className="flex flex-col justify-between gap-6 border-b-4 border-black p-6 sm:flex-row sm:items-start sm:gap-8 sm:p-10 lg:p-14">
-        <div className="max-w-3xl">
-          <p className="os-section-title mb-2 text-[0.65rem] text-[var(--os-orange)] sm:text-xs">
-            MEMORIA + OFICIO
-          </p>
+    <div id="sec-11" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
+      <div className="os-section-head--cyan flex flex-col justify-between gap-6 border-b-2 border-black p-6 sm:flex-row sm:items-start sm:gap-8 sm:p-10 lg:p-14">
+        <div className="max-w-3xl min-w-0 flex-1">
+          <SectionEyebrow index={11} label={sectionNavLabel(11)} tone="light" />
           <h2 className="font-black uppercase leading-[1.05] tracking-tight text-2xl sm:text-4xl lg:text-5xl xl:text-6xl">
             LO DISEÑAMOS
             <br />
@@ -22,13 +22,10 @@ export function Section11() {
             COMO UNA PELÍCULA.
           </h2>
         </div>
-        <div className="os-brutal-num self-end sm:self-start">
-          11
-        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12">
-        <aside className="flex flex-col justify-between border-b-4 border-black p-6 sm:p-8 lg:col-span-4 lg:border-b-0 lg:border-r-4 lg:p-10">
+        <aside className="flex flex-col justify-between border-b-2 border-black p-6 sm:p-8 lg:col-span-4 lg:border-b-0 lg:border-r-2 lg:p-10">
           <div>
             <p className="font-black uppercase tracking-widest text-[var(--os-navy)] text-xs opacity-80">
               Desde 1990
@@ -69,7 +66,7 @@ export function Section11() {
             <p className="text-sm font-bold uppercase tracking-wide text-black/80 sm:text-base">
               Entendemos que <RegresadosWord variant="split" /> no es un público.
             </p>
-            <p className="border-l-4 border-[var(--os-cyan)] pl-4 font-black sm:text-lg lg:text-xl">
+            <p className="border-l-2 border-[var(--os-cyan)] pl-4 font-black sm:text-lg lg:text-xl">
               Es una identidad.
             </p>
           </div>

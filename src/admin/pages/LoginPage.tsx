@@ -56,7 +56,7 @@ export function LoginPage() {
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-3xl border-4 border-black bg-white p-7 shadow-[6px_6px_0_0_#000]"
+          className="rounded-3xl border-2 border-black bg-white p-7 shadow-[6px_6px_0_0_#000]"
         >
           <div className="space-y-4">
             {/* Email */}
