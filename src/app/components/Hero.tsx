@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import gsap from 'gsap';
 import { sectionNavLabel } from '../siteNav';
 import { HeroMediaColumn } from './hero/HeroMediaColumn';
@@ -18,6 +18,8 @@ export function Hero({ onPostular }: HeroProps) {
   const ctaRef = useRef(null);
   const buttonsRef = useRef(null);
   const collageRef = useRef(null);
+  const splitFrom = useMemo(() => ({ opacity: 0, y: 36 }), []);
+  const splitTo = useMemo(() => ({ opacity: 1, y: 0 }), []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -89,8 +91,8 @@ export function Hero({ onPostular }: HeroProps) {
               delay={32}
               duration={0.95}
               ease="power3.out"
-              from={{ opacity: 0, y: 36 }}
-              to={{ opacity: 1, y: 0 }}
+              from={splitFrom}
+              to={splitTo}
               textAlign="left"
               threshold={0.2}
               rootMargin="-40px"
