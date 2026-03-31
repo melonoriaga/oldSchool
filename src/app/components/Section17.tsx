@@ -1,7 +1,8 @@
 import { ArrowRight } from 'lucide-react';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { sectionNavLabel } from '../siteNav';
 import { SectionEyebrow } from './SectionEyebrow';
+import { DotGrid } from './ui/DotGrid';
 
 interface Section17Props {
   onPostular: () => void;
@@ -9,6 +10,26 @@ interface Section17Props {
 
 export function Section17({ onPostular }: Section17Props) {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const headRef = useRef<HTMLDivElement | null>(null);
+  const [runBrandSweep, setRunBrandSweep] = useState(false);
+
+  useEffect(() => {
+    const node = headRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setRunBrandSweep(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25, rootMargin: '-30px' },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div
@@ -21,9 +42,20 @@ export function Section17({ onPostular }: Section17Props) {
         <div className="os-section-glow-blob os-section-glow-blob--orange-tr" />
         <div className="os-section-glow-blob os-section-glow-blob--cyan-bl" />
       </div>
-      <div className="relative z-[1] flex flex-col border-b-2 border-black p-8 lg:flex-row lg:items-start lg:justify-between lg:p-16">
-        <div className="max-w-4xl min-w-0 flex-1">
-          <SectionEyebrow index={17} label={sectionNavLabel(17)} />
+      <div
+        ref={headRef}
+        className={`relative z-[1] os-section-head-row os-section-head--navy os-oldschool-head ${runBrandSweep ? 'os-oldschool-head--run' : ''}`}
+      >
+        <div className="os-oldschool-brand-sweep" aria-hidden>
+          <div className="os-oldschool-brand-icon">
+            <span className="os-oldschool-brand-ring" />
+            <span className="os-oldschool-brand-triangle os-oldschool-brand-triangle--cyan" />
+            <span className="os-oldschool-brand-triangle os-oldschool-brand-triangle--orange" />
+          </div>
+        </div>
+
+        <div className="relative z-[1] max-w-4xl min-w-0 flex-1">
+          <SectionEyebrow index={17} label={sectionNavLabel(17)} tone="light" />
           <h2 className="text-4xl font-black leading-[1.05] tracking-tight lg:text-6xl xl:text-7xl">
             SI LLEGASTE
             <br />
@@ -61,7 +93,7 @@ export function Section17({ onPostular }: Section17Props) {
           <p className="os-asterisk-deco mt-8 hidden text-5xl leading-none xl:block">*</p>
         </div>
 
-        <div className="os-s21-col-navy-wash p-6 sm:p-8">
+        <div className="p-6 sm:p-8">
           <p className="os-editorial-col-head os-reveal text-[var(--os-navy)]">La parte incómoda</p>
           <div className="os-editorial-col-body text-black">
             <p className="os-reveal font-black text-base sm:text-lg">Ahora, la parte incómoda:</p>
@@ -104,11 +136,24 @@ export function Section17({ onPostular }: Section17Props) {
         </div>
       </div>
 
-      <div className="relative z-[1] p-6 sm:p-8 lg:p-12 xl:p-16">
+      <div className="relative z-[1] overflow-hidden bg-[color-mix(in_srgb,var(--os-paper)_92%,var(--os-cyan)_8%)] p-6 sm:p-8 lg:p-12 xl:p-16">
+        <DotGrid
+          className="z-0"
+          dotSize={3}
+          gap={10}
+          baseColor="#7cdff3"
+          activeColor="#22b8df"
+          proximity={130}
+          speedTrigger={70}
+          shockRadius={180}
+          shockStrength={3.2}
+          resistance={820}
+          returnDuration={1.3}
+        />
         <button
           type="button"
           onClick={onPostular}
-          className="os-btn-primary os-btn-lg inline-flex w-full justify-center sm:w-auto"
+          className="os-btn-primary os-btn-lg relative z-[1] inline-flex w-full justify-center sm:w-auto"
         >
           POSTULARME AHORA <ArrowRight className="h-5 w-5 shrink-0" strokeWidth={2.5} />
         </button>

@@ -373,6 +373,16 @@
   color: #fff;
 }
 
+button,
+a {
+  cursor: pointer;
+}
+
+button:disabled,
+a[aria-disabled='true'] {
+  cursor: not-allowed;
+}
+
 /* Fila de encabezado de sección: banda de color + texto claro */
 .os-section-head-row.os-section-head--navy,
 .os-section-head--navy {
@@ -394,18 +404,23 @@
 .os-section-head-row.os-section-head--cyan,
 .os-section-head--cyan {
   background-color: var(--os-cyan);
-  color: #fff;
+  color: var(--os-navy);
 }
 
 .os-section-head-row.os-section-head--cyan .os-section-kicker,
 .os-section-head--cyan .os-section-kicker {
-  color: rgba(255, 255, 255, 0.95);
+  color: color-mix(in srgb, var(--os-navy) 86%, transparent);
+}
+
+.os-section-head-row.os-section-head--cyan .os-section-eyebrow,
+.os-section-head--cyan .os-section-eyebrow {
+  color: color-mix(in srgb, var(--os-navy) 76%, transparent) !important;
 }
 
 .os-section-head-row.os-section-head--cyan .os-section-h2,
 .os-section-head--cyan .os-section-h2,
 .os-section-head--cyan h2 {
-  color: #fff;
+  color: var(--os-navy);
 }
 
 .os-section-head-row.os-section-head--orange,
@@ -425,13 +440,95 @@
   color: #fff;
 }
 
+/* Sweep de marca detrás del row de OLD SCHOOL */
+.os-oldschool-head {
+  position: relative;
+  overflow: hidden;
+}
+
+.os-oldschool-brand-sweep {
+  position: absolute;
+  top: 50%;
+  right: -9rem;
+  transform: translate3d(0, -50%, 0);
+  z-index: 0;
+  opacity: 0;
+}
+
+.os-oldschool-head--run .os-oldschool-brand-sweep {
+  animation: os-oldschool-brand-sweep 3.9s cubic-bezier(0.2, 0.72, 0.2, 1) forwards;
+}
+
+.os-oldschool-brand-icon {
+  position: relative;
+  width: clamp(4.9rem, 9vw, 6.9rem);
+  height: clamp(4.9rem, 9vw, 6.9rem);
+}
+
+.os-oldschool-brand-ring {
+  position: absolute;
+  inset: 0;
+  border: clamp(0.26rem, 0.46vw, 0.38rem) solid #fff;
+  border-radius: 999px;
+}
+
+.os-oldschool-brand-triangle {
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform: translateY(-50%);
+}
+
+.os-oldschool-brand-triangle--cyan {
+  left: 27%;
+  border-top: clamp(0.55rem, 1vw, 0.72rem) solid transparent;
+  border-bottom: clamp(0.55rem, 1vw, 0.72rem) solid transparent;
+  border-right: clamp(1rem, 1.9vw, 1.45rem) solid var(--os-cyan);
+}
+
+.os-oldschool-brand-triangle--orange {
+  right: 27%;
+  border-top: clamp(0.55rem, 1vw, 0.72rem) solid transparent;
+  border-bottom: clamp(0.55rem, 1vw, 0.72rem) solid transparent;
+  border-right: clamp(1rem, 1.9vw, 1.45rem) solid var(--os-orange);
+}
+
+.os-oldschool-brand-divider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(0.2rem, 0.28vw, 0.28rem);
+  height: clamp(1rem, 1.6vw, 1.3rem);
+  background: #fff;
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes os-oldschool-brand-sweep {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -50%, 0);
+  }
+  12% {
+    opacity: 0.72;
+  }
+  72% {
+    opacity: 0.72;
+  }
+  100% {
+    opacity: 0.08;
+    transform: translate3d(calc(-100vw - 12rem), -50%, 0);
+  }
+}
+
 /* Kickers que usan .os-section-title en cabeceras tipo Section10/11 */
 .os-section-head--orange .max-w-3xl > .os-section-title {
   color: rgba(255, 255, 255, 0.92);
 }
 
 .os-section-head--cyan .max-w-3xl > .os-section-title {
-  color: rgba(255, 255, 255, 0.95);
+  color: color-mix(in srgb, var(--os-navy) 90%, transparent);
 }
 
 .os-band-navy :is(.os-body, .os-body-strong) {
@@ -530,6 +627,7 @@
   animation: os-testimonios-marquee 52s linear infinite;
 }
 
+
 @media (max-width: 640px) {
   .os-section-head-row {
     padding: 1.25rem;
@@ -577,4 +675,5 @@
   .os-testimonios-marquee-track {
     animation: none;
   }
+
 }

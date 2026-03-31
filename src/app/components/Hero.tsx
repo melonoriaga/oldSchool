@@ -87,7 +87,7 @@ export function Hero({ onPostular }: HeroProps) {
               tag="h1"
               text={'NO ES UN VIAJE.\nES VOLVER A ESTAR JUNTOS.\nES VOLVER.'}
               className="os-section-title os-title-capra max-w-3xl text-[2.15rem] uppercase tracking-[-0.02em] leading-[0.98] sm:text-4xl sm:tracking-[-0.03em] lg:text-6xl xl:text-7xl"
-              splitType="chars"
+              splitType="words, chars"
               delay={32}
               duration={0.95}
               ease="power3.out"

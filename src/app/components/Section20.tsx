@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { SectionEyebrow } from './SectionEyebrow';
 import { sectionNavLabel } from '../siteNav';
+import { DotGrid } from './ui/DotGrid';
 
 export function Section20() {
   return (
@@ -17,12 +18,25 @@ export function Section20() {
           </h2>
         </div>
       </div>
-      <div className="p-6 sm:p-8 lg:p-12 xl:p-16">
+      <div className="relative overflow-hidden bg-[color-mix(in_srgb,var(--os-paper)_92%,var(--os-orange)_8%)] p-6 sm:p-8 lg:p-12 xl:p-16">
+        <DotGrid
+          className="z-0"
+          dotSize={3}
+          gap={10}
+          baseColor="#f5a46e"
+          activeColor="#ff6a00"
+          proximity={130}
+          speedTrigger={70}
+          shockRadius={180}
+          shockStrength={3.2}
+          resistance={820}
+          returnDuration={1.3}
+        />
         <a
           href="https://wa.me/5491128935992"
           target="_blank"
           rel="noopener noreferrer"
-          className="os-btn-primary os-btn-lg inline-flex w-full justify-center sm:w-auto"
+          className="os-btn-primary os-btn-lg relative z-[1] inline-flex w-full justify-center sm:w-auto"
         >
           SOLICITAR MEET <ArrowRight className="h-5 w-5 shrink-0" strokeWidth={2.5} />
         </a>

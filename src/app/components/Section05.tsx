@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { sectionNavLabel } from '../siteNav';
 import { SectionEyebrow } from './SectionEyebrow';
 import sec6img1d from '@/assets/imageBySections/Section06/OldSchool-IMG-Sec6-01-Desktop1.jpg';
@@ -6,14 +7,46 @@ import sec6img2d from '@/assets/imageBySections/Section06/OldSchool-IMG-Sec6-02-
 import sec6img2m from '@/assets/imageBySections/Section06/OldSchool-IMG-Sec6-02-Mobile1.jpg';
 
 export function Section05() {
+  const headRef = useRef<HTMLDivElement | null>(null);
+  const [runBrandSweep, setRunBrandSweep] = useState(false);
+
+  useEffect(() => {
+    const node = headRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setRunBrandSweep(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25, rootMargin: '-30px' },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
       id="bariloche"
       data-os-read-marker
       className="os-surface border-x-4 border-b-4 border-black"
     >
-      <div className="os-section-head-row os-section-head--navy">
-        <div className=" min-w-0 flex-1">
+      <div
+        ref={headRef}
+        className={`os-section-head-row os-section-head--navy os-oldschool-head ${runBrandSweep ? 'os-oldschool-head--run' : ''}`}
+      >
+        <div className="os-oldschool-brand-sweep" aria-hidden>
+          <div className="os-oldschool-brand-icon">
+            <span className="os-oldschool-brand-ring" />
+            <span className="os-oldschool-brand-triangle os-oldschool-brand-triangle--cyan" />
+            <span className="os-oldschool-brand-triangle os-oldschool-brand-triangle--orange" />
+          </div>
+        </div>
+
+        <div className="relative z-[1] min-w-0 flex-1">
           <SectionEyebrow index={5} label={sectionNavLabel(5)} tone="light" />
           <h2 className="os-section-h2">
             BARILOCHE NO ES UN LUGAR.

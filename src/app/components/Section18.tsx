@@ -49,7 +49,7 @@ export function Section18() {
 
   return (
     <div id="testimonios" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
-      <div className="border-b-2 border-black p-8 lg:p-16 bg-[color-mix(in_srgb,var(--os-cyan)_8%,var(--os-paper))]">
+      <div className="border-b-2 border-black bg-[var(--os-cyan)] p-8 lg:p-16">
         <div className="min-w-0">
           <SectionEyebrow index={18} label={sectionNavLabel(18)} />
           <h2 className="text-3xl font-black lg:text-5xl">
