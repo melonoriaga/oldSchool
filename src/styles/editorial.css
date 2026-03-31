@@ -8,7 +8,11 @@
   .os-surface {
     background-color: var(--os-paper);
     background-image:
-      radial-gradient(circle at 1px 1px, color-mix(in srgb, #000 9%, transparent) 0.7px, transparent 0),
+      radial-gradient(
+        circle at 1px 1px,
+        color-mix(in srgb, #000 9%, transparent) 0.7px,
+        transparent 0
+      ),
       linear-gradient(
         150deg,
         color-mix(in srgb, var(--os-cyan) 7%, transparent) 0%,
@@ -44,6 +48,14 @@
   .os-section-title {
     @apply font-black uppercase tracking-tight text-black;
     font-family: 'Sora', 'Onest', sans-serif;
+  }
+
+  .os-section-subtitle {
+    @apply text-sm lg:text-base tracking-wide text-black/80;
+    line-height: 1.2;
+    font-family: 'Sora', 'Onest', sans-serif;
+    font-weight: 500;
+    margin-bottom: 1 rem;
   }
 
   .os-section-head-row {

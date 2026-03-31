@@ -1,145 +1,117 @@
+import { ArrowRight } from 'lucide-react';
+import { useRef } from 'react';
 import { sectionNavLabel } from '../siteNav';
 import { SectionEyebrow } from './SectionEyebrow';
-import sec17d from '@/assets/imageBySections/Section17/OldSchool-IMG-Sec17-Desktop1.jpg';
-import sec17m from '@/assets/imageBySections/Section17/OldSchool-IMG-Sec17-Mobile1.jpg';
 
-/** Misma escala de padding que bloques editoriales en papel (cf. Section07 celda 10). */
-const paperPad = 'relative border-b-2 border-black p-8 sm:p-10 lg:p-12 xl:p-16';
+interface Section17Props {
+  onPostular: () => void;
+}
 
-export function Section17() {
+export function Section17({ onPostular }: Section17Props) {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
   return (
     <div
-      id="sec-17"
+      ref={sectionRef}
+      id="comunidad"
       data-os-read-marker
-      className="os-surface border-x-4 border-b-4 border-black"
+      className="os-surface relative overflow-hidden border-x-4 border-b-4 border-black"
     >
-      <div className="os-section-head-row os-section-head--navy">
-        <div className="max-w-3xl min-w-0 flex-1">
-          <SectionEyebrow index={15} label={sectionNavLabel(17)} tone="light" />
-          <h2 className="os-section-h2">
-            VOLVEMOS A DONDE
+      <div className="os-section-glow-layer" aria-hidden>
+        <div className="os-section-glow-blob os-section-glow-blob--orange-tr" />
+        <div className="os-section-glow-blob os-section-glow-blob--cyan-bl" />
+      </div>
+      <div className="relative z-[1] flex flex-col border-b-2 border-black p-8 lg:flex-row lg:items-start lg:justify-between lg:p-16">
+        <div className="max-w-4xl min-w-0 flex-1">
+          <SectionEyebrow index={17} label={sectionNavLabel(17)} />
+          <h2 className="text-4xl font-black leading-[1.05] tracking-tight lg:text-6xl xl:text-7xl">
+            SI LLEGASTE
             <br />
-            LA MÚSICA LO
+            HASTA ACÁ,
             <br />
-            ACOMODABA TODO
-            <br />
-            DONDE TODO EXPLOTA
+            NO ES CASUALIDAD.
           </h2>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 items-stretch border-b-2 border-black lg:grid-cols-[2fr_1fr]">
-        <div className={`${paperPad} border-b-2 border-black lg:border-b-0 lg:border-r-2`}>
-          <p className="os-body max-w-2xl lg:max-w-none">
-            Visitamos las discotecas icónicas de Bariloche y revivimos la energía del viaje de
-            egresados en versión <span className="font-black">Retro Premium</span>: hits 80/90/2000,
-            puesta cinematográfica y noches pensadas para que el grupo se suelte, se ría y se lleve
-            recuerdos reales.
-          </p>
-        </div>
-        <div className="os-grid-cover-cell">
-          <picture>
-            <source media="(min-width: 1024px)" srcSet={sec17d} />
-            <img src={sec17m} alt="Noche Old School Bariloche" className="os-grid-cover-img" />
-          </picture>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className={`${paperPad} border-b-2 lg:border-r-2`}>
-          <div className="os-asterisk-deco absolute right-8 top-8 text-4xl font-black">*</div>
-          <div className="os-brutal-num-sub mb-4">17.01</div>
-          <h3 className="os-section-title mb-3 text-sm lg:text-base">Fiesta de Disfraces</h3>
-          <div className="max-w-2xl space-y-3 border-l-2 border-[var(--os-cyan)] pl-5 lg:max-w-none lg:pl-6">
-            <div className="space-y-3 os-body">
-              <p>Disfraces, personajes, música, pasarela, desafíos y premios.</p>
-              <p>Una noche para soltarse y reírse sin filtro.</p>
-              <p className="os-body-strong font-black">Código de Vestimenta: Disfraces.</p>
-            </div>
+      <div className="relative z-[1] grid grid-cols-1 divide-y-2 divide-black border-b-2 border-black lg:grid-cols-2 lg:divide-x-2 lg:divide-y-2 xl:grid-cols-4">
+        <div className="p-6 sm:p-8">
+          <p className="os-editorial-col-head os-reveal text-[var(--os-navy)]">Apertura</p>
+          <div className="os-editorial-col-body text-black">
+            <p className="os-reveal">Vos no estabas buscando un viaje.</p>
+            <p className="os-reveal font-black text-base sm:text-lg lg:text-xl">
+              Estabas buscando una prueba de que todavía estás ahí.
+            </p>
+            <p className="os-reveal pt-2">Old School® no te promete nostalgia.</p>
+            <p className="os-reveal font-black">
+              Te promete algo más incómodo y más verdadero: volver a sentir.
+            </p>
           </div>
         </div>
 
-        <div className={`${paperPad}`}>
-          <div className="os-asterisk-deco absolute right-8 top-8 text-4xl font-black">*</div>
-          <div className="os-brutal-num-sub mb-4">17.02</div>
-          <h3 className="os-section-title mb-3 text-sm lg:text-base">Fiesta Colegial</h3>
-          <div className="space-y-3 border-l-2 border-black pl-5 lg:pl-6">
-            <div className="space-y-3 os-body">
-              <p>
-                La fiesta del estudiante convertida en una de las noches más esperadas del viaje.
-              </p>
-              <p>DJ en vivo, luces, hits y energía de egresados desde que entrás.</p>
-              <p className="os-body-strong font-black">Código de Vestimenta: Estudiantil Retro.</p>
-            </div>
+        <div className="p-6 sm:p-8">
+          <p className="os-editorial-col-head os-reveal text-[var(--os-navy)]">Cuerpo</p>
+          <div className="os-editorial-col-body text-black">
+            <p className="os-reveal">Reírte con el cuerpo.</p>
+            <p className="os-reveal">Cantar sin vergüenza.</p>
+            <p className="os-reveal">
+              Mirar a tus amigos y reconocer esa chispa que es tuya.
+            </p>
+          </div>
+          <p className="os-asterisk-deco mt-8 hidden text-5xl leading-none xl:block">*</p>
+        </div>
+
+        <div className="os-s21-col-navy-wash p-6 sm:p-8">
+          <p className="os-editorial-col-head os-reveal text-[var(--os-navy)]">La parte incómoda</p>
+          <div className="os-editorial-col-body text-black">
+            <p className="os-reveal font-black text-base sm:text-lg">Ahora, la parte incómoda:</p>
+            <p className="os-reveal">nadie te va a venir a buscar.</p>
+            <p className="os-reveal">La vida no frena.</p>
+            <p className="os-reveal">Los años no esperan.</p>
+            <p className="os-reveal font-black text-lg sm:text-xl lg:text-2xl">
+              Y esa versión tuya no vuelve sola.
+            </p>
+          </div>
+        </div>
+
+        <div className="p-6 sm:p-8">
+          <p className="os-editorial-col-head os-reveal text-[var(--os-navy)]">Invitación</p>
+          <div className="os-editorial-col-body text-black">
+            <p className="os-reveal">
+              Por eso este cierre no es un &quot;gracias por leer&quot;.
+            </p>
+            <p className="os-reveal font-black text-lg sm:text-xl lg:text-2xl">
+              Es una invitación a decidir.
+            </p>
+            <ul className="os-reveal mt-4 list-none space-y-2 border-l-2 border-[var(--os-orange)] pl-4 font-black text-base sm:text-lg lg:text-xl">
+              <li>Reservá tu fecha.</li>
+              <li>Reservá tu lugar.</li>
+              <li>Sumá a tu gente.</li>
+              <li>Hacé que suceda.</li>
+            </ul>
           </div>
         </div>
       </div>
 
-      <div
-        className="os-band-orange relative border-b-2 border-black p-8 sm:p-10 lg:p-12 xl:p-16"
-      >
-        <div className="os-asterisk-deco absolute right-8 top-8 text-4xl">*</div>
-        <div className="os-brutal-num-sub mb-4">17.03</div>
-        <h3 className="os-section-title mb-3 text-sm lg:text-base">
-          Fiesta del Semáforo & Color Crush
-        </h3>
-        <div className="max-w-4xl space-y-3">
-          <p className="os-body-strong font-black">Dos conceptos en una noche.</p>
-          <p className="os-body">Primero el código. Después la vibra.</p>
-          <p className="os-body">Una propuesta pensada para conectar de verdad.</p>
-          <p className="os-body pt-3">
-            <span className="font-black">Semáforo:</span> cada color representa un mood, un deseo,
-            una intención.
-            <br />
-            Código de vestimenta: tu estado civil.
+      <div className="relative z-[1] border-b-2 border-black p-8 lg:p-20 xl:p-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="os-reveal text-xl font-black sm:text-2xl lg:text-3xl xl:text-4xl">
+            El viaje de egresados se hace una sola vez en la vida.
           </p>
-          <p className="os-body">
-            <span className="font-black">Color Crush:</span> entrás con un color, jugás con una
-            vibra y dejás que la noche haga el resto.
-            <br />
-            Código de vestimenta: tu vibra romántica.
+          <p className="os-reveal mt-6 text-2xl font-black sm:text-3xl lg:text-4xl xl:text-5xl">
+            Hasta ahora.
           </p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div
-          className="os-band-cyan relative border-b-2 border-black p-8 sm:p-10 lg:border-r-2 lg:border-b-0 lg:p-12 xl:p-16"
+      <div className="relative z-[1] p-6 sm:p-8 lg:p-12 xl:p-16">
+        <button
+          type="button"
+          onClick={onPostular}
+          className="os-btn-primary os-btn-lg inline-flex w-full justify-center sm:w-auto"
         >
-          <div className="os-asterisk-deco absolute right-8 top-8 text-4xl font-black">*</div>
-          <div className="os-brutal-num-sub mb-4">17.04</div>
-          <h3 className="os-section-title mb-3 text-sm lg:text-base">Super Retro Show</h3>
-          <div className="space-y-3 os-body">
-            <p className="os-body-strong font-black">Fiesta temática inmersiva.</p>
-            <p>
-              Neón, pantallas VHS, guiños a los 80/90/2000, show en vivo, Momento Generación y
-              Clímax Colectivo.
-            </p>
-            <p className="os-body-strong font-black text-sm sm:text-base">
-              No es nostalgia pasiva.
-              <br />
-              Es volver a entrar en una versión tuya que seguía intacta.
-            </p>
-            <p className="os-body-strong font-black">Código de Vestimenta: Retro.</p>
-          </div>
-        </div>
-
-        <div className={`${paperPad} border-b-0`}>
-          <div className="os-asterisk-deco absolute right-8 top-8 text-4xl font-black">*</div>
-          <div className="os-brutal-num-sub mb-4">17.05</div>
-          <h3 className="os-section-title mb-3 text-sm lg:text-base">EVENTOS ESPECIALES</h3>
-          <div className="space-y-3 border-l-2 border-[var(--os-orange)] pl-5 lg:pl-6">
-            <div className="space-y-3 os-body">
-              <p>
-                Conducción en vivo, tribunas, desafíos, karaoke y juegos que te hacen gritar de
-                risa.
-              </p>
-              <p className="os-body-strong font-black">
-                Si te animás, te convertís en protagonista.
-              </p>
-            </div>
-          </div>
-        </div>
+          POSTULARME AHORA <ArrowRight className="h-5 w-5 shrink-0" strokeWidth={2.5} />
+        </button>
       </div>
     </div>
   );

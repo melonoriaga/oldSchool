@@ -6,15 +6,16 @@ import sec2img2d from '@/assets/imageBySections/Section02/OldSchool-IMG--Sec2-02
 import sec2img2m from '@/assets/imageBySections/Section02/OldSchool-IMG-Sec2-02-Mobile2.jpg';
 
 export function Section02() {
-
   return (
-    <div id="concepto" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
+    <div
+      id="concepto"
+      data-os-read-marker
+      className="os-surface border-x-4 border-b-4 border-black"
+    >
       <div className="os-section-head-row os-section-head--navy">
         <div className="max-w-3xl min-w-0 flex-1">
           <SectionEyebrow index={2} label={sectionNavLabel(2)} tone="light" />
-          <h2 className="os-section-h2">
-            HUBO UN<br />MOMENTO
-          </h2>
+          <h2 className="os-section-h2">OLD SCHOOL</h2>
         </div>
       </div>
 
@@ -26,48 +27,39 @@ export function Section02() {
 
           <div className="max-w-prose space-y-5 pr-2 sm:pr-12 lg:max-w-2xl">
             <p className="os-slice">
-              Hubo un momento en tu vida en el que no estabas pensando tanto:
-              <br />
-              estabas <span className="font-black">viviendo</span>.
-            </p>
-
-            <p
-
-              className="os-pull border-l-2 border-[var(--os-cyan)] pl-4 sm:pl-5"
-            >
-              No calculabas cada paso.
-              <br />
-              No medías todo.
-              <br />
-              No te frenabas tanto.
+              Old School® es una propuesta diseñada para grupos que quieren volver a compartir una
+              experiencia distinta.
             </p>
 
             <p className="os-slice text-black/88">
-              Te reías más. Te soltabas más. Conectabas más.
+              Creamos el regreso a Bariloche para adultos +30, con una estructura pensada para
+              generar dinámica, conexión y momentos reales.
             </p>
 
-            <p className="os-slice border-l-2 border-black pl-4 text-black/88 sm:pl-5">
-              Ese momento no desapareció:
-              <br />
-              quedó guardado en el cuerpo.
+            <p className="os-pull border-l-2 border-[var(--os-cyan)] pl-4 sm:pl-5">
+              Cada instancia tiene intención. Nada es improvisado.
+            </p>
+
+            <p className="os-slice text-black/88">
+              No se trata solo del destino. Se trata de lo que pasa cuando se forma un grupo que
+              vuelve a estar junto.
             </p>
 
             <p className="os-pull pt-1 text-base sm:text-lg lg:text-xl">
-              Y cada tanto vuelve,
-              <br />
-              en una canción, en una foto, en una charla.
+              El viaje de egresados se hace una sola vez en la vida. Hasta ahora.
             </p>
 
-            <p className="os-slice pt-1 text-black/88">
-              Y cuando vuelve, incomoda.
-              <br />
-              Porque te muestra algo que no perdiste,
+            <p className="os-slice border-l-2 border-black pl-4 text-black/88 sm:pl-5">
+              Old School® nace para recuperar las amistades que no se rompieron, pero se dejaron de
+              habitar.
             </p>
-            <p
 
-              className="os-section-title border-l-2 border-black pl-4 pt-2 text-sm sm:text-base lg:text-lg"
-            >
-              pero dejaste de usar.
+            <p className="os-slice text-black/88">
+              Los grupos que siguen existiendo, pero ya no se encuentran. Las historias que no
+              terminaron, pero quedaron en pausa.
+            </p>
+            <p className="os-section-title border-l-2 border-black pl-4 pt-2 text-sm sm:text-base lg:text-lg">
+              Old School® crea el regreso.
             </p>
           </div>
         </div>

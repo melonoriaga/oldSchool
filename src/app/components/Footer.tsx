@@ -4,10 +4,10 @@ import { RegresadosWord } from './RegresadosWord';
 
 const footerNav = [
   { label: 'Inicio', href: '#hero' },
-  { label: 'Concepto', href: '#concepto' },
-  { label: 'Experiencia', href: '#producto' },
-  { label: 'Comunidad', href: '#comunidad' },
-  { label: 'Museo', href: '#museo' },
+  { label: 'Old School', href: '#concepto' },
+  { label: 'Regresados', href: '#generaciones' },
+  { label: 'Preguntas frecuentes', href: '#faq' },
+  { label: 'Solicitar reunión', href: '#meet' },
   { label: 'Postulación', href: '#postulacion' },
 ];
 
@@ -113,9 +113,12 @@ export function Footer() {
               <br />
               ES LA PUERTA DE ENTRADA.
             </p>
-            <p className="text-sm font-medium leading-relaxed text-white/80 sm:max-w-sm">
-              Formato experiencial original y sistema registrado. Lo esencial para contacto y
-              siguiente paso.
+            <p className="text-sm font-medium leading-relaxed text-white/80 sm:max-w-md">
+              OLD SCHOOL® — REGRESADOS es un formato experiencial original, con sistema y narrativa
+              propia, protegido por derechos de autor. Todo su contenido, diseño y metodología están
+              registrados como obra intelectual. Su uso es exclusivo bajo licencia oficial, y
+              cualquier copia o adaptación sin autorización constituye una infracción. No es solo un
+              viaje: es un sistema registrado con identidad protegida.
             </p>
             <a href="#postulacion" className="os-btn-primary inline-flex">
               Ir a postulación →
