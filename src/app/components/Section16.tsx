@@ -1,4 +1,6 @@
+import { sectionNavLabel } from '../siteNav';
 import { OldSchoolWord } from './OldSchoolWord';
+import { SectionEyebrow } from './SectionEyebrow';
 import sec16img1d from '@/assets/imageBySections/Section16/OldSchool-IMG-Sec16-Desktop1.jpg';
 import sec16img1m from '@/assets/imageBySections/Section16/OldSchool-IMG-Sec16-Mobile1.jpg';
 import sec16img2d from '@/assets/imageBySections/Section16/OldSchool-IMG-Sec16-Desktop2.jpg';
@@ -9,21 +11,18 @@ import sec16img3m from '@/assets/imageBySections/Section16/OldSchool-IMG-Sec16-M
 export function Section16() {
 
   return (
-    <div data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
+    <div id="sec-16" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="os-section-head-row">
-        <div className="max-w-3xl">
-          <p className="os-section-kicker">TERRITORIO + DÍAS</p>
+        <div className="max-w-3xl min-w-0 flex-1">
+          <SectionEyebrow index={16} label={sectionNavLabel(16)} />
           <h2 className="os-section-h2">
             LAS EXCURSIONES<br />QUE HICIERON<br />HISTORIA
           </h2>
         </div>
-        <div className="os-brutal-num self-end sm:self-start">
-          16
-        </div>
       </div>
 
-      <div className="grid grid-cols-1 border-b-4 border-black lg:grid-cols-12">
-        <aside className="flex flex-col justify-center border-b-4 border-black bg-black/[0.02] p-6 sm:p-8 lg:col-span-4 lg:border-b-0 lg:border-r-4 lg:p-10 xl:p-12">
+      <div className="grid grid-cols-1 border-b-2 border-black lg:grid-cols-12">
+        <aside className="flex flex-col justify-center border-b-2 border-black bg-black/[0.02] p-6 sm:p-8 lg:col-span-4 lg:border-b-0 lg:border-r-2 lg:p-10 xl:p-12">
           <p className="os-section-title mb-2 text-[0.65rem] text-[var(--os-navy)] sm:text-xs">MISMA ENERGÍA</p>
           <p className="text-sm font-black uppercase tracking-widest text-black/50">
             <OldSchoolWord registered={false} /> Edition
@@ -39,11 +38,11 @@ export function Section16() {
       </div>
 
       {/* Excursion 1: City Hall, Chico & Punto */}
-      <div className="border-b-4 border-black">
+      <div className="border-b-2 border-black">
         <div className="grid grid-cols-1 items-stretch lg:grid-cols-[1fr_2fr]">
           <div
 
-            className="os-grid-cover-cell border-b-4 border-black lg:border-b-0 lg:border-r-4"
+            className="os-grid-cover-cell border-b-2 border-black lg:border-b-0 lg:border-r-2"
           >
             <picture>
               <source media="(min-width: 1024px)" srcSet={sec16img1d} />
@@ -51,7 +50,7 @@ export function Section16() {
             </picture>
           </div>
           <div className="p-6 sm:p-8 lg:p-10 xl:p-12">
-            <div className="border-l-4 border-[var(--os-orange)] pl-5 sm:pl-6">
+            <div className="border-l-2 border-[var(--os-orange)] pl-5 sm:pl-6">
             <h3 className="mb-2 font-black uppercase tracking-tight text-[var(--os-navy)] text-xl sm:text-2xl lg:text-3xl xl:text-4xl">
               City Hall, Chico & Punto
             </h3>
@@ -67,10 +66,10 @@ export function Section16() {
       </div>
 
       {/* Excursion 2: Día de Campo */}
-      <div className="border-b-4 border-black">
+      <div className="border-b-2 border-black">
         <div className="grid grid-cols-1 items-stretch lg:grid-cols-[2fr_1fr]">
-          <div className="border-b-4 border-black p-6 sm:p-8 lg:border-b-0 lg:border-r-4 lg:p-10 xl:p-12">
-            <div className="border-l-4 border-[var(--os-orange)] pl-5 sm:pl-6">
+          <div className="border-b-2 border-black p-6 sm:p-8 lg:border-b-0 lg:border-r-2 lg:p-10 xl:p-12">
+            <div className="border-l-2 border-[var(--os-orange)] pl-5 sm:pl-6">
             <h3 className="mb-2 font-black uppercase tracking-tight text-[var(--os-navy)] text-xl sm:text-2xl lg:text-3xl xl:text-4xl">
               Día de Campo
             </h3>
@@ -90,9 +89,9 @@ export function Section16() {
       </div>
 
       {/* Excursion 3: Old School Festival */}
-      <div className="border-b-4 border-black p-6 sm:p-8 lg:p-10 xl:p-12">
+      <div className="border-b-2 border-black p-6 sm:p-8 lg:p-10 xl:p-12">
         <div className="max-w-4xl">
-          <div className="border-l-4 border-[var(--os-cyan)] pl-5 sm:pl-6">
+          <div className="border-l-2 border-[var(--os-cyan)] pl-5 sm:pl-6">
           <h3 className="mb-2 font-black uppercase tracking-tight text-[var(--os-navy)] text-xl sm:text-2xl lg:text-3xl xl:text-4xl">
             <OldSchoolWord uppercase /> Festival
           </h3>
@@ -105,9 +104,9 @@ export function Section16() {
       </div>
 
       {/* Excursion 4: Trineos */}
-      <div className="border-b-4 border-black p-6 sm:p-8 lg:p-10 xl:p-12">
+      <div className="border-b-2 border-black p-6 sm:p-8 lg:p-10 xl:p-12">
         <div className="max-w-4xl">
-          <div className="border-l-4 border-[var(--os-orange)] pl-5 sm:pl-6">
+          <div className="border-l-2 border-[var(--os-orange)] pl-5 sm:pl-6">
           <h3 className="mb-2 font-black uppercase tracking-tight text-[var(--os-navy)] text-xl sm:text-2xl lg:text-3xl xl:text-4xl">
             Trineos Patagonia 360
           </h3>
@@ -125,7 +124,7 @@ export function Section16() {
         <div className="grid grid-cols-1 items-stretch lg:grid-cols-2">
           <div
 
-            className="os-grid-cover-cell border-b-4 border-black lg:border-b-0 lg:border-r-4"
+            className="os-grid-cover-cell border-b-2 border-black lg:border-b-0 lg:border-r-2"
           >
             <picture>
               <source media="(min-width: 1024px)" srcSet={sec16img3d} />
@@ -133,7 +132,7 @@ export function Section16() {
             </picture>
           </div>
           <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10 xl:p-12">
-            <div className="border-l-4 border-black pl-5 sm:pl-6">
+            <div className="border-l-2 border-black pl-5 sm:pl-6">
             <h3 className="mb-2 font-black uppercase tracking-tight text-[var(--os-navy)] text-xl sm:text-2xl lg:text-3xl xl:text-4xl">
               Cerro Catedral & Gruta Virgen de las Nieves
             </h3>

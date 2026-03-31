@@ -8,14 +8,14 @@ export function ProductBlock() {
     <div id="producto" className="os-surface border-x-4 border-b-4 border-black">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Left - Image */}
-        <div className="relative h-[50vh] lg:h-screen border-b-4 lg:border-b-0 lg:border-r-4 border-black">
+        <div className="relative h-[50vh] lg:h-screen border-b-2 lg:border-b-0 lg:border-r-2 border-black">
           <ImageWithFallback
 
             src="https://images.unsplash.com/photo-1772127822607-2343696cf82e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3RlbCUyMHJlc29ydCUyMHRyYXZlbCUyMGV4cGVyaWVuY2V8ZW58MXx8fHwxNzczNzk4NzMwfDA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Experiencia"
             className="w-full h-full object-cover"
           />
-          <div className="absolute top-8 left-8 os-surface px-6 py-3 border-4 border-black">
+          <div className="absolute top-8 left-8 os-surface px-6 py-3 border-2 border-black">
             <p className="text-sm font-bold tracking-widest">LA EXPERIENCIA</p>
           </div>
           <div className="os-spin-slow absolute bottom-8 left-8 text-6xl font-black opacity-20">
@@ -60,7 +60,7 @@ export function ProductBlock() {
               </ul>
             </div>
 
-            <div className="pt-6 border-t-4 border-black">
+            <div className="pt-6 border-t-2 border-black">
               <p className="text-xl font-bold">
                 Cupos limitados<br />
                 Inscripción sujeta a disponibilidad

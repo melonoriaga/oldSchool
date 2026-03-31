@@ -8,14 +8,14 @@ export function Block07Generaciones() {
       <div className="grid grid-cols-1 lg:grid-cols-12">
         
         {/* Columna izquierda - Número */}
-        <div className="lg:col-span-3 lg:row-span-5 border-b-4 lg:border-b-0 lg:border-r-4 border-black p-8 lg:p-12 flex items-center justify-center">
+        <div className="lg:col-span-3 lg:row-span-5 border-b-2 lg:border-b-0 lg:border-r-2 border-black p-8 lg:p-12 flex items-center justify-center">
           <div className="text-[8rem] lg:text-[12rem] font-black leading-none text-black">
             07
           </div>
         </div>
 
         {/* Título y subtítulo */}
-        <div className="lg:col-span-9 border-b-4 border-black p-8 lg:p-12 xl:p-16 space-y-6">
+        <div className="lg:col-span-9 border-b-2 border-black p-8 lg:p-12 xl:p-16 space-y-6">
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-black leading-tight text-black">
             <RegresadosWord className="h-[0.8em] align-[-0.04em]" />
           </h2>
@@ -35,7 +35,7 @@ export function Block07Generaciones() {
         </div>
 
         {/* Generación 80 */}
-        <div className="lg:col-span-9 border-b-4 border-black p-8 lg:p-12 xl:p-16 space-y-4">
+        <div className="lg:col-span-9 border-b-2 border-black p-8 lg:p-12 xl:p-16 space-y-4">
           <h3 className="text-2xl lg:text-3xl font-black text-black">
             Generación 80 - La que vivió sin filtro.
           </h3>
@@ -47,7 +47,7 @@ export function Block07Generaciones() {
         </div>
 
         {/* Generación 90 */}
-        <div className="lg:col-span-9 border-b-4 border-black p-8 lg:p-12 xl:p-16 space-y-4">
+        <div className="lg:col-span-9 border-b-2 border-black p-8 lg:p-12 xl:p-16 space-y-4">
           <h3 className="text-2xl lg:text-3xl font-black text-black">
             Generación 90 - La que mezcló inocencia con revolución.
           </h3>
@@ -59,7 +59,7 @@ export function Block07Generaciones() {
         </div>
 
         {/* Generación 2000 */}
-        <div className="lg:col-span-9 border-b-4 border-black p-8 lg:p-12 xl:p-16 space-y-4">
+        <div className="lg:col-span-9 border-b-2 border-black p-8 lg:p-12 xl:p-16 space-y-4">
           <h3 className="text-2xl lg:text-3xl font-black text-black">
             Generación 2000 - La que creció conectada.
           </h3>

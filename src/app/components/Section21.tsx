@@ -1,5 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { useRef } from 'react';
+import { sectionNavLabel } from '../siteNav';
+import { SectionEyebrow } from './SectionEyebrow';
 
 interface Section21Props {
   onPostular: () => void;
@@ -19,20 +21,20 @@ export function Section21({ onPostular }: Section21Props) {
         <div className="os-section-glow-blob os-section-glow-blob--orange-tr" />
         <div className="os-section-glow-blob os-section-glow-blob--cyan-bl" />
       </div>
-      <div className="relative z-[1] flex flex-col border-b-4 border-black p-8 lg:flex-row lg:items-center lg:justify-between lg:p-16">
-        <h2 className="max-w-4xl text-4xl font-black leading-tight lg:text-6xl xl:text-7xl">
-          <span className="text-[var(--os-navy)]">SI</span> LLEGASTE
-          <br />
-          HASTA <span className="text-[var(--os-orange)]">ACÁ</span>,
-          <br />
-          NO ES <span className="text-[var(--os-cyan)]">CASUALIDAD</span>
-        </h2>
-        <div className="os-brutal-num mt-6 shrink-0 lg:mt-0">
-          21
+      <div className="relative z-[1] flex flex-col border-b-2 border-black p-8 lg:flex-row lg:items-start lg:justify-between lg:p-16">
+        <div className="max-w-4xl min-w-0 flex-1">
+          <SectionEyebrow index={21} label={sectionNavLabel(21)} />
+          <h2 className="text-4xl font-black leading-tight lg:text-6xl xl:text-7xl">
+            <span className="text-[var(--os-navy)]">SI</span> LLEGASTE
+            <br />
+            HASTA <span className="text-[var(--os-orange)]">ACÁ</span>,
+            <br />
+            NO ES <span className="text-[var(--os-cyan)]">CASUALIDAD</span>
+          </h2>
         </div>
       </div>
 
-      <div className="relative z-[1] grid grid-cols-1 divide-y-4 divide-black border-b-4 border-black lg:grid-cols-2 lg:divide-x-4 lg:divide-y-4 xl:grid-cols-4">
+      <div className="relative z-[1] grid grid-cols-1 divide-y-2 divide-black border-b-2 border-black lg:grid-cols-2 lg:divide-x-2 lg:divide-y-2 xl:grid-cols-4">
         <div className="p-6 sm:p-8">
           <p className="os-editorial-col-head os-reveal">Apertura</p>
           <div className="os-editorial-col-body">
@@ -81,7 +83,7 @@ export function Section21({ onPostular }: Section21Props) {
             <p className="os-reveal font-black text-lg sm:text-xl lg:text-2xl">
               Es una invitación a decidir.
             </p>
-            <ul className="os-reveal mt-4 list-none space-y-2 border-l-4 border-[var(--os-orange)] pl-4 font-black text-base sm:text-lg lg:text-xl">
+            <ul className="os-reveal mt-4 list-none space-y-2 border-l-2 border-[var(--os-orange)] pl-4 font-black text-base sm:text-lg lg:text-xl">
               <li>Reservá tu fecha.</li>
               <li>Reservá tu lugar.</li>
               <li>Sumá a tu gente.</li>
@@ -91,7 +93,7 @@ export function Section21({ onPostular }: Section21Props) {
         </div>
       </div>
 
-      <div className="relative z-[1] border-b-4 border-black p-8 lg:p-20 xl:p-24">
+      <div className="relative z-[1] border-b-2 border-black p-8 lg:p-20 xl:p-24">
         <div className="mx-auto max-w-3xl text-center">
           <p className="os-reveal text-xl font-black sm:text-2xl lg:text-3xl xl:text-4xl">
             El viaje de egresados se hace una sola vez en la vida.

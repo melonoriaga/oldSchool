@@ -1,19 +1,18 @@
+import { sectionNavLabel } from '../siteNav';
+import { SectionEyebrow } from './SectionEyebrow';
 import sec15d from '@/assets/imageBySections/Section15/OldSchool-IMG-Sec15-Desktop1.jpg';
 import sec15m from '@/assets/imageBySections/Section15/OldSchool-IMG-Sec15-Mobile1.jpg';
 
 export function Section15() {
 
   return (
-    <div data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
-      <div className="os-section-head-row">
-        <div className="max-w-3xl">
-          <p className="os-section-kicker">MESA + GRUPO</p>
+    <div id="sec-15" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
+      <div className="os-section-head-row os-section-head--cyan">
+        <div className="max-w-3xl min-w-0 flex-1">
+          <SectionEyebrow index={15} label={sectionNavLabel(15)} tone="light" />
           <h2 className="os-section-h2">
             DONDE SE<br />CONSTRUYE TODO
           </h2>
-        </div>
-        <div className="os-brutal-num self-end sm:self-start">
-          15
         </div>
       </div>
 
@@ -22,7 +21,7 @@ export function Section15() {
         {/* Image */}
         <div
 
-          className="os-grid-cover-cell border-b-4 border-black lg:border-b-0 lg:border-r-4"
+          className="os-grid-cover-cell border-b-2 border-black lg:border-b-0 lg:border-r-2"
         >
           <picture>
             <source media="(min-width: 1024px)" srcSet={sec15d} />
@@ -59,7 +58,7 @@ export function Section15() {
             Contemplamos dietas especiales, menús vegetarianos, celíacos y otras especificaciones.
           </p>
 
-          <p className="os-pull max-w-2xl border-l-4 border-[var(--os-cyan)] pl-5 pt-4 sm:pl-6">
+          <p className="os-pull max-w-2xl border-l-2 border-[var(--os-cyan)] pl-5 pt-4 sm:pl-6">
             Porque lo importante es esto:<br />
             nadie está solo.
           </p>

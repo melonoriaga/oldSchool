@@ -1,19 +1,21 @@
+import { sectionNavLabel } from '../siteNav';
+import { SectionEyebrow } from './SectionEyebrow';
 import sec17d from '@/assets/imageBySections/Section17/OldSchool-IMG-Sec17-Desktop1.jpg';
 import sec17m from '@/assets/imageBySections/Section17/OldSchool-IMG-Sec17-Mobile1.jpg';
 
 /** Misma escala de padding que bloques editoriales en papel (cf. Section07 celda 10). */
-const paperPad = 'relative border-b-4 border-black p-8 sm:p-10 lg:p-12 xl:p-16';
+const paperPad = 'relative border-b-2 border-black p-8 sm:p-10 lg:p-12 xl:p-16';
 
 export function Section17() {
   return (
     <div
-
+      id="sec-17"
       data-os-read-marker
       className="os-surface border-x-4 border-b-4 border-black"
     >
-      <div className="os-section-head-row">
-        <div className="max-w-3xl">
-          <p className="os-section-kicker">NOCHE + RITMO</p>
+      <div className="os-section-head-row os-section-head--navy">
+        <div className="max-w-3xl min-w-0 flex-1">
+          <SectionEyebrow index={17} label={sectionNavLabel(17)} tone="light" />
           <h2 className="os-section-h2">
             VOLVEMOS A DONDE
             <br />
@@ -24,13 +26,10 @@ export function Section17() {
             DONDE TODO EXPLOTA
           </h2>
         </div>
-        <div className="os-brutal-num self-end sm:self-start">
-          17
-        </div>
       </div>
 
-      <div className="grid grid-cols-1 items-stretch border-b-4 border-black lg:grid-cols-[2fr_1fr]">
-        <div className={`${paperPad} border-b-4 border-black lg:border-b-0 lg:border-r-4`}>
+      <div className="grid grid-cols-1 items-stretch border-b-2 border-black lg:grid-cols-[2fr_1fr]">
+        <div className={`${paperPad} border-b-2 border-black lg:border-b-0 lg:border-r-2`}>
           <p className="os-body max-w-2xl lg:max-w-none">
             Visitamos las discotecas icónicas de Bariloche y revivimos la energía del viaje de
             egresados en versión <span className="font-black">Retro Premium</span>: hits 80/90/2000,
@@ -47,11 +46,11 @@ export function Section17() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className={`${paperPad} border-b-4 lg:border-r-4`}>
+        <div className={`${paperPad} border-b-2 lg:border-r-2`}>
           <div className="os-asterisk-deco absolute right-8 top-8 text-4xl font-black">*</div>
           <div className="os-brutal-num-sub mb-4">17.01</div>
           <h3 className="os-section-title mb-3 text-sm lg:text-base">Fiesta de Disfraces</h3>
-          <div className="max-w-2xl space-y-3 border-l-4 border-[var(--os-cyan)] pl-5 lg:max-w-none lg:pl-6">
+          <div className="max-w-2xl space-y-3 border-l-2 border-[var(--os-cyan)] pl-5 lg:max-w-none lg:pl-6">
             <div className="space-y-3 os-body">
               <p>Disfraces, personajes, música, pasarela, desafíos y premios.</p>
               <p>Una noche para soltarse y reírse sin filtro.</p>
@@ -64,7 +63,7 @@ export function Section17() {
           <div className="os-asterisk-deco absolute right-8 top-8 text-4xl font-black">*</div>
           <div className="os-brutal-num-sub mb-4">17.02</div>
           <h3 className="os-section-title mb-3 text-sm lg:text-base">Fiesta Colegial</h3>
-          <div className="space-y-3 border-l-4 border-black pl-5 lg:pl-6">
+          <div className="space-y-3 border-l-2 border-black pl-5 lg:pl-6">
             <div className="space-y-3 os-body">
               <p>
                 La fiesta del estudiante convertida en una de las noches más esperadas del viaje.
@@ -77,7 +76,7 @@ export function Section17() {
       </div>
 
       <div
-        className="os-band-orange relative border-b-4 border-black p-8 sm:p-10 lg:p-12 xl:p-16"
+        className="os-band-orange relative border-b-2 border-black p-8 sm:p-10 lg:p-12 xl:p-16"
       >
         <div className="os-asterisk-deco absolute right-8 top-8 text-4xl">*</div>
         <div className="os-brutal-num-sub mb-4">17.03</div>
@@ -105,7 +104,7 @@ export function Section17() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div
-          className="os-band-cyan relative border-b-4 border-black p-8 sm:p-10 lg:border-r-4 lg:border-b-0 lg:p-12 xl:p-16"
+          className="os-band-cyan relative border-b-2 border-black p-8 sm:p-10 lg:border-r-2 lg:border-b-0 lg:p-12 xl:p-16"
         >
           <div className="os-asterisk-deco absolute right-8 top-8 text-4xl font-black">*</div>
           <div className="os-brutal-num-sub mb-4">17.04</div>
@@ -129,7 +128,7 @@ export function Section17() {
           <div className="os-asterisk-deco absolute right-8 top-8 text-4xl font-black">*</div>
           <div className="os-brutal-num-sub mb-4">17.05</div>
           <h3 className="os-section-title mb-3 text-sm lg:text-base">EVENTOS ESPECIALES</h3>
-          <div className="space-y-3 border-l-4 border-[var(--os-orange)] pl-5 lg:pl-6">
+          <div className="space-y-3 border-l-2 border-[var(--os-orange)] pl-5 lg:pl-6">
             <div className="space-y-3 os-body">
               <p>
                 Conducción en vivo, tribunas, desafíos, karaoke y juegos que te hacen gritar de

@@ -1,4 +1,6 @@
+import { sectionNavLabel } from '../siteNav';
 import { RegresadosWord } from './RegresadosWord';
+import { SectionEyebrow } from './SectionEyebrow';
 import sec7img1d from '@/assets/imageBySections/Section07/OldSchool-IMG-Sec7-01-Desktop1.jpg';
 import sec7img1m from '@/assets/imageBySections/Section07/OldSchool-IMG-Sec7-01-Mobile1.jpg';
 import sec7img2d from '@/assets/imageBySections/Section07/OldSchool-IMG-Sec7-01-Desktop2.jpg';
@@ -8,8 +10,9 @@ export function Section07Generaciones() {
 
   return (
     <div id="generaciones" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
-      <div className="relative flex flex-col items-start justify-between gap-5 border-b-4 border-black p-5 sm:gap-6 sm:p-8 lg:flex-row lg:items-start lg:p-16">
-        <div className="max-w-3xl space-y-4">
+      <div className="relative flex flex-col items-start justify-between gap-5 border-b-2 border-black p-5 sm:gap-6 sm:p-8 lg:flex-row lg:items-start lg:p-16">
+        <div className="max-w-3xl min-w-0 flex-1 space-y-4">
+          <SectionEyebrow index={7} label={sectionNavLabel(7)} />
           <h2 className="os-section-h2">
             <RegresadosWord className="h-[0.8em] align-[-0.04em]" />
           </h2>
@@ -21,14 +24,11 @@ export function Section07Generaciones() {
             PERO TODAS SINTIERON LO MISMO.
           </p>
         </div>
-        <div className="os-brutal-num self-end lg:self-start">
-          07
-        </div>
       </div>
 
-      <div className="border-b-4 border-black">
+      <div className="border-b-2 border-black">
         <div className="mx-auto grid w-full max-w-[72rem] grid-cols-1 items-stretch lg:grid-cols-[minmax(0,36rem)_minmax(240px,280px)]">
-          <div className="space-y-5 border-b-4 border-black p-6 sm:p-8 lg:border-b-0 lg:border-r-4 lg:p-12 xl:p-14">
+          <div className="space-y-5 border-b-2 border-black p-6 sm:p-8 lg:border-b-0 lg:border-r-2 lg:p-12 xl:p-14">
             <div className="max-w-prose space-y-4 text-base font-medium leading-relaxed text-black sm:text-lg lg:text-xl lg:leading-relaxed">
               <p className="font-black leading-snug sm:text-xl lg:text-2xl">
                 No hacemos un viaje estándar.
@@ -44,14 +44,14 @@ export function Section07Generaciones() {
               </p>
               <p
 
-            className="os-section-title border-l-4 border-[var(--os-orange)] pl-4 pt-2 text-xs sm:text-base lg:text-lg"
+            className="os-section-title border-l-2 border-[var(--os-orange)] pl-4 pt-2 text-xs sm:text-base lg:text-lg"
               >
                 Pero hay algo que no cambió: lo que Bariloche dejó adentro.
               </p>
             </div>
           </div>
           <div className="grid min-h-[20rem] grid-rows-2 lg:h-full lg:min-h-0">
-            <div className="relative min-h-[10rem] overflow-hidden border-b-4 border-black lg:min-h-0">
+            <div className="relative min-h-[10rem] overflow-hidden border-b-2 border-black lg:min-h-0">
               <picture>
                 <source media="(min-width: 1024px)" srcSet={sec7img1d} />
                 <img src={sec7img1m} alt="Old School Regresados" className="absolute inset-0 h-full w-full object-cover object-center" />
@@ -68,7 +68,7 @@ export function Section07Generaciones() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="os-band-orange relative border-b-4 border-black p-8 lg:border-r-4 lg:p-12 xl:p-16">
+        <div className="os-band-orange relative border-b-2 border-black p-8 lg:border-r-2 lg:p-12 xl:p-16">
           <div
 
             className="os-asterisk-deco absolute right-8 top-8 text-4xl"
@@ -76,10 +76,10 @@ export function Section07Generaciones() {
             *
           </div>
           <div className="os-brutal-num-sub mb-4">80</div>
-          <h3 className="os-section-title mb-3 text-sm lg:text-base">
+          <h3 className="os-section-title mb-3 text-base lg:text-lg">
             La que vivió sin filtro.
           </h3>
-          <p className="os-body leading-relaxed text-[0.8rem] sm:text-[0.86rem]">
+          <p className="os-body leading-relaxed text-sm sm:text-base lg:text-lg">
             Casseteras, Walkman, cartas, lentos y promesas.
             <br />
             Una generación con mística, códigos y amistades que todavía laten.
@@ -88,7 +88,7 @@ export function Section07Generaciones() {
           </p>
         </div>
 
-        <div className="os-band-cyan relative border-b-4 border-black p-8 lg:p-12 xl:p-16">
+        <div className="os-band-cyan relative border-b-2 border-black p-8 lg:p-12 xl:p-16">
           <div
 
             className="os-asterisk-deco absolute right-8 top-8 text-4xl"
@@ -96,10 +96,10 @@ export function Section07Generaciones() {
             *
           </div>
           <div className="os-brutal-num-sub mb-4">90</div>
-          <h3 className="os-section-title mb-3 text-sm lg:text-base">
+          <h3 className="os-section-title mb-3 text-base lg:text-lg">
             La que mezcló inocencia con revolución.
           </h3>
-          <p className="os-body leading-relaxed text-[0.8rem] sm:text-[0.86rem]">
+          <p className="os-body leading-relaxed text-sm sm:text-base lg:text-lg">
             CD, MSN, primeras cámaras digitales, coreografías, noches eternas y amistad intensa.
             <br />
             Una generación que empezó a mostrarse al mundo, pero todavía sabía mirar a los ojos.
@@ -108,7 +108,7 @@ export function Section07Generaciones() {
           </p>
         </div>
 
-        <div className="os-band-navy relative border-b-4 border-black p-8 lg:border-r-4 lg:border-b-0 lg:p-12 xl:p-16">
+        <div className="os-band-navy relative border-b-2 border-black p-8 lg:border-r-2 lg:border-b-0 lg:p-12 xl:p-16">
           <div
 
             className="os-asterisk-deco absolute right-8 top-8 text-4xl"
@@ -116,10 +116,10 @@ export function Section07Generaciones() {
             *
           </div>
           <div className="os-brutal-num-sub mb-4 text-white">00</div>
-          <h3 className="os-section-title mb-3 text-sm lg:text-base">
+          <h3 className="os-section-title mb-3 text-base lg:text-lg">
             La que creció conectada.
           </h3>
-          <p className="os-body leading-relaxed text-[0.8rem] sm:text-[0.86rem]">
+          <p className="os-body leading-relaxed text-sm sm:text-base lg:text-lg">
             Fotolog, Messenger, redes, primeras selfies.
             <br />
             Una generación expresiva, intensa y protagonista.
@@ -129,7 +129,7 @@ export function Section07Generaciones() {
         </div>
 
         <div className="relative grid grid-cols-1 lg:grid-cols-2">
-          <div className="flex flex-col justify-center border-b-4 border-black p-8 lg:border-b-0 lg:border-r-4 lg:p-12 xl:p-16">
+          <div className="flex flex-col justify-center border-b-2 border-black p-8 lg:border-b-0 lg:border-r-2 lg:p-12 xl:p-16">
             <div
 
               className="os-asterisk-deco absolute right-8 top-8 text-4xl lg:right-auto lg:left-8"
@@ -137,10 +137,10 @@ export function Section07Generaciones() {
               *
             </div>
             <div className="os-brutal-num-sub mb-4">10</div>
-            <h3 className="os-section-title mb-3 text-sm lg:text-base">
+            <h3 className="os-section-title mb-3 text-base lg:text-lg">
               La que empezó a vivir… y a mostrarse.
             </h3>
-          <p className="os-body leading-relaxed text-[0.8rem] sm:text-[0.86rem]">
+          <p className="os-body leading-relaxed text-sm sm:text-base lg:text-lg">
               Instagram, WhatsApp, Snapchat.
               <br />
             Viajes en tiempo real, entre lo digital y lo real.

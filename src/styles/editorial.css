@@ -47,7 +47,12 @@
   }
 
   .os-section-head-row {
-    @apply flex flex-col justify-between gap-6 border-b-4 border-black p-6 sm:flex-row sm:items-start sm:gap-8 sm:p-10 lg:p-14;
+    @apply flex flex-col justify-between gap-6 border-b-2 border-black p-6 sm:flex-row sm:items-start sm:gap-8 sm:p-10 lg:p-14;
+  }
+
+  /** Rótulo tipo "02 / CONCEPTO" — división sutil entre bloques */
+  .os-section-eyebrow {
+    font-family: 'Sora', 'Onest', system-ui, sans-serif;
   }
 
   .os-section-kicker {
@@ -194,7 +199,7 @@
   }
 
   .os-grid-border {
-    @apply border-x-4 border-b-4 border-black;
+    @apply border-x-2 border-b-2 border-black;
   }
 
   .os-photo-cell {
@@ -354,6 +359,67 @@
 .os-band-orange {
   background-color: var(--os-orange);
   color: #fff;
+}
+
+/* Fila de encabezado de sección: banda de color + texto claro */
+.os-section-head-row.os-section-head--navy,
+.os-section-head--navy {
+  background-color: var(--os-navy);
+  color: #fff;
+}
+
+.os-section-head-row.os-section-head--navy .os-section-kicker,
+.os-section-head--navy .os-section-kicker {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.os-section-head-row.os-section-head--navy .os-section-h2,
+.os-section-head--navy .os-section-h2,
+.os-section-head--navy h2 {
+  color: #fff;
+}
+
+.os-section-head-row.os-section-head--cyan,
+.os-section-head--cyan {
+  background-color: var(--os-cyan);
+  color: #fff;
+}
+
+.os-section-head-row.os-section-head--cyan .os-section-kicker,
+.os-section-head--cyan .os-section-kicker {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.os-section-head-row.os-section-head--cyan .os-section-h2,
+.os-section-head--cyan .os-section-h2,
+.os-section-head--cyan h2 {
+  color: #fff;
+}
+
+.os-section-head-row.os-section-head--orange,
+.os-section-head--orange {
+  background-color: var(--os-orange);
+  color: #fff;
+}
+
+.os-section-head-row.os-section-head--orange .os-section-kicker,
+.os-section-head--orange .os-section-kicker {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.os-section-head-row.os-section-head--orange .os-section-h2,
+.os-section-head--orange .os-section-h2,
+.os-section-head--orange h2 {
+  color: #fff;
+}
+
+/* Kickers que usan .os-section-title en cabeceras tipo Section10/11 */
+.os-section-head--orange .max-w-3xl > .os-section-title {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.os-section-head--cyan .max-w-3xl > .os-section-title {
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .os-band-navy :is(.os-body, .os-body-strong) {

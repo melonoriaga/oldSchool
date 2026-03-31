@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { sectionNavLabel } from '../siteNav';
+import { SectionEyebrow } from './SectionEyebrow';
 
 export function Section22() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -42,23 +44,18 @@ export function Section22() {
       data-os-read-marker
       className="os-surface border-x-4 border-b-4 border-black"
     >
-      <div className="flex flex-col justify-between gap-6 border-b-4 border-black p-5 sm:flex-row sm:items-end sm:gap-8 sm:p-8 lg:p-16">
-        <div className="max-w-3xl">
-          <p className="os-section-title mb-2 text-[0.65rem] text-[var(--os-orange)] sm:text-xs">
-            PREGUNTAS FRECUENTES
-          </p>
+      <div className="flex flex-col justify-between gap-6 border-b-2 border-black p-5 sm:flex-row sm:items-end sm:gap-8 sm:p-8 lg:p-16">
+        <div className="max-w-3xl min-w-0 flex-1">
+          <SectionEyebrow index={23} label={sectionNavLabel(23)} />
           <h2 className="font-black uppercase leading-[1.05] tracking-tight text-2xl sm:text-4xl lg:text-6xl">
             Antes de postularte,
             <br className="hidden sm:block" /> esto aclara el mapa.
           </h2>
         </div>
-        <div className="os-brutal-num self-end sm:self-auto">
-          22
-        </div>
       </div>
 
       <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,2.2fr)]">
-        <div className="hidden border-b-4 border-black bg-[var(--os-navy)] px-8 py-10 text-white lg:block lg:border-b-0 lg:border-r-4 lg:py-16">
+        <div className="hidden border-b-2 border-black bg-[var(--os-navy)] px-8 py-10 text-white lg:block lg:border-b-0 lg:border-r-2 lg:py-16">
           <p className="font-black uppercase leading-tight tracking-tight text-lg">
             Dudas habituales.
           </p>
@@ -74,7 +71,7 @@ export function Section22() {
         </div>
 
         <div className="border-black lg:border-0">
-          <ul className="divide-y-4 divide-black">
+          <ul className="divide-y-2 divide-black">
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
               const num = String(index + 1).padStart(2, '0');
@@ -118,7 +115,7 @@ export function Section22() {
                     }`}
                   >
                     <div className="min-h-0 overflow-hidden">
-                      <div className="border-t-4 border-black bg-[var(--os-cyan)]/12 px-4 py-5 sm:px-8 sm:py-7 sm:pl-[4.25rem] lg:px-10 lg:py-8 lg:pl-[6.5rem]">
+                      <div className="border-t-2 border-black bg-[var(--os-cyan)]/12 px-4 py-5 sm:px-8 sm:py-7 sm:pl-[4.25rem] lg:px-10 lg:py-8 lg:pl-[6.5rem]">
                         <p className="text-sm leading-relaxed sm:text-base lg:text-lg">
                           {faq.answer}
                         </p>

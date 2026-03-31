@@ -1,26 +1,24 @@
-
+import { sectionNavLabel } from '../siteNav';
+import { SectionEyebrow } from './SectionEyebrow';
 
 export function Section18() {
 
   return (
-    <div data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
+    <div id="sec-18" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="os-section-head-row">
-        <div className="max-w-3xl">
-          <p className="os-section-kicker">IMPACTO + MEMORIA</p>
+        <div className="max-w-3xl min-w-0 flex-1">
+          <SectionEyebrow index={18} label={sectionNavLabel(18)} />
           <h2 className="os-section-h2">
             RECUERDOS<br />DISEÑADOS PARA<br />QUEDARSE
           </h2>
         </div>
-        <div className="os-brutal-num self-end sm:self-start">
-          18
-        </div>
       </div>
 
-      <div className="border-b-4 border-black p-6 sm:p-8 lg:p-10 xl:p-12">
+      <div className="border-b-2 border-black p-6 sm:p-8 lg:p-10 xl:p-12">
         <p className="os-pull max-w-4xl">
           Los Momentos WOW no son actividades sueltas.
         </p>
-        <p className="os-slice mt-4 max-w-4xl border-l-4 border-[var(--os-orange)] pl-5 font-black text-black sm:pl-6 sm:text-lg lg:text-xl">
+        <p className="os-slice mt-4 max-w-4xl border-l-2 border-[var(--os-orange)] pl-5 font-black text-black sm:pl-6 sm:text-lg lg:text-xl">
           Son escenas creadas para provocar impacto emocional, pertenencia y conexión real.
         </p>
       </div>
@@ -28,8 +26,8 @@ export function Section18() {
       {/* Lista de Momentos WOW */}
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Columna 1 */}
-        <div className="space-y-8 border-b-4 border-black p-6 sm:p-8 lg:border-b-0 lg:border-r-4 lg:p-10 xl:p-12">
-          <div className="relative border-l-4 border-[var(--os-cyan)] pl-5 sm:pl-6">
+        <div className="space-y-8 border-b-2 border-black p-6 sm:p-8 lg:border-b-0 lg:border-r-2 lg:p-10 xl:p-12">
+          <div className="relative border-l-2 border-[var(--os-cyan)] pl-5 sm:pl-6">
             <div className="absolute -left-1 top-0 -translate-x-full pr-2 text-2xl font-black os-asterisk-deco sm:text-3xl lg:text-4xl">
               *
             </div>
@@ -38,7 +36,7 @@ export function Section18() {
             </h3>
           </div>
 
-          <div className="relative border-l-4 border-[var(--os-cyan)] pl-5 sm:pl-6">
+          <div className="relative border-l-2 border-[var(--os-cyan)] pl-5 sm:pl-6">
             <div className="absolute -left-1 top-0 -translate-x-full pr-2 text-2xl font-black os-asterisk-deco sm:text-3xl lg:text-4xl">
               *
             </div>
@@ -47,7 +45,7 @@ export function Section18() {
             </h3>
           </div>
 
-          <div className="relative border-l-4 border-[var(--os-cyan)] pl-5 sm:pl-6">
+          <div className="relative border-l-2 border-[var(--os-cyan)] pl-5 sm:pl-6">
             <div className="absolute -left-1 top-0 -translate-x-full pr-2 text-2xl font-black os-asterisk-deco sm:text-3xl lg:text-4xl">
               *
             </div>
@@ -56,7 +54,7 @@ export function Section18() {
             </h3>
           </div>
 
-          <div className="relative border-l-4 border-[var(--os-cyan)] pl-5 sm:pl-6">
+          <div className="relative border-l-2 border-[var(--os-cyan)] pl-5 sm:pl-6">
             <div className="absolute -left-1 top-0 -translate-x-full pr-2 text-2xl font-black os-asterisk-deco sm:text-3xl lg:text-4xl">
               *
             </div>
@@ -67,7 +65,7 @@ export function Section18() {
         </div>
 
         <div className="space-y-8 p-6 sm:p-8 lg:p-10 xl:p-12">
-          <div className="relative border-l-4 border-[var(--os-orange)] pl-5 sm:pl-6">
+          <div className="relative border-l-2 border-[var(--os-orange)] pl-5 sm:pl-6">
             <div className="absolute -left-1 top-0 -translate-x-full pr-2 text-2xl font-black os-asterisk-deco sm:text-3xl lg:text-4xl">
               *
             </div>
@@ -76,7 +74,7 @@ export function Section18() {
             </h3>
           </div>
 
-          <div className="relative border-l-4 border-[var(--os-orange)] pl-5 sm:pl-6">
+          <div className="relative border-l-2 border-[var(--os-orange)] pl-5 sm:pl-6">
             <div className="absolute -left-1 top-0 -translate-x-full pr-2 text-2xl font-black os-asterisk-deco sm:text-3xl lg:text-4xl">
               *
             </div>
@@ -85,7 +83,7 @@ export function Section18() {
             </h3>
           </div>
 
-          <div className="relative border-l-4 border-[var(--os-orange)] pl-5 sm:pl-6">
+          <div className="relative border-l-2 border-[var(--os-orange)] pl-5 sm:pl-6">
             <div className="absolute -left-1 top-0 -translate-x-full pr-2 text-2xl font-black os-asterisk-deco sm:text-3xl lg:text-4xl">
               *
             </div>
@@ -94,7 +92,7 @@ export function Section18() {
             </h3>
           </div>
 
-          <div className="relative border-l-4 border-[var(--os-orange)] pl-5 sm:pl-6">
+          <div className="relative border-l-2 border-[var(--os-orange)] pl-5 sm:pl-6">
             <div className="absolute -left-1 top-0 -translate-x-full pr-2 text-2xl font-black os-asterisk-deco sm:text-3xl lg:text-4xl">
               *
             </div>

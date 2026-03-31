@@ -21,7 +21,7 @@ export function Footer() {
       data-os-read-marker
       className="border-x-4 border-b-4 border-black bg-[var(--os-navy)] text-white"
     >
-      <div className="border-b-4 border-black bg-black py-3">
+      <div className="border-b-2 border-black bg-black py-3">
         <div className="overflow-hidden">
           <div className="os-footer-reveal os-hero-marquee-track flex w-max">
             {[0, 1].map((copy) => (
@@ -61,7 +61,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-x-10 lg:gap-y-14">
           {/* Marca + CTA */}
-          <div className="os-footer-reveal space-y-6 border-4 border-black bg-white/5 p-6 sm:p-8 lg:col-span-5 lg:p-10">
+          <div className="os-footer-reveal space-y-6 border-2 border-black bg-white/5 p-6 sm:p-8 lg:col-span-5 lg:p-10">
             <div className="space-y-4">
               <img
                 src={logoBlancoCompleto}
@@ -99,7 +99,7 @@ export function Footer() {
 
           {/* Navegación */}
           <nav
-            className="os-footer-reveal border-4 border-black bg-white/5 p-6 sm:p-8 lg:col-span-3 lg:p-10"
+            className="os-footer-reveal border-2 border-black bg-white/5 p-6 sm:p-8 lg:col-span-3 lg:p-10"
             aria-label="En el sitio"
           >
             <h3 className="mb-5 font-black uppercase tracking-wider text-[0.65rem] text-[var(--os-cyan)] sm:text-xs">
@@ -120,7 +120,7 @@ export function Footer() {
           </nav>
 
           {/* Contacto */}
-          <div className="os-footer-reveal space-y-5 border-4 border-black bg-white/5 p-6 sm:p-8 lg:col-span-4 lg:p-10">
+          <div className="os-footer-reveal space-y-5 border-2 border-black bg-white/5 p-6 sm:p-8 lg:col-span-4 lg:p-10">
             <h3 className="font-black uppercase tracking-wider text-white/60 text-xs">
               Contacto
             </h3>
@@ -129,9 +129,10 @@ export function Footer() {
                 href="https://wa.me/5491128935992"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block font-black text-[var(--os-cyan)] transition-opacity hover:text-white"
+                className="inline-block border-b-2 border-white/35 pb-1 font-black uppercase tracking-wide text-sm text-white/90 transition-colors hover:text-white"
+                aria-label="Abrir WhatsApp para contactar"
               >
-                WhatsApp → +54 9 11 2893-5992
+                WhatsApp
               </a>
             </div>
 
@@ -156,7 +157,7 @@ export function Footer() {
       </div>
 
       {/* Barra legal / copyright */}
-      <div className="os-footer-reveal border-t-4 border-black bg-black px-5 py-6 sm:px-8">
+      <div className="os-footer-reveal border-t-2 border-black bg-black px-5 py-6 sm:px-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-white/55 sm:text-left">
             © {new Date().getFullYear()} Old School® — <RegresadosWord variant="split" className="text-[0.9em]" />

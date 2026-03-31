@@ -1,4 +1,6 @@
+import { sectionNavLabel } from '../siteNav';
 import { RegresadosWord } from './RegresadosWord';
+import { SectionEyebrow } from './SectionEyebrow';
 
 const bullets = [
   { refIndex: 2, text: 'Cupos reducidos' },
@@ -10,22 +12,19 @@ const bullets = [
 export function Section10() {
   return (
     <div id="formato" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
-      <div className="flex flex-col justify-between gap-6 border-b-4 border-black p-6 sm:flex-row sm:items-start sm:gap-8 sm:p-10 lg:p-14">
-        <div className="max-w-3xl">
-          <p className="os-section-title mb-2 text-[0.65rem] text-[var(--os-orange)] sm:text-xs">FORMATO</p>
+      <div className="os-section-head--orange flex flex-col justify-between gap-6 border-b-2 border-black p-6 sm:flex-row sm:items-start sm:gap-8 sm:p-10 lg:p-14">
+        <div className="max-w-3xl min-w-0 flex-1">
+          <SectionEyebrow index={10} label={sectionNavLabel(10)} tone="light" />
           <h2 className="font-black uppercase leading-[1.05] tracking-tight text-3xl sm:text-5xl lg:text-6xl xl:text-7xl">
             FORMATO
             <br />
             EXCLUSIVO
           </h2>
         </div>
-        <div className="os-brutal-num self-end sm:self-start">
-          10
-        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12">
-        <div className="border-b-4 border-black p-6 sm:p-8 lg:col-span-5 lg:border-b-0 lg:border-r-4 lg:p-10 xl:p-12">
+        <div className="border-b-2 border-black p-6 sm:p-8 lg:col-span-5 lg:border-b-0 lg:border-r-2 lg:p-10 xl:p-12">
           <p className="font-black leading-snug sm:text-xl lg:text-2xl">
             Old School® no es un viaje abierto.
           </p>
@@ -60,7 +59,7 @@ export function Section10() {
             <p>
               Esto no es un paquete.
             </p>
-            <p className="border-l-4 border-[var(--os-orange)] pl-4 font-black leading-snug sm:text-lg lg:text-2xl">
+            <p className="border-l-2 border-[var(--os-orange)] pl-4 font-black leading-snug sm:text-lg lg:text-2xl">
               Es un formato experiencial, diseñado y cuidado para que cada momento tenga sentido.
             </p>
           </div>

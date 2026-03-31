@@ -1,5 +1,7 @@
 import { ArrowRight } from 'lucide-react';
-import retroVideo from '@/assets/videos/retroVideo.mp4';
+import { sectionNavLabel } from '../siteNav';
+import { SectionEyebrow } from './SectionEyebrow';
+import retroVideo from '@/assets/videos/retroVideo.mov';
 
 interface PostulacionBlockProps {
   onPostular: () => void;
@@ -15,11 +17,8 @@ export function PostulacionBlock({ onPostular }: PostulacionBlockProps) {
       className="os-surface border-x-4 border-b-4 border-black"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="flex flex-col justify-center space-y-10 border-b-4 border-black p-8 lg:border-b-0 lg:border-r-4 lg:p-16 xl:p-20">
-          <div className="os-brutal-num">
-            26
-          </div>
-
+        <div className="flex flex-col justify-center space-y-10 border-b-2 border-black p-8 lg:border-b-0 lg:border-r-2 lg:p-16 xl:p-20">
+          <SectionEyebrow index={27} label={sectionNavLabel(27)} />
           <div className="space-y-6">
             <h2 className="font-black leading-tight text-3xl lg:text-5xl">
               ESTO NO ES INSCRIPCIÓN.

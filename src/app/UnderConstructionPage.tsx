@@ -35,7 +35,7 @@ export function UnderConstructionPage() {
         </div>
       </div>
 
-      <div className="relative z-30 w-full max-w-3xl border-4 border-black bg-white/95 p-5 sm:p-10 lg:p-12 text-center">
+      <div className="relative z-30 w-full max-w-3xl border-2 border-black bg-white/95 p-5 sm:p-10 lg:p-12 text-center">
         <p className="os-section-kicker">OLD SCHOOL</p>
         <img
           src={logoSticker}

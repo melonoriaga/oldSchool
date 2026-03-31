@@ -8,7 +8,7 @@ export function Block03() {
       <div className="grid grid-cols-1 lg:grid-cols-12">
         
         {/* Columna izquierda - Número */}
-        <div className="lg:col-span-3 border-b-4 lg:border-b-0 lg:border-r-4 border-black p-8 lg:p-12 flex items-center justify-center">
+        <div className="lg:col-span-3 border-b-2 lg:border-b-0 lg:border-r-2 border-black p-8 lg:p-12 flex items-center justify-center">
           <div className="text-[8rem] lg:text-[12rem] font-black leading-none text-black">
             03
           </div>
