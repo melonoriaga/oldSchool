@@ -11,7 +11,7 @@ export function Section13() {
     >
       <div className="os-section-head-row border-b-2 border-black">
         <div className="max-w-3xl min-w-0 flex-1">
-          <SectionEyebrow index={13} label={sectionNavLabel(13)} tone="light" />
+          <SectionEyebrow index={11} label={sectionNavLabel(13)} tone="light" />
           <h2 className="os-section-h2">
             EL SISTEMA
             <br />

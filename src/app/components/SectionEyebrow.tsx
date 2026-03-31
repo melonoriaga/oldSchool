@@ -17,6 +17,7 @@ export function SectionEyebrow({
   tone = 'dark',
   className = '',
 }: SectionEyebrowProps) {
+  if (!label.trim()) return null;
   const num = String(index).padStart(2, '0');
   const toneCls = tone === 'light' ? 'text-white/42' : 'text-black/38';
 

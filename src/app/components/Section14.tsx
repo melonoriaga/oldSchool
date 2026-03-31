@@ -9,7 +9,7 @@ export function Section14() {
     <div id="sec-14" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="os-section-head-row">
         <div className="max-w-3xl min-w-0 flex-1">
-          <SectionEyebrow index={14} label={sectionNavLabel(14)} />
+          <SectionEyebrow index={12} label={sectionNavLabel(14)} />
           <h2 className="os-section-h2">
             DONDE EMPIEZA<br />TODO
           </h2>
@@ -33,7 +33,7 @@ export function Section14() {
         <div className="space-y-6 p-6 sm:p-8 lg:p-10 xl:p-12">
           <p className="os-pull max-w-2xl">
             El hotel no es alojamiento.<br />
-            Es <span className="text-[var(--os-cyan)]">escenario</span>.
+            Es escenario.
           </p>
 
           <p className="os-slice max-w-2xl pt-1">

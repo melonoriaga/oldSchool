@@ -51,7 +51,7 @@ export function TestimoniosBlock() {
     <div id="testimonios" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="border-b-2 border-black p-8 lg:p-16 bg-[color-mix(in_srgb,var(--os-cyan)_8%,var(--os-paper))]">
         <div className="min-w-0">
-          <SectionEyebrow index={22} label={sectionNavLabel(22)} />
+          <SectionEyebrow index={18} label={sectionNavLabel(22)} />
           <h2 className="text-3xl font-black lg:text-5xl">
             LOS <RegresadosWord variant="split" className="align-[0.02em]" /> DICEN
           </h2>

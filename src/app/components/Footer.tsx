@@ -1,5 +1,3 @@
-import { Instagram } from 'lucide-react';
-
 import logoBlancoCompleto from '../../assets/01logos/LogoBlancoCompleto.png';
 import logoHumanNegro from '../../assets/01logos/LogoHumanNegro.png';
 import { RegresadosWord } from './RegresadosWord';
@@ -12,6 +10,34 @@ const footerNav = [
   { label: 'Museo', href: '#museo' },
   { label: 'Postulación', href: '#postulacion' },
 ];
+
+const socialLinks = [
+  {
+    href: 'https://www.instagram.com/oldschool.regresados/',
+    label: 'Instagram',
+    iconClass: 'ri-instagram-fill',
+  },
+  {
+    href: 'https://open.spotify.com/user/31b3t7qyy26b2vnkpncb4jglnrvm?si=eba6df296e084dc2',
+    label: 'Spotify',
+    iconClass: 'ri-spotify-fill',
+  },
+  {
+    href: 'https://www.tiktok.com/@oldschool.regresados?_r=1&_t=ZS-959Ne6CahOq',
+    label: 'TikTok',
+    iconClass: 'ri-tiktok-fill',
+  },
+  {
+    href: 'https://www.facebook.com/oldschool.regresados?mibextid=wwXIfr&rdid=IxHJGPaMWYM1ee9C&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CcpKQ8siM%2F%3Fmibextid%3DwwXIfr%26ref%3D1#',
+    label: 'Facebook',
+    iconClass: 'ri-facebook-circle-fill',
+  },
+  {
+    href: 'https://www.youtube.com/channel/UCBXzmS5NfYNY6xEGrdbneMg',
+    label: 'YouTube',
+    iconClass: 'ri-youtube-fill',
+  },
+] as const;
 
 export function Footer() {
   const footerMarqueeItems = ['EDICION_BRAND', 'BARILOCHE', 'RETRO PREMIUM'] as const;
@@ -29,9 +55,7 @@ export function Footer() {
                 {Array.from({ length: 6 }).flatMap((_, repeatIdx) =>
                   footerMarqueeItems.map((label, itemIdx) => {
                     const toneClass =
-                      label === 'BARILOCHE'
-                          ? 'text-[var(--os-cyan)]'
-                          : 'text-[var(--os-paper)]';
+                      label === 'BARILOCHE' ? 'text-[var(--os-cyan)]' : 'text-[var(--os-paper)]';
                     return (
                       <span key={`${copy}-${repeatIdx}-${itemIdx}`} className="flex items-center">
                         <span
@@ -39,7 +63,11 @@ export function Footer() {
                         >
                           {label === 'EDICION_BRAND' ? (
                             <span className="inline-flex items-center gap-1">
-                              EDICIÓN <RegresadosWord variant="split" className="text-[0.75em] align-[0.02em]" />
+                              EDICIÓN{' '}
+                              <RegresadosWord
+                                variant="split"
+                                className="text-[0.75em] align-[0.02em]"
+                              />
                             </span>
                           ) : (
                             label
@@ -61,28 +89,25 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-x-10 lg:gap-y-14">
           {/* Marca + CTA */}
-          <div className="os-footer-reveal space-y-6 border-2 border-black bg-white/5 p-6 sm:p-8 lg:col-span-5 lg:p-10">
-            <div className="space-y-4">
+          <div className="os-footer-reveal space-y-6 sm:p-8 lg:col-span-5 flex flex-col items-start justify-start">
+            <div className="space-y-4 flex flex-col items-start justify-start">
               <img
                 src={logoBlancoCompleto}
                 alt="Old School Regresados"
-                className="h-20 w-auto object-contain sm:h-24 lg:h-28"
+                className="h-30 w-auto object-contain sm:h-36 lg:h-40"
                 loading="lazy"
               />
-              <div className="inline-flex items-center gap-2">
-                <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-white/65">
-                  by
-                </span>
-                <span className="inline-flex rounded-md bg-white px-2 py-1">
-                  <img
-                    src={logoHumanNegro}
-                    alt="Human"
-                    className="h-4 w-auto object-contain sm:h-5"
-                    loading="lazy"
-                  />
-                </span>
-              </div>
+
+              <span className="inline-flex rounded-md bg-white px-2 py-1">
+                <img
+                  src={logoHumanNegro}
+                  alt="Human"
+                  className="h-10 w-auto object-contain sm:h-12 lg:h-14"
+                  loading="lazy"
+                />
+              </span>
             </div>
+
             <p className="max-w-md text-2xl font-black uppercase leading-[1.05] tracking-tight text-white sm:text-3xl lg:text-4xl">
               NO ES CIERRE.
               <br />
@@ -98,10 +123,7 @@ export function Footer() {
           </div>
 
           {/* Navegación */}
-          <nav
-            className="os-footer-reveal border-2 border-black bg-white/5 p-6 sm:p-8 lg:col-span-3 lg:p-10"
-            aria-label="En el sitio"
-          >
+          <nav className="os-footer-reveal  p-6 sm:p-8 lg:col-span-3 " aria-label="En el sitio">
             <h3 className="mb-5 font-black uppercase tracking-wider text-[0.65rem] text-[var(--os-cyan)] sm:text-xs">
               Sitio
             </h3>
@@ -120,10 +142,8 @@ export function Footer() {
           </nav>
 
           {/* Contacto */}
-          <div className="os-footer-reveal space-y-5 border-2 border-black bg-white/5 p-6 sm:p-8 lg:col-span-4 lg:p-10">
-            <h3 className="font-black uppercase tracking-wider text-white/60 text-xs">
-              Contacto
-            </h3>
+          <div className="os-footer-reveal space-y-5  p-6 sm:p-8 lg:col-span-4 ">
+            <h3 className="font-black uppercase  text-xs">Contacto</h3>
             <div className="space-y-2 text-sm font-medium text-white/85">
               <a
                 href="https://wa.me/5491128935992"
@@ -137,19 +157,20 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="mb-3 font-black uppercase tracking-wider text-white/60 text-xs">
-                Seguinos
-              </h3>
+              <h3 className="mb-3 font-black uppercase  text-xs">Seguinos</h3>
               <div className="flex flex-wrap gap-3">
-                <a
-                  href="https://www.instagram.com/oldschool.regresados/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-12 w-12 items-center justify-center border-2 border-white/80 text-white transition-colors hover:border-white hover:bg-white hover:text-[var(--os-navy)]"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="h-5 w-5" strokeWidth={2.25} />
-                </a>
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-12 w-12 items-center justify-center text-white transition-colors hover:border-white hover:bg-white hover:text-[var(--os-navy)]"
+                    aria-label={social.label}
+                  >
+                    <i className={`${social.iconClass} text-[1.35rem] leading-none`} aria-hidden />
+                  </a>
+                ))}
               </div>
             </div>
           </div>
@@ -160,7 +181,8 @@ export function Footer() {
       <div className="os-footer-reveal border-t-2 border-black bg-black px-5 py-6 sm:px-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-white/55 sm:text-left">
-            © {new Date().getFullYear()} Old School® — <RegresadosWord variant="split" className="text-[0.9em]" />
+            © {new Date().getFullYear()} Old School® —{' '}
+            <RegresadosWord variant="split" className="text-[0.9em]" />
           </p>
           <p className="text-center text-xs text-white/45 sm:text-right">
             Buenos Aires · Bariloche · Experiencia registrada

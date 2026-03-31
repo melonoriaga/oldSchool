@@ -4,10 +4,8 @@ import { Hero } from './components/Hero';
 import { Section02 } from './components/Section02';
 import { Section03 } from './components/Section03';
 import { Section04 } from './components/Section04';
-import { Section05 } from './components/Section05';
 import { Section06 } from './components/Section06';
 import { Section07Generaciones } from './components/Section07Generaciones';
-import { Section08 } from './components/Section08';
 import { Section09 } from './components/Section09';
 import { Section10 } from './components/Section10';
 import { Section11 } from './components/Section11';
@@ -18,13 +16,8 @@ import { Section15 } from './components/Section15';
 import { Section16 } from './components/Section16';
 import { Section17 } from './components/Section17';
 import { Section18 } from './components/Section18';
-import { Section19 } from './components/Section19';
-import { Section20 } from './components/Section20';
 import { Section21 } from './components/Section21';
-import { Section22 } from './components/Section22';
 import { TestimoniosBlock } from './components/TestimoniosBlock';
-import { Section23 } from './components/Section23';
-import { Section24 } from './components/Section24';
 import { MuseoBlock } from './components/MuseoBlock';
 import { PostulacionBlock } from './components/PostulacionBlock';
 import { Footer } from './components/Footer';
@@ -40,6 +33,7 @@ export default function App() {
   return (
     <div className="relative z-[1] min-h-screen overflow-x-hidden">
       <Header onPostular={() => setIsFormOpen(true)} onHiddenChange={setHeaderHidden} />
+
       <FloatingMenu onPostular={() => setIsFormOpen(true)} visible={headerHidden} />
 
       <Hero onPostular={() => setIsFormOpen(true)} />
@@ -50,13 +44,9 @@ export default function App() {
 
       <Section04 />
 
-      <Section05 />
-
       <Section06 />
 
       <Section07Generaciones />
-
-      <Section08 />
 
       <Section09 />
 
@@ -78,19 +68,9 @@ export default function App() {
 
       <Section18 />
 
-      <Section19 />
-
-      <Section20 />
-
       <Section21 onPostular={() => setIsFormOpen(true)} />
 
       <TestimoniosBlock />
-
-      <Section22 />
-
-      <Section23 onPostular={() => setIsFormOpen(true)} />
-
-      <Section24 onPostular={() => setIsFormOpen(true)} />
 
       <MuseoBlock />
 
@@ -99,6 +79,7 @@ export default function App() {
       <Footer />
 
       <WhatsAppButton />
+
       <BackToTopButton visible={headerHidden} />
 
       <PostulacionForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />

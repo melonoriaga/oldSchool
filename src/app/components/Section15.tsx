@@ -9,7 +9,7 @@ export function Section15() {
     <div id="sec-15" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="os-section-head-row os-section-head--cyan">
         <div className="max-w-3xl min-w-0 flex-1">
-          <SectionEyebrow index={15} label={sectionNavLabel(15)} tone="light" />
+          <SectionEyebrow index={13} label={sectionNavLabel(15)} tone="light" />
           <h2 className="os-section-h2">
             DONDE SE<br />CONSTRUYE TODO
           </h2>
@@ -39,7 +39,7 @@ export function Section15() {
             La comida no es comida.<br />
             Es mezcla.<br />
             Es grupo.<br />
-            Es <span className="text-[var(--os-orange)]">banda</span>.
+            Es banda.
           </p>
 
           <p className="os-slice max-w-2xl text-black/80">

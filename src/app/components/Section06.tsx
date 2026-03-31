@@ -11,7 +11,7 @@ export function Section06() {
     <div id="bariloche" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="os-section-head-row">
         <div className="max-w-3xl min-w-0 flex-1">
-          <SectionEyebrow index={6} label={sectionNavLabel(6)} />
+          <SectionEyebrow index={5} label={sectionNavLabel(6)} />
           <h2 className="os-section-h2">
             BARILOCHE NO ES UN LUGAR.
             <br />

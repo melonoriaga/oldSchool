@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, Plus, X } from 'lucide-react';
 import gsap from 'gsap';
 import { NAV_DESKTOP } from '../siteNav';
 import { MobileNavScrollInner } from './MobileNavScrollInner';
@@ -30,6 +30,9 @@ export function Header({ onPostular, onHiddenChange }: HeaderProps) {
       const shouldHide = hero.getBoundingClientRect().bottom < 2;
       if (lastHidden === shouldHide) return;
       lastHidden = shouldHide;
+      if (shouldHide) {
+        setIsMenuOpen(false);
+      }
       onHiddenChange?.(shouldHide);
       gsap.to(header, {
         y: shouldHide ? HEADER_HIDE_Y : 0,
@@ -58,7 +61,7 @@ export function Header({ onPostular, onHiddenChange }: HeaderProps) {
       gsap.killTweensOf(header);
       gsap.set(header, { clearProps: 'transform' });
     };
-  }, []);
+  }, [onHiddenChange]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -69,8 +72,11 @@ export function Header({ onPostular, onHiddenChange }: HeaderProps) {
   };
 
   return (
-    <header ref={headerRef} className="fixed top-0 left-0 right-0 os-surface border-b-4 border-black z-50">
-      <div className="flex items-center justify-between p-4 lg:px-8">
+    <header
+      ref={headerRef}
+      className="fixed top-0 left-0 right-0 os-surface border-b-4 border-black z-50"
+    >
+      <div className="flex items-center justify-between p-4 lg:pl-8 lg:pr-0">
         {/* Logo */}
         <button
           type="button"
@@ -97,14 +103,30 @@ export function Header({ onPostular, onHiddenChange }: HeaderProps) {
               {link.label}
             </button>
           ))}
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="cursor-pointer p-1 transition-opacity hover:opacity-70"
+            aria-label="Abrir más secciones"
+          >
+            {isMenuOpen ? (
+              <X className="h-6 w-6" strokeWidth={3} />
+            ) : (
+              <Plus className="h-6 w-6" strokeWidth={3} />
+            )}
+          </button>
         </nav>
 
         {/* CTA Button - Desktop */}
-        <button type="button" onClick={onPostular} className="os-btn-primary os-btn-compact hidden lg:inline-flex">
+        <button
+          type="button"
+          onClick={onPostular}
+          className="os-btn-primary os-btn-compact hidden lg:inline-flex mr-8"
+        >
           POSTULARME
         </button>
 
-        {/* Mobile Menu Button */}
+        {/* Drawer button (mobile + desktop overflow) */}
         <button
           type="button"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -114,14 +136,14 @@ export function Header({ onPostular, onHiddenChange }: HeaderProps) {
           {isMenuOpen ? (
             <X className="w-8 h-8" strokeWidth={3} />
           ) : (
-            <Menu className="w-8 h-8" strokeWidth={3} />
+            <Menu className="h-8 w-8" strokeWidth={3} />
           )}
         </button>
       </div>
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="lg:hidden max-h-[min(88vh,40rem)] border-t-2 border-black os-surface">
+        <div className="max-h-[min(88vh,40rem)] border-t-2 border-black os-surface">
           <div className="flex max-h-[min(88vh,40rem)] flex-col">
             <nav className="flex-1 overflow-y-auto overscroll-contain">
               <MobileNavScrollInner

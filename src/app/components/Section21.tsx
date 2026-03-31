@@ -23,21 +23,21 @@ export function Section21({ onPostular }: Section21Props) {
       </div>
       <div className="relative z-[1] flex flex-col border-b-2 border-black p-8 lg:flex-row lg:items-start lg:justify-between lg:p-16">
         <div className="max-w-4xl min-w-0 flex-1">
-          <SectionEyebrow index={21} label={sectionNavLabel(21)} />
-          <h2 className="text-4xl font-black leading-tight lg:text-6xl xl:text-7xl">
-            <span className="text-[var(--os-navy)]">SI</span> LLEGASTE
+          <SectionEyebrow index={17} label={sectionNavLabel(21)} />
+          <h2 className="text-4xl font-black leading-[1.05] tracking-tight lg:text-6xl xl:text-7xl">
+            SI LLEGASTE
             <br />
-            HASTA <span className="text-[var(--os-orange)]">ACÁ</span>,
+            HASTA ACÁ,
             <br />
-            NO ES <span className="text-[var(--os-cyan)]">CASUALIDAD</span>
+            NO ES CASUALIDAD
           </h2>
         </div>
       </div>
 
       <div className="relative z-[1] grid grid-cols-1 divide-y-2 divide-black border-b-2 border-black lg:grid-cols-2 lg:divide-x-2 lg:divide-y-2 xl:grid-cols-4">
         <div className="p-6 sm:p-8">
-          <p className="os-editorial-col-head os-reveal">Apertura</p>
-          <div className="os-editorial-col-body">
+          <p className="os-editorial-col-head os-reveal text-[var(--os-navy)]">Apertura</p>
+          <div className="os-editorial-col-body text-black">
             <p className="os-reveal">Vos no estabas buscando un viaje.</p>
             <p className="os-reveal font-black text-base sm:text-lg lg:text-xl">
               Estabas buscando una prueba de que todavía estás ahí.
@@ -50,8 +50,8 @@ export function Section21({ onPostular }: Section21Props) {
         </div>
 
         <div className="p-6 sm:p-8">
-          <p className="os-editorial-col-head os-editorial-col-head--cyan os-reveal">Cuerpo</p>
-          <div className="os-editorial-col-body">
+          <p className="os-editorial-col-head os-reveal text-[var(--os-navy)]">Cuerpo</p>
+          <div className="os-editorial-col-body text-black">
             <p className="os-reveal">Reírte con el cuerpo.</p>
             <p className="os-reveal">Cantar sin vergüenza.</p>
             <p className="os-reveal">
@@ -62,8 +62,8 @@ export function Section21({ onPostular }: Section21Props) {
         </div>
 
         <div className="os-s21-col-navy-wash p-6 sm:p-8">
-          <p className="os-editorial-col-head os-reveal">La parte incómoda</p>
-          <div className="os-editorial-col-body">
+          <p className="os-editorial-col-head os-reveal text-[var(--os-navy)]">La parte incómoda</p>
+          <div className="os-editorial-col-body text-black">
             <p className="os-reveal font-black text-base sm:text-lg">Ahora, la parte incómoda:</p>
             <p className="os-reveal">nadie te va a venir a buscar.</p>
             <p className="os-reveal">La vida no frena.</p>
@@ -75,8 +75,8 @@ export function Section21({ onPostular }: Section21Props) {
         </div>
 
         <div className="p-6 sm:p-8">
-          <p className="os-editorial-col-head os-reveal">Invitación</p>
-          <div className="os-editorial-col-body">
+          <p className="os-editorial-col-head os-reveal text-[var(--os-navy)]">Invitación</p>
+          <div className="os-editorial-col-body text-black">
             <p className="os-reveal">
               Por eso este cierre no es un &quot;gracias por leer&quot;.
             </p>
@@ -99,8 +99,7 @@ export function Section21({ onPostular }: Section21Props) {
             El viaje de egresados se hace una sola vez en la vida.
           </p>
           <p className="os-reveal mt-6 text-2xl font-black sm:text-3xl lg:text-4xl xl:text-5xl">
-            <span className="text-[var(--os-navy)]">Hasta</span>{' '}
-            <span className="text-[var(--os-orange)]">ahora</span>.
+            Hasta ahora.
           </p>
         </div>
       </div>

@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { sectionNavLabel } from '../siteNav';
 import { HeroMediaColumn } from './hero/HeroMediaColumn';
 import { SectionEyebrow } from './SectionEyebrow';
+import volveAVosAzul from '@/assets/01logos/VolveAVosAzul.png';
 
 interface HeroProps {
   onPostular: () => void;
@@ -98,7 +99,7 @@ export function Hero({ onPostular }: HeroProps) {
               NO ES UN VIAJE,
               <br />
               ES UN{' '}
-              <span ref={regresoRef} className="inline-block text-[var(--os-navy)]">
+              <span ref={regresoRef} className="inline-block">
                 REGRESO
               </span>
               .
@@ -112,9 +113,14 @@ export function Hero({ onPostular }: HeroProps) {
               </p>
             </div>
 
-            <p ref={ctaRef} className="os-section-title text-xl lg:text-2xl">
-              VOLVÉ A VOS.
-            </p>
+            <div ref={ctaRef}>
+              <img
+                src={volveAVosAzul}
+                alt="Volvé a vos"
+                className="h-auto w-full max-w-[22rem] lg:max-w-[26rem]"
+                loading="lazy"
+              />
+            </div>
           </div>
 
           <div ref={buttonsRef} className="os-cta-row">

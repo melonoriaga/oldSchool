@@ -12,7 +12,7 @@ export function Section07Generaciones() {
     <div id="generaciones" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="relative flex flex-col items-start justify-between gap-5 border-b-2 border-black p-5 sm:gap-6 sm:p-8 lg:flex-row lg:items-start lg:p-16">
         <div className="max-w-3xl min-w-0 flex-1 space-y-4">
-          <SectionEyebrow index={7} label={sectionNavLabel(7)} />
+          <SectionEyebrow index={6} label={sectionNavLabel(7)} />
           <h2 className="os-section-h2">
             <RegresadosWord className="h-[0.8em] align-[-0.04em]" />
           </h2>

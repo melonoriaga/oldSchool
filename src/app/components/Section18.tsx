@@ -7,7 +7,7 @@ export function Section18() {
     <div id="sec-18" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="os-section-head-row">
         <div className="max-w-3xl min-w-0 flex-1">
-          <SectionEyebrow index={18} label={sectionNavLabel(18)} />
+          <SectionEyebrow index={16} label={sectionNavLabel(18)} />
           <h2 className="os-section-h2">
             RECUERDOS<br />DISEÑADOS PARA<br />QUEDARSE
           </h2>

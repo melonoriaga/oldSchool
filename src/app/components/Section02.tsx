@@ -28,7 +28,7 @@ export function Section02() {
             <p className="os-slice">
               Hubo un momento en tu vida en el que no estabas pensando tanto:
               <br />
-              estabas <span className="font-black text-[var(--os-orange)]">viviendo</span>.
+              estabas <span className="font-black">viviendo</span>.
             </p>
 
             <p

@@ -9,7 +9,7 @@ export function Section09() {
     <div id="sec-09" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="os-section-head-row os-section-head--navy">
         <div className="max-w-3xl min-w-0 flex-1">
-          <SectionEyebrow index={9} label={sectionNavLabel(9)} tone="light" />
+          <SectionEyebrow index={7} label={sectionNavLabel(9)} tone="light" />
           <h2 className="os-section-h2">
             LA IDEA
           </h2>
@@ -31,7 +31,7 @@ export function Section09() {
             >
               las personas no solo extrañan el destino.
               <br />
-              También extrañan <span className="text-[var(--os-navy)]">quiénes eran</span> en ese momento de su vida.
+              También extrañan quiénes eran en ese momento de su vida.
             </p>
             <p className="os-pull pt-1 text-base sm:text-lg lg:text-xl">
               De ahí nace Old School®:
@@ -45,7 +45,7 @@ export function Section09() {
             >
               Volver a Bariloche, no para recordar.
               <br />
-              Para volver a <span className="text-[var(--os-orange)]">sentir</span>.
+              Para volver a sentir.
             </p>
           </div>
         </div>

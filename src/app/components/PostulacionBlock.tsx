@@ -18,9 +18,9 @@ export function PostulacionBlock({ onPostular }: PostulacionBlockProps) {
     >
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="flex flex-col justify-center space-y-10 border-b-2 border-black p-8 lg:border-b-0 lg:border-r-2 lg:p-16 xl:p-20">
-          <SectionEyebrow index={27} label={sectionNavLabel(27)} />
+          <SectionEyebrow index={20} label={sectionNavLabel(27)} />
           <div className="space-y-6">
-            <h2 className="font-black leading-tight text-3xl lg:text-5xl">
+            <h2 className="font-black leading-[1.05] tracking-tight text-3xl lg:text-5xl">
               ESTO NO ES INSCRIPCIÓN.
               <br />
               ES POSTULACIÓN.

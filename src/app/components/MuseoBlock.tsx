@@ -15,7 +15,7 @@ export function MuseoBlock() {
             25
           </div>
 
-          <SectionEyebrow index={26} label={sectionNavLabel(26)} />
+          <SectionEyebrow index={19} label={sectionNavLabel(26)} />
 
           <h2 className="text-4xl lg:text-5xl font-black leading-tight">
             MUSEO

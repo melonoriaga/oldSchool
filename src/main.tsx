@@ -6,6 +6,7 @@ import './app/revealSetup';
 import App from './app/App';
 import { UnderConstructionPage } from './app/UnderConstructionPage';
 import './styles/index.css';
+import 'remixicon/fonts/remixicon.css';
 
 // Admin
 import { AdminLayout } from './admin/components/AdminLayout';

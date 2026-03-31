@@ -2,6 +2,7 @@ import CountUp from '@/components/CountUp';
 import { sectionNavLabel } from '../siteNav';
 import { SectionEyebrow } from './SectionEyebrow';
 import { RegresadosWord } from './RegresadosWord';
+import volveAVosAzul from '@/assets/01logos/VolveAVosAzul.png';
 
 export function Section11() {
   const formatToMillions = (v: number) => {
@@ -13,7 +14,7 @@ export function Section11() {
     <div id="sec-11" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="os-section-head--cyan flex flex-col justify-between gap-6 border-b-2 border-black p-6 sm:flex-row sm:items-start sm:gap-8 sm:p-10 lg:p-14">
         <div className="max-w-3xl min-w-0 flex-1">
-          <SectionEyebrow index={11} label={sectionNavLabel(11)} tone="light" />
+          <SectionEyebrow index={9} label={sectionNavLabel(11)} tone="light" />
           <h2 className="font-black uppercase leading-[1.05] tracking-tight text-2xl sm:text-4xl lg:text-5xl xl:text-6xl">
             LO DISEÑAMOS
             <br />
@@ -71,11 +72,17 @@ export function Section11() {
             </p>
           </div>
 
-          <p className="font-black leading-[1.1] sm:text-2xl lg:text-3xl xl:text-4xl">
-            Y nuestra bandera es simple:
-            <br />
-            <span className="text-[var(--os-orange)]">Volvé a vos.</span>
-          </p>
+          <div className="space-y-3">
+            <p className="font-black leading-[1.1] sm:text-2xl lg:text-3xl xl:text-4xl">
+              Y nuestra bandera es simple.
+            </p>
+            <img
+              src={volveAVosAzul}
+              alt="Volvé a vos"
+              className="h-auto w-full max-w-[20rem] sm:max-w-[24rem]"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </div>

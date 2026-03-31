@@ -14,7 +14,7 @@ export function Section16() {
     <div id="sec-16" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="os-section-head-row">
         <div className="max-w-3xl min-w-0 flex-1">
-          <SectionEyebrow index={16} label={sectionNavLabel(16)} />
+          <SectionEyebrow index={14} label={sectionNavLabel(16)} />
           <h2 className="os-section-h2">
             LAS EXCURSIONES<br />QUE HICIERON<br />HISTORIA
           </h2>

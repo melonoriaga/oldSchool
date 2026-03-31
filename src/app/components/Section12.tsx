@@ -11,7 +11,7 @@ export function Section12() {
     <div id="sec-12" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="os-section-head-row os-section-head--navy">
         <div className="max-w-3xl min-w-0 flex-1">
-          <SectionEyebrow index={12} label={sectionNavLabel(12)} tone="light" />
+          <SectionEyebrow index={10} label={sectionNavLabel(12)} tone="light" />
           <h2 className="os-section-h2">
             LA CÁPSULA<br />DEL TIEMPO<br />ARRANCA EN<br />EL AVIÓN
           </h2>
@@ -52,7 +52,7 @@ export function Section12() {
 
           <p className="os-pull max-w-2xl">
             Porque el avión no es transporte.<br />
-            Es <span className="text-[var(--os-orange)]">transición</span>.
+            Es transición.
           </p>
 
           <p className="os-slice max-w-2xl pt-2 text-black/80">
