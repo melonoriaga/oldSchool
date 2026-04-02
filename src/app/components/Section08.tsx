@@ -1,6 +1,7 @@
 import { sectionNavLabel } from '../siteNav';
 import { RegresadosWord } from './RegresadosWord';
 import { SectionEyebrow } from './SectionEyebrow';
+import { DotGrid } from './ui/DotGrid';
 
 const bullets = [
   { refIndex: 2, text: 'Cupos reducidos' },
@@ -42,21 +43,25 @@ export function Section08() {
           </div>
         </div>
 
-        <div className="relative p-6 sm:p-8 lg:col-span-7 lg:p-10 xl:p-14">
-          <div className="os-asterisk-deco pointer-events-none absolute right-4 top-4 text-5xl font-black sm:right-8 sm:top-8 sm:text-7xl lg:text-8xl">
-            *
-          </div>
-
-          <div className="max-w-2xl space-y-5 text-base font-medium leading-relaxed sm:text-lg lg:space-y-6 lg:text-xl lg:leading-relaxed">
-            <p className="font-black sm:text-xl lg:text-2xl">
-              No todos los viajes merecen volver a vivirse.
-              <br />
-              Este sí.
-            </p>
-
-            <p>Esto no es un paquete.</p>
-            <p className="border-l-2 border-[var(--os-orange)] pl-4 font-black leading-snug sm:text-lg lg:text-2xl">
-              Es un formato experiencial, diseñado y cuidado para que cada momento tenga sentido.
+        <div className="relative flex min-w-0 items-center overflow-hidden bg-[color-mix(in_srgb,var(--os-paper)_90%,var(--os-cyan)_10%)] p-6 sm:p-8 lg:col-span-7 lg:p-10 xl:p-14">
+          <DotGrid
+            className="z-0"
+            dotSize={2}
+            gap={10}
+            baseColor="#8ad4eb"
+            activeColor="#19c9ef"
+            proximity={130}
+            speedTrigger={70}
+            shockRadius={180}
+            shockStrength={3.2}
+            resistance={820}
+            returnDuration={1.3}
+          />
+          <div className="relative z-[1] max-w-2xl space-y-5 text-base font-medium leading-relaxed sm:text-lg lg:space-y-6 lg:text-xl lg:leading-relaxed">
+            <p>No todos los viajes merecen volver a vivirse.</p>
+            <p className="border-l-2 border-[var(--os-cyan)] pl-4 font-black leading-snug sm:text-lg lg:text-2xl">
+              Este viaje es un formato experiencial, diseñado y cuidado para que cada momento tenga
+              sentido.
             </p>
           </div>
         </div>

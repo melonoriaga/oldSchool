@@ -1,3 +1,4 @@
+import fotoGrupalCrudo from '@/assets/imageBySections/Section03/FotoGrupalCrudo.jpeg';
 import { sectionNavLabel } from '../siteNav';
 import { SectionEyebrow } from './SectionEyebrow';
 import { DotGrid } from './ui/DotGrid';
@@ -13,22 +14,22 @@ export function Section03() {
       </div>
 
       <div className="grid grid-cols-1 items-stretch lg:grid-cols-12">
-        <div className="border-b-2 border-black p-6 sm:p-8 lg:col-span-8 lg:border-b-0 lg:border-r-2 lg:p-10 xl:p-12">
-          <div className="max-w-3xl space-y-5">
-            <p className="os-slice">Old School® no es recordar. Es reactivar.</p>
-            <p className="os-pull border-l-2 border-[var(--os-orange)] pl-4 sm:pl-5">
-              No es mirar lo que fue. Es volver a sentirlo en tiempo real.
-            </p>
-            <p className="os-slice text-black/88">
-              No es nostalgia: es una reconexión concreta con una versión tuya que sigue viva.
-            </p>
-            <p className="os-section-title border-l-2 border-black pl-4 pt-2 text-sm sm:text-base lg:text-lg">
-              No es mirar atrás. Es volver a estar.
-            </p>
-          </div>
+        <div
+          className="os-grid-cover-cell border-b-2 border-black lg:col-span-4 lg:border-b-0 lg:border-r-2"
+          style={{ height: '52vh' }}
+        >
+          <img
+            src={fotoGrupalCrudo}
+            alt="Foto grupal en la nieve con montañas y grupo con camperas blancas"
+            className="os-grid-cover-img"
+          />
         </div>
 
-        <div className="relative flex items-center justify-center overflow-hidden bg-[color-mix(in_srgb,var(--os-paper)_92%,var(--os-orange)_8%)] p-8 lg:col-span-4 lg:p-10">
+        <div
+          className="relative flex items-center justify-center overflow-hidden 
+        bg-[color-mix(in_srgb,var(--os-paper)_92%,var(--os-orange)_8%)] 
+        p-8 lg:col-span-8 lg:p-10"
+        >
           <DotGrid
             className="z-0"
             dotSize={3}
@@ -45,12 +46,12 @@ export function Section03() {
           <div className="pointer-events-none absolute right-6 top-6 os-asterisk-deco text-5xl">
             *
           </div>
-          <div className="relative z-[1] max-w-md border-l-2 border-black pl-4 sm:pl-5">
+          <div className="relative z-[1] border-l-2 border-black pl-4 sm:pl-5">
             <p className="os-section-title text-xl leading-tight sm:text-2xl lg:text-4xl">
-              NO ES NOSTALGIA
+              Old School® No es recordar. Es reactivar.
             </p>
             <p className="mt-3 text-base font-black leading-snug text-black sm:mt-4 sm:text-lg lg:text-xl">
-              Es una reconexión real con una versión de vos que sigue viva.
+              No es mirar lo que fue. Es volver a sentirlo en tiempo real.
             </p>
           </div>
         </div>

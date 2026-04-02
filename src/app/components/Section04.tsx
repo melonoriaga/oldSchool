@@ -34,11 +34,7 @@ export function Section04() {
             esto importa&quot;.
           </p>
 
-          <p className="os-slice max-w-2xl text-black/88">
-            Después llegaron responsabilidades.
-            <br />
-            Old School® nació para que no tengas que esperar a que algún día se dé.
-          </p>
+          <p className="os-slice max-w-2xl text-black/88">Después llegaron responsabilidades.</p>
 
           <p className="os-pull max-w-2xl border-l-2 border-[var(--os-cyan)] pl-4 sm:pl-5">
             <OldSchoolWord /> nació para eso.
@@ -51,12 +47,6 @@ export function Section04() {
           <p className="os-slice max-w-2xl">
             Volvemos a Bariloche con producción premium, estética retro, rituales y Momentos WOW
             diseñados para que no seas espectador: seas protagonista.
-          </p>
-
-          <p className="os-pull max-w-2xl pt-1 text-base sm:text-lg lg:text-xl">
-            No es un viaje convencional.
-            <br />
-            Es un antes y un después.
           </p>
 
           <p className="os-section-title max-w-2xl border-l-2 border-black pl-4 pt-3 text-sm sm:text-base lg:text-lg">
