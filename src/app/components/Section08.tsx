@@ -13,12 +13,10 @@ export function Section08() {
   return (
     <div id="formato" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="os-section-head--orange flex flex-col justify-between gap-6 border-b-2 border-black p-6 sm:flex-row sm:items-start sm:gap-8 sm:p-10 lg:p-14">
-        <div className="max-w-3xl min-w-0 flex-1">
+        <div className=" min-w-0 flex-1">
           <SectionEyebrow index={8} label={sectionNavLabel(8)} tone="light" />
           <h2 className="font-black uppercase leading-[1.05] tracking-tight text-3xl sm:text-5xl lg:text-6xl xl:text-7xl">
-            FORMATO
-            <br />
-            EXCLUSIVO
+            FORMATO EXCLUSIVO
           </h2>
         </div>
       </div>
@@ -56,9 +54,7 @@ export function Section08() {
               Este sí.
             </p>
 
-            <p>
-              Esto no es un paquete.
-            </p>
+            <p>Esto no es un paquete.</p>
             <p className="border-l-2 border-[var(--os-orange)] pl-4 font-black leading-snug sm:text-lg lg:text-2xl">
               Es un formato experiencial, diseñado y cuidado para que cada momento tenga sentido.
             </p>

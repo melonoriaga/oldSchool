@@ -57,9 +57,7 @@ export function Section17({ onPostular }: Section17Props) {
         <div className="relative z-[1] max-w-4xl min-w-0 flex-1">
           <SectionEyebrow index={17} label={sectionNavLabel(17)} tone="light" />
           <h2 className="text-4xl font-black leading-[1.05] tracking-tight lg:text-6xl xl:text-7xl">
-            SI LLEGASTE
-            <br />
-            HASTA ACÁ,
+            SI LLEGASTE HASTA ACÁ,
             <br />
             NO ES CASUALIDAD.
           </h2>
@@ -86,9 +84,7 @@ export function Section17({ onPostular }: Section17Props) {
           <div className="os-editorial-col-body text-black">
             <p className="os-reveal">Reírte con el cuerpo.</p>
             <p className="os-reveal">Cantar sin vergüenza.</p>
-            <p className="os-reveal">
-              Mirar a tus amigos y reconocer esa chispa que es tuya.
-            </p>
+            <p className="os-reveal">Mirar a tus amigos y reconocer esa chispa que es tuya.</p>
           </div>
           <p className="os-asterisk-deco mt-8 hidden text-5xl leading-none xl:block">*</p>
         </div>
@@ -109,9 +105,7 @@ export function Section17({ onPostular }: Section17Props) {
         <div className="p-6 sm:p-8">
           <p className="os-editorial-col-head os-reveal text-[var(--os-navy)]">Invitación</p>
           <div className="os-editorial-col-body text-black">
-            <p className="os-reveal">
-              Por eso este cierre no es un &quot;gracias por leer&quot;.
-            </p>
+            <p className="os-reveal">Por eso este cierre no es un &quot;gracias por leer&quot;.</p>
             <p className="os-reveal font-black text-lg sm:text-xl lg:text-2xl">
               Es una invitación a decidir.
             </p>

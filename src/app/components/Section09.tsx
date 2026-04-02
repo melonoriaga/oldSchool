@@ -6,19 +6,20 @@ import volveAVosAzul from '@/assets/01logos/VolveAVosAzul.png';
 
 export function Section09() {
   const formatToMillions = (v: number) => {
-    const compact = (v / 100).toFixed(2).replace(/\.00$/, '').replace(/(\.\d)0$/, '$1');
+    const compact = (v / 100)
+      .toFixed(2)
+      .replace(/\.00$/, '')
+      .replace(/(\.\d)0$/, '$1');
     return `+${compact}M`;
   };
 
   return (
     <div id="sec-11" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="os-section-head--cyan flex flex-col justify-between gap-6 border-b-2 border-black p-6 sm:flex-row sm:items-start sm:gap-8 sm:p-10 lg:p-14">
-        <div className="max-w-3xl min-w-0 flex-1">
+        <div className="min-w-0 flex-1">
           <SectionEyebrow index={9} label={sectionNavLabel(9)} tone="light" />
           <h2 className="font-black uppercase leading-[1.05] tracking-tight text-2xl sm:text-4xl lg:text-5xl xl:text-6xl">
-            LO DISEÑAMOS
-            <br />
-            DE MEMORIA.
+            LO DISEÑAMOS DE MEMORIA.
             <br />
             COMO UNA PELÍCULA.
           </h2>
@@ -50,13 +51,12 @@ export function Section09() {
         <div className="space-y-5 p-6 sm:p-8 lg:col-span-8 lg:space-y-6 lg:p-10 xl:p-12">
           <p className="font-black leading-snug sm:text-xl lg:text-2xl xl:text-3xl">
             Lo hicimos mil veces.
-            <br />
-            Y ahora lo hacemos para vos, en versión premium.
+            <br />Y ahora lo hacemos para vos, en versión premium.
           </p>
 
           <p className="text-base font-medium leading-relaxed sm:text-lg lg:max-w-2xl">
-            Haber organizado más de un millón de viajes de egresados desde 1990 nos da algo que no se
-            improvisa: oficio.
+            Haber organizado más de un millón de viajes de egresados desde 1990 nos da algo que no
+            se improvisa: oficio.
           </p>
 
           <p className="text-base font-medium leading-relaxed sm:text-lg lg:max-w-2xl">

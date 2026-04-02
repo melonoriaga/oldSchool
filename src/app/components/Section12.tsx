@@ -4,25 +4,19 @@ import sec14d from '@/assets/imageBySections/Section14/OldSchool-IMG-Sec14-Deskt
 import sec14m from '@/assets/imageBySections/Section14/OldSchool-IMG-Sec14-Mobile1.jpg';
 
 export function Section12() {
-
   return (
     <div id="sec-14" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="os-section-head-row">
-        <div className="max-w-3xl min-w-0 flex-1">
+        <div className="min-w-0 flex-1">
           <SectionEyebrow index={12} label={sectionNavLabel(12)} />
-          <h2 className="os-section-h2">
-            DONDE EMPIEZA<br />TODO
-          </h2>
+          <h2 className="os-section-h2">DONDE EMPIEZA TODO</h2>
         </div>
       </div>
 
       {/* Grid section */}
       <div className="grid grid-cols-1 items-stretch lg:grid-cols-[1fr_2fr]">
         {/* Image */}
-        <div
-
-          className="os-grid-cover-cell border-b-2 border-black lg:border-b-0 lg:border-r-2"
-        >
+        <div className="os-grid-cover-cell border-b-2 border-black lg:border-b-0 lg:border-r-2">
           <picture>
             <source media="(min-width: 1024px)" srcSet={sec14d} />
             <img src={sec14m} alt="Hotel Bariloche Old School" className="os-grid-cover-img" />
@@ -32,13 +26,14 @@ export function Section12() {
         {/* Text content */}
         <div className="space-y-6 p-6 sm:p-8 lg:p-10 xl:p-12">
           <p className="os-pull max-w-2xl">
-            El hotel no es alojamiento.<br />
+            El hotel no es alojamiento.
+            <br />
             Es escenario.
           </p>
 
           <p className="os-slice max-w-2xl pt-1">
-            Tu base está en el corazón de Bariloche:<br />
-            a metros del Centro Cívico, el lago y las discotecas.
+            Tu base está en el corazón de Bariloche:
+            <br />a metros del Centro Cívico, el lago y las discotecas.
           </p>
 
           <p className="os-slice max-w-2xl text-black/80">

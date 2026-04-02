@@ -1,15 +1,7 @@
 import logoBlancoCompleto from '../../assets/01logos/LogoBlancoCompleto.png';
 import logoHumanNegro from '../../assets/01logos/LogoHumanNegro.png';
+import { NAV_FULL } from '../siteNav';
 import { RegresadosWord } from './RegresadosWord';
-
-const footerNav = [
-  { label: 'Inicio', href: '#hero' },
-  { label: 'Old School', href: '#concepto' },
-  { label: 'Regresados', href: '#generaciones' },
-  { label: 'Preguntas frecuentes', href: '#faq' },
-  { label: 'Solicitar reunión', href: '#meet' },
-  { label: 'Postulación', href: '#postulacion' },
-];
 
 const socialLinks = [
   {
@@ -41,13 +33,17 @@ const socialLinks = [
 
 export function Footer() {
   const footerMarqueeItems = ['EDICION_BRAND', 'BARILOCHE', 'RETRO PREMIUM'] as const;
+  const siteLinks = NAV_FULL.map((item) => ({
+    label: item.label,
+    href: `#${item.id}`,
+  }));
 
   return (
     <footer
       data-os-read-marker
-      className="border-x-4 border-b-4 border-black bg-[var(--os-navy)] text-white"
+      className="flex min-h-[90vh] flex-col border-x-4 border-b-4 border-black bg-[var(--os-navy)] text-white"
     >
-      <div className="border-b-2 border-black bg-black py-3">
+      <div className="border-b-2 border-black bg-[color-mix(in_srgb,var(--os-navy)_74%,black)] py-3">
         <div className="overflow-hidden">
           <div className="os-footer-reveal os-hero-marquee-track flex w-max">
             {[0, 1].map((copy) => (
@@ -86,10 +82,11 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-x-10 lg:gap-y-14">
+      <div className="mx-auto flex w-full max-w-7xl flex-1 px-5 py-8 sm:px-8 lg:px-10 lg:py-10">
+        <div className="grid w-full grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-0">
           {/* Marca + CTA */}
-          <div className="os-footer-reveal space-y-6 sm:p-8 lg:col-span-5 flex flex-col items-start justify-start">
+          <div className="os-footer-reveal flex flex-col items-start justify-start space-y-6 border-2 border-black  p-6 sm:p-8 lg:col-span-5 lg:border-r-0">
+            <div className="h-2 w-full border-2 border-black bg-[var(--os-cyan)]" />
             <div className="space-y-4 flex flex-col items-start justify-start">
               <img
                 src={logoBlancoCompleto}
@@ -120,22 +117,23 @@ export function Footer() {
               cualquier copia o adaptación sin autorización constituye una infracción. No es solo un
               viaje: es un sistema registrado con identidad protegida.
             </p>
-            <a href="#postulacion" className="os-btn-primary inline-flex">
-              Ir a postulación →
-            </a>
           </div>
 
           {/* Navegación */}
-          <nav className="os-footer-reveal  p-6 sm:p-8 lg:col-span-3 " aria-label="En el sitio">
+          <nav
+            className="os-footer-reveal border-2 border-black  p-6 sm:p-8 lg:col-span-3 lg:border-r-0"
+            aria-label="En el sitio"
+          >
+            <div className="mb-4 h-2 w-full border-2 border-black bg-[var(--os-orange)]" />
             <h3 className="mb-5 font-black uppercase tracking-wider text-[0.65rem] text-[var(--os-cyan)] sm:text-xs">
               Sitio
             </h3>
-            <ul className="space-y-3">
-              {footerNav.map(({ label, href }) => (
+            <ul className="space-y-1.5">
+              {siteLinks.map(({ label, href }) => (
                 <li key={href}>
                   <a
                     href={href}
-                    className="inline-block border-b-2 border-white/35 pb-1 font-black uppercase tracking-wide text-sm text-white/90 transition-colors hover:text-white"
+                    className="inline-block border-b border-white/25 pb-0.5 text-[0.68rem] font-black uppercase leading-tight tracking-[0.09em] text-white/90 transition-colors hover:text-white"
                   >
                     {label}
                   </a>
@@ -145,7 +143,8 @@ export function Footer() {
           </nav>
 
           {/* Contacto */}
-          <div className="os-footer-reveal space-y-5  p-6 sm:p-8 lg:col-span-4 ">
+          <div className="os-footer-reveal space-y-5 border-2 border-black  p-6 sm:p-8 lg:col-span-4">
+            <div className="h-2 w-full border-2 border-black bg-[var(--os-cyan)]" />
             <h3 className="font-black uppercase  text-xs">Contacto</h3>
             <div className="space-y-2 text-sm font-medium text-white/85">
               <a
@@ -161,27 +160,31 @@ export function Footer() {
 
             <div>
               <h3 className="mb-3 font-black uppercase  text-xs">Seguinos</h3>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-nowrap items-center gap-2">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-12 w-12 items-center justify-center text-white transition-colors hover:border-white hover:bg-white hover:text-[var(--os-navy)]"
+                    className="flex h-12 w-12 items-center justify-center text-white transition-transform duration-200 hover:scale-110 lg:h-16 lg:w-16"
                     aria-label={social.label}
                   >
-                    <i className={`${social.iconClass} text-[1.35rem] leading-none`} aria-hidden />
+                    <i className={`${social.iconClass} text-[1.35rem] leading-none lg:text-[2rem]`} aria-hidden />
                   </a>
                 ))}
               </div>
             </div>
+
+            <a href="#postulacion" className="os-btn-primary mt-3 inline-flex">
+              IR A POSTULACIÓN →
+            </a>
           </div>
         </div>
       </div>
 
       {/* Barra legal / copyright */}
-      <div className="os-footer-reveal border-t-2 border-black bg-black px-5 py-6 sm:px-8">
+      <div className="os-footer-reveal border-t-2 border-black bg-[color-mix(in_srgb,var(--os-navy)_72%,black)] px-5 py-6 sm:px-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-white/55 sm:text-left">
             © {new Date().getFullYear()} Old School® —{' '}

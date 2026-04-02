@@ -8,22 +8,14 @@ const paperPad = 'relative border-b-2 border-black p-8 sm:p-10 lg:p-12 xl:p-16';
 
 export function Section15() {
   return (
-    <div
-      id="sec-17"
-      data-os-read-marker
-      className="os-surface border-x-4 border-b-4 border-black"
-    >
+    <div id="sec-17" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="os-section-head-row os-section-head--navy">
-        <div className="max-w-3xl min-w-0 flex-1">
+        <div className=" min-w-0 flex-1">
           <SectionEyebrow index={15} label={sectionNavLabel(15)} tone="light" />
           <h2 className="os-section-h2">
-            VOLVEMOS A DONDE
+            VOLVEMOS A DONDE LA MÚSICA LO
             <br />
-            LA MÚSICA LO
-            <br />
-            ACOMODABA TODO
-            <br />
-            DONDE TODO EXPLOTA
+            ACOMODABA TODO DONDE TODO EXPLOTA
           </h2>
         </div>
       </div>
@@ -75,9 +67,7 @@ export function Section15() {
         </div>
       </div>
 
-      <div
-        className="os-band-orange relative border-b-2 border-black p-8 sm:p-10 lg:p-12 xl:p-16"
-      >
+      <div className="os-band-orange relative border-b-2 border-black p-8 sm:p-10 lg:p-12 xl:p-16">
         <div className="os-asterisk-deco absolute right-8 top-8 text-4xl">*</div>
         <div className="os-brutal-num-sub mb-4">17.03</div>
         <h3 className="os-section-title mb-3 text-sm lg:text-base">
@@ -103,9 +93,7 @@ export function Section15() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div
-          className="os-band-cyan relative border-b-2 border-black p-8 sm:p-10 lg:border-r-2 lg:border-b-0 lg:p-12 xl:p-16"
-        >
+        <div className="os-band-cyan relative border-b-2 border-black p-8 sm:p-10 lg:border-r-2 lg:border-b-0 lg:p-12 xl:p-16">
           <div className="os-asterisk-deco absolute right-8 top-8 text-4xl font-black">*</div>
           <div className="os-brutal-num-sub mb-4">17.04</div>
           <h3 className="os-section-title mb-3 text-sm lg:text-base">Super Retro Show</h3>

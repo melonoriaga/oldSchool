@@ -8,11 +8,9 @@ interface Section21Props {
 }
 
 export function Section21({ onPostular }: Section21Props) {
-
   return (
     <div
       id="postulacion"
-
       data-os-read-marker
       className="os-surface border-x-4 border-b-4 border-black"
     >

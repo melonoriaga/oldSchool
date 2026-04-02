@@ -2,22 +2,17 @@ import { sectionNavLabel } from '../siteNav';
 import { SectionEyebrow } from './SectionEyebrow';
 
 export function Section16() {
-
   return (
     <div id="sec-18" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
       <div className="os-section-head-row">
-        <div className="max-w-3xl min-w-0 flex-1">
+        <div className=" min-w-0 flex-1">
           <SectionEyebrow index={16} label={sectionNavLabel(16)} />
-          <h2 className="os-section-h2">
-            RECUERDOS<br />DISEÑADOS PARA<br />QUEDARSE
-          </h2>
+          <h2 className="os-section-h2">RECUERDOS DISEÑADOS PARA QUEDARSE</h2>
         </div>
       </div>
 
       <div className="border-b-2 border-black p-6 sm:p-8 lg:p-10 xl:p-12">
-        <p className="os-pull max-w-4xl">
-          Los Momentos WOW no son actividades sueltas.
-        </p>
+        <p className="os-pull max-w-4xl">Los Momentos WOW no son actividades sueltas.</p>
         <p className="os-slice mt-4 max-w-4xl border-l-2 border-[var(--os-orange)] pl-5 font-black text-black sm:pl-6 sm:text-lg lg:text-xl">
           Son escenas creadas para provocar impacto emocional, pertenencia y conexión real.
         </p>
