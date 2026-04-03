@@ -1,5 +1,6 @@
 
 import { RegresadosWord } from './RegresadosWord';
+import volveAVosAzul from '@/assets/01logos/VolveAVosAzul.png';
 
 // BLOQUE 08 - UN VIAJE QUE NO TERMINA
 export function Block08() {
@@ -142,10 +143,15 @@ export function Block11() {
               Entendemos que <RegresadosWord variant="split" /> no es un público.<br />
               Es una identidad.
             </p>
-            <p className="font-black text-2xl lg:text-3xl">
-              Y nuestra bandera es simple:<br />
-              Volvé a vos.
-            </p>
+            <div className="space-y-3">
+              <p className="font-black text-2xl lg:text-3xl">Y nuestra bandera es simple.</p>
+              <img
+                src={volveAVosAzul}
+                alt="Volvé a vos"
+                className="h-auto w-full max-w-[20rem] lg:max-w-[24rem]"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>

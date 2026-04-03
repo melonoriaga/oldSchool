@@ -1,118 +1,66 @@
 import { ArrowRight } from 'lucide-react';
-import { useRef } from 'react';
 import { sectionNavLabel } from '../siteNav';
 import { SectionEyebrow } from './SectionEyebrow';
+import retroVideo from '@/assets/videos/retroVideo.mov';
 
 interface Section21Props {
   onPostular: () => void;
 }
 
 export function Section21({ onPostular }: Section21Props) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
   return (
     <div
-      ref={sectionRef}
-      id="comunidad"
+      id="postulacion"
       data-os-read-marker
-      className="os-surface relative overflow-hidden border-x-4 border-b-4 border-black"
+      className="os-surface border-x-4 border-b-4 border-black"
     >
-      <div className="os-section-glow-layer" aria-hidden>
-        <div className="os-section-glow-blob os-section-glow-blob--orange-tr" />
-        <div className="os-section-glow-blob os-section-glow-blob--cyan-bl" />
-      </div>
-      <div className="relative z-[1] flex flex-col border-b-2 border-black p-8 lg:flex-row lg:items-start lg:justify-between lg:p-16">
-        <div className="max-w-4xl min-w-0 flex-1">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="flex flex-col justify-center space-y-10 border-b-2 border-black p-8 lg:border-b-0 lg:border-r-2 lg:p-16 xl:p-20">
           <SectionEyebrow index={21} label={sectionNavLabel(21)} />
-          <h2 className="text-4xl font-black leading-tight lg:text-6xl xl:text-7xl">
-            <span className="text-[var(--os-navy)]">SI</span> LLEGASTE
-            <br />
-            HASTA <span className="text-[var(--os-orange)]">ACÁ</span>,
-            <br />
-            NO ES <span className="text-[var(--os-cyan)]">CASUALIDAD</span>
-          </h2>
-        </div>
-      </div>
+          <div className="space-y-6">
+            <h2 className="font-black leading-[1.05] tracking-tight text-4xl lg:text-6xl">
+              ESTO NO ES INSCRIPCIÓN.
+              <br />
+              ES POSTULACIÓN.
+            </h2>
 
-      <div className="relative z-[1] grid grid-cols-1 divide-y-2 divide-black border-b-2 border-black lg:grid-cols-2 lg:divide-x-2 lg:divide-y-2 xl:grid-cols-4">
-        <div className="p-6 sm:p-8">
-          <p className="os-editorial-col-head os-reveal">Apertura</p>
-          <div className="os-editorial-col-body">
-            <p className="os-reveal">Vos no estabas buscando un viaje.</p>
-            <p className="os-reveal font-black text-base sm:text-lg lg:text-xl">
-              Estabas buscando una prueba de que todavía estás ahí.
+            <p className="os-body max-w-xl">
+              Es para quienes sienten que todavía tienen algo pendiente con esa versión suya que
+              despertó en el viaje.
             </p>
-            <p className="os-reveal pt-2">Old School® no te promete nostalgia.</p>
-            <p className="os-reveal font-black">
-              Te promete algo más incómodo y más verdadero: volver a sentir.
-            </p>
+
+            <div className="os-body-strong space-y-2 pt-2">
+              <p>Cupos limitados</p>
+              <p>Postulación sujeta a disponibilidad</p>
+            </div>
+          </div>
+
+          <div className="os-cta-row">
+            <button type="button" onClick={onPostular} className="os-btn-primary">
+              POSTULARME AHORA <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
+            </button>
+            <a
+              href="https://wa.me/5491128935992"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="os-btn-secondary"
+            >
+              INFO POR WHATSAPP
+            </a>
           </div>
         </div>
 
-        <div className="p-6 sm:p-8">
-          <p className="os-editorial-col-head os-editorial-col-head--cyan os-reveal">Cuerpo</p>
-          <div className="os-editorial-col-body">
-            <p className="os-reveal">Reírte con el cuerpo.</p>
-            <p className="os-reveal">Cantar sin vergüenza.</p>
-            <p className="os-reveal">
-              Mirar a tus amigos y reconocer esa chispa que es tuya.
-            </p>
-          </div>
-          <p className="os-asterisk-deco mt-8 hidden text-5xl leading-none xl:block">*</p>
+        <div className="relative min-h-[45vh] lg:min-h-[80vh] overflow-hidden">
+          <video
+            src={retroVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 h-full w-full object-cover"
+            aria-hidden
+          />
         </div>
-
-        <div className="os-s21-col-navy-wash p-6 sm:p-8">
-          <p className="os-editorial-col-head os-reveal">La parte incómoda</p>
-          <div className="os-editorial-col-body">
-            <p className="os-reveal font-black text-base sm:text-lg">Ahora, la parte incómoda:</p>
-            <p className="os-reveal">nadie te va a venir a buscar.</p>
-            <p className="os-reveal">La vida no frena.</p>
-            <p className="os-reveal">Los años no esperan.</p>
-            <p className="os-reveal font-black text-lg sm:text-xl lg:text-2xl">
-              Y esa versión tuya no vuelve sola.
-            </p>
-          </div>
-        </div>
-
-        <div className="p-6 sm:p-8">
-          <p className="os-editorial-col-head os-reveal">Invitación</p>
-          <div className="os-editorial-col-body">
-            <p className="os-reveal">
-              Por eso este cierre no es un &quot;gracias por leer&quot;.
-            </p>
-            <p className="os-reveal font-black text-lg sm:text-xl lg:text-2xl">
-              Es una invitación a decidir.
-            </p>
-            <ul className="os-reveal mt-4 list-none space-y-2 border-l-2 border-[var(--os-orange)] pl-4 font-black text-base sm:text-lg lg:text-xl">
-              <li>Reservá tu fecha.</li>
-              <li>Reservá tu lugar.</li>
-              <li>Sumá a tu gente.</li>
-              <li>Hacé que suceda.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div className="relative z-[1] border-b-2 border-black p-8 lg:p-20 xl:p-24">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="os-reveal text-xl font-black sm:text-2xl lg:text-3xl xl:text-4xl">
-            El viaje de egresados se hace una sola vez en la vida.
-          </p>
-          <p className="os-reveal mt-6 text-2xl font-black sm:text-3xl lg:text-4xl xl:text-5xl">
-            <span className="text-[var(--os-navy)]">Hasta</span>{' '}
-            <span className="text-[var(--os-orange)]">ahora</span>.
-          </p>
-        </div>
-      </div>
-
-      <div className="relative z-[1] p-6 sm:p-8 lg:p-12 xl:p-16">
-        <button
-          type="button"
-          onClick={onPostular}
-          className="os-btn-primary os-btn-lg inline-flex w-full justify-center sm:w-auto"
-        >
-          POSTULARME AHORA <ArrowRight className="h-5 w-5 shrink-0" strokeWidth={2.5} />
-        </button>
       </div>
     </div>
   );

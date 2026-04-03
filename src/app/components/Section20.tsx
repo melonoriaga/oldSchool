@@ -1,44 +1,45 @@
-import CountUp from '@/components/CountUp';
-import { sectionNavLabel } from '../siteNav';
+import { ArrowRight } from 'lucide-react';
 import { SectionEyebrow } from './SectionEyebrow';
+import { sectionNavLabel } from '../siteNav';
+import { DotGrid } from './ui/DotGrid';
 
 export function Section20() {
-
-  const formatToMillions = (v: number) => {
-    const compact = (v / 100).toFixed(2).replace(/\.00$/, '').replace(/(\.\d)0$/, '$1');
-    return `+${compact}M`;
-  };
-
   return (
-    <div id="sec-20" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
-      <div className="os-section-head-row">
-        <div className="max-w-3xl min-w-0 flex-1">
-          <SectionEyebrow index={20} label={sectionNavLabel(20)} />
-          <h2 className="os-section-h2 os-title-capra text-3xl sm:text-5xl lg:text-6xl xl:text-7xl">
-            CONFIANZA
+    <div id="meet" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
+      <div className="os-section-head-row os-section-head--orange">
+        <div className="max-w-4xl min-w-0 flex-1">
+          <SectionEyebrow index={20} label={sectionNavLabel(20)} tone="light" />
+          <h2 className="os-section-h2">
+            SOLICITÁ TU REUNIÓN
+            <br />
+            VIRTUAL INFORMATIVA
+            <br />
+            CON NUESTROS ASESORES.
           </h2>
         </div>
       </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-12">
-        <aside className="flex flex-col justify-center gap-4 border-b-2 border-black bg-black/[0.02] p-6 sm:p-8 lg:col-span-5 lg:border-b-0 lg:border-r-2 lg:p-10 xl:p-12">
-          <p className="os-section-title text-center text-[0.65rem] text-[var(--os-navy)] sm:text-xs">NÚMEROS QUE SUMAN</p>
-          <CountUp
-            from={0}
-            to={100}
-            duration={1.9}
-            className="block text-center font-black leading-none text-4xl text-[var(--os-orange)] sm:text-5xl lg:text-6xl"
-            formatter={formatToMillions}
-          />
-          <p className="text-center text-sm font-medium uppercase tracking-widest text-black/60">viajes</p>
-        </aside>
-        <div className="flex flex-col justify-center space-y-5 p-6 sm:p-8 lg:col-span-7 lg:p-10 xl:p-12">
-          <p className="os-pull">Más de un millón de viajes.</p>
-          <p className="os-slice max-w-2xl text-black/85">Décadas creando experiencias.</p>
-          <p className="os-pull max-w-2xl border-l-2 border-black pl-5 pt-4 text-xl sm:pl-6 sm:text-2xl lg:text-3xl">
-            Esto no es improvisado.
-          </p>
-        </div>
+      <div className="relative overflow-hidden bg-[color-mix(in_srgb,var(--os-paper)_92%,var(--os-orange)_8%)] p-6 sm:p-8 lg:p-12 xl:p-16">
+        <DotGrid
+          className="z-0"
+          dotSize={3}
+          gap={10}
+          baseColor="#f5a46e"
+          activeColor="#ff6a00"
+          proximity={130}
+          speedTrigger={70}
+          shockRadius={180}
+          shockStrength={3.2}
+          resistance={820}
+          returnDuration={1.3}
+        />
+        <a
+          href="https://wa.me/5491128935992"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="os-btn-primary os-btn-lg relative z-[1] inline-flex w-full justify-center sm:w-auto"
+        >
+          SOLICITAR MEET <ArrowRight className="h-5 w-5 shrink-0" strokeWidth={2.5} />
+        </a>
       </div>
     </div>
   );

@@ -12,8 +12,27 @@ function setupReveal() {
   if (revealReady) return;
   revealReady = true;
 
-  // ── Numbers: scale bounce ────────────────────────────────────────────────
-  ScrollTrigger.batch('.os-brutal-num, .os-brutal-num-sub, [data-reveal="num"]', {
+  // ── Sub-números / rótulos “Gen …”: solo fade + slide (sin scale: el scale + display
+  // inline rompía el layout y podía dejar el texto invisible tras clearProps).
+  ScrollTrigger.batch('.os-brutal-num-sub', {
+    onEnter: (batch) => {
+      const els = batch.filter((el) => !el.closest('#hero'));
+      if (!els.length) return;
+      gsap.from(els, {
+        opacity: 0,
+        y: 16,
+        duration: 0.6,
+        stagger: 0.04,
+        ease: 'power3.out',
+        clearProps: 'all',
+      });
+    },
+    start: 'top 92%',
+    once: true,
+  });
+
+  // ── Números grandes hero / data-reveal: scale bounce ─────────────────────
+  ScrollTrigger.batch('.os-brutal-num, [data-reveal="num"]', {
     onEnter: (batch) => {
       const els = batch.filter((el) => !el.closest('#hero'));
       if (!els.length) return;
