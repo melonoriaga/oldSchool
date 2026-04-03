@@ -1,6 +1,7 @@
 import fotoGrupalCrudo from '@/assets/imageBySections/Section03/FotoGrupalCrudo.jpeg';
 import { sectionNavLabel } from '../siteNav';
 import { SectionEyebrow } from './SectionEyebrow';
+import { DecryptedText } from './ui/DecryptedText';
 import { DotGrid } from './ui/DotGrid';
 
 export function Section03() {
@@ -9,7 +10,16 @@ export function Section03() {
       <div className="os-section-head-row os-section-head--cyan">
         <div className=" min-w-0 flex-1">
           <SectionEyebrow index={3} label={sectionNavLabel(3)} tone="light" />
-          <h2 className="os-section-h2">NO ES NOSTALGIA, ES RECONEXIÓN.</h2>
+          <h2 className="os-section-h2" aria-label="NO ES NOSTALGIA, ES RECONEXIÓN.">
+            NO ES NOSTALGIA,{' '}
+            <DecryptedText
+              text="ES RECONEXIÓN."
+              replayOnHover
+              useOriginalCharsOnly
+              className="inline-block align-top"
+              speed={48}
+            />
+          </h2>
         </div>
       </div>
 

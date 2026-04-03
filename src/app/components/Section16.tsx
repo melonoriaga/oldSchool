@@ -1,13 +1,23 @@
 import { sectionNavLabel } from '../siteNav';
 import { SectionEyebrow } from './SectionEyebrow';
+import { DecryptedText } from './ui/DecryptedText';
 
 export function Section16() {
   return (
     <div id="sec-18" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
-      <div className="os-section-head-row">
-        <div className=" min-w-0 flex-1">
-          <SectionEyebrow index={16} label={sectionNavLabel(16)} />
-          <h2 className="os-section-h2">RECUERDOS DISEÑADOS PARA QUEDARSE</h2>
+      <div className="os-section-head-row os-section-head--cyan">
+        <div className="min-w-0 flex-1">
+          <SectionEyebrow index={16} label={sectionNavLabel(16)} tone="light" />
+          <h2 className="os-section-h2" aria-label="RECUERDOS DISEÑADOS PARA QUEDARSE">
+            RECUERDOS DISEÑADOS{' '}
+            <DecryptedText
+              text="PARA QUEDARSE"
+              replayOnHover
+              useOriginalCharsOnly
+              className="inline-block align-top"
+              speed={48}
+            />
+          </h2>
         </div>
       </div>
 

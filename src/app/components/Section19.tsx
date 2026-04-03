@@ -40,10 +40,10 @@ export function Section19() {
 
   return (
     <div id="faq" data-os-read-marker className="os-surface border-x-4 border-b-4 border-black">
-      <div className="flex flex-col justify-between gap-6 border-b-2 border-black p-5 sm:flex-row sm:items-end sm:gap-8 sm:p-8 lg:p-16">
+      <div className="os-section-head-row os-section-head--cyan sm:items-end">
         <div className="max-w-3xl min-w-0 flex-1">
-          <SectionEyebrow index={19} label={sectionNavLabel(19)} />
-          <h2 className="font-black uppercase leading-[1.05] tracking-tight text-2xl sm:text-4xl lg:text-6xl">
+          <SectionEyebrow index={19} label={sectionNavLabel(19)} tone="light" />
+          <h2 className="os-section-h2">
             Antes de postularte,
             <br className="hidden sm:block" /> esto aclara el mapa.
           </h2>

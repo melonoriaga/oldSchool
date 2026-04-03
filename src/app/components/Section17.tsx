@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { sectionNavLabel } from '../siteNav';
 import { SectionEyebrow } from './SectionEyebrow';
 import { DotGrid } from './ui/DotGrid';
+import { TextType } from './ui/TextType';
 
 interface Section17Props {
   onPostular: () => void;
@@ -64,52 +65,43 @@ export function Section17({ onPostular }: Section17Props) {
         </div>
       </div>
 
-      <div className="relative z-[1] grid grid-cols-1 divide-y-2 divide-black border-b-2 border-black lg:grid-cols-2 lg:divide-x-2 lg:divide-y-2 xl:grid-cols-4">
-        <div className="p-6 sm:p-8">
-          <p className="os-editorial-col-head os-reveal text-[var(--os-navy)]">Apertura</p>
-          <div className="os-editorial-col-body text-black">
+      <div className="relative z-[1] grid grid-cols-1 divide-y-2 divide-black border-b-2 border-black lg:grid-cols-2 lg:divide-x-2 lg:divide-y-0">
+        <div className="p-6 sm:p-8 lg:p-10 xl:p-12">
+          <div className="os-editorial-col-body max-w-xl space-y-4 text-black lg:space-y-5">
             <p className="os-reveal">Vos no estabas buscando un viaje.</p>
-            <p className="os-reveal font-black text-base sm:text-lg lg:text-xl">
+            <p className="os-reveal font-black text-base leading-snug sm:text-lg lg:text-xl">
               Estabas buscando una prueba de que todavía estás ahí.
             </p>
-            <p className="os-reveal pt-2">Old School® no te promete nostalgia.</p>
-            <p className="os-reveal font-black">
-              Te promete algo más incómodo y más verdadero: volver a sentir.
+            <p className="os-reveal">Old School® no te promete nostalgia.</p>
+            <p className="os-reveal font-black leading-snug sm:text-lg lg:text-xl">
+              Te promete algo más incómodo y más verdadero:
             </p>
-          </div>
-        </div>
-
-        <div className="p-6 sm:p-8">
-          <p className="os-editorial-col-head os-reveal text-[var(--os-navy)]">Cuerpo</p>
-          <div className="os-editorial-col-body text-black">
-            <p className="os-reveal">Reírte con el cuerpo.</p>
-            <p className="os-reveal">Cantar sin vergüenza.</p>
+            <p className="os-reveal font-medium leading-relaxed sm:text-lg">
+              Volver a sentir, reírte con el cuerpo, cantar sin vergüenza.
+            </p>
             <p className="os-reveal">Mirar a tus amigos y reconocer esa chispa que es tuya.</p>
           </div>
-          <p className="os-asterisk-deco mt-8 hidden text-5xl leading-none xl:block">*</p>
         </div>
 
-        <div className="p-6 sm:p-8">
-          <p className="os-editorial-col-head os-reveal text-[var(--os-navy)]">La parte incómoda</p>
-          <div className="os-editorial-col-body text-black">
-            <p className="os-reveal font-black text-base sm:text-lg">Ahora, la parte incómoda:</p>
-            <p className="os-reveal">nadie te va a venir a buscar.</p>
-            <p className="os-reveal">La vida no frena.</p>
-            <p className="os-reveal">Los años no esperan.</p>
-            <p className="os-reveal font-black text-lg sm:text-xl lg:text-2xl">
-              Y esa versión tuya no vuelve sola.
+        <div className="relative p-6 sm:p-8 lg:p-10 xl:p-12">
+          <p className="os-asterisk-deco pointer-events-none absolute right-6 top-6 hidden text-4xl leading-none sm:block lg:right-8 lg:top-8 lg:text-5xl">
+            *
+          </p>
+          <div className="os-editorial-col-body max-w-xl space-y-4 text-black lg:space-y-5">
+            <p className="os-reveal font-black leading-snug sm:text-lg lg:text-xl">
+              Ahora, la parte incómoda: nadie te va a venir a buscar.
             </p>
-          </div>
-        </div>
-
-        <div className="p-6 sm:p-8">
-          <p className="os-editorial-col-head os-reveal text-[var(--os-navy)]">Invitación</p>
-          <div className="os-editorial-col-body text-black">
-            <p className="os-reveal">Por eso este cierre no es un &quot;gracias por leer&quot;.</p>
-            <p className="os-reveal font-black text-lg sm:text-xl lg:text-2xl">
+            <p className="os-reveal leading-relaxed sm:text-lg">
+              La vida no frena. Los años no esperan.{' '}
+              <span className="font-black">Y esa versión tuya no vuelve sola.</span>
+            </p>
+            <p className="os-reveal pt-1">
+              Por eso este cierre no es un &quot;gracias por leer&quot;.
+            </p>
+            <p className="os-reveal font-black text-lg leading-snug sm:text-xl lg:text-2xl">
               Es una invitación a decidir.
             </p>
-            <ul className="os-reveal mt-4 list-none space-y-2 border-l-2 border-[var(--os-orange)] pl-4 font-black text-base sm:text-lg lg:text-xl">
+            <ul className="os-reveal mt-2 list-none space-y-2 border-l-2 border-[var(--os-orange)] pl-4 font-black text-base sm:text-lg lg:text-xl">
               <li>Reservá tu fecha.</li>
               <li>Reservá tu lugar.</li>
               <li>Sumá a tu gente.</li>
@@ -119,38 +111,44 @@ export function Section17({ onPostular }: Section17Props) {
         </div>
       </div>
 
-      <div className="relative z-[1] border-b-2 border-black p-8 lg:p-20 xl:p-24">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="os-reveal text-xl font-black sm:text-2xl lg:text-3xl xl:text-4xl">
-            El viaje de egresados se hace una sola vez en la vida.
-          </p>
-          <p className="os-reveal mt-6 text-2xl font-black sm:text-3xl lg:text-4xl xl:text-5xl">
-            Hasta ahora.
-          </p>
+      <div className="relative z-[1] border-t-2 border-black bg-[color-mix(in_srgb,var(--os-paper)_92%,var(--os-cyan)_8%)] p-6 sm:p-8 lg:p-12 xl:p-16">
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden>
+          <DotGrid
+            className="z-0"
+            dotSize={3}
+            gap={10}
+            baseColor="#7cdff3"
+            activeColor="#22b8df"
+            proximity={130}
+            speedTrigger={70}
+            shockRadius={180}
+            shockStrength={3.2}
+            resistance={820}
+            returnDuration={1.3}
+          />
         </div>
-      </div>
-
-      <div className="relative z-[1] overflow-hidden bg-[color-mix(in_srgb,var(--os-paper)_92%,var(--os-cyan)_8%)] p-6 sm:p-8 lg:p-12 xl:p-16">
-        <DotGrid
-          className="z-0"
-          dotSize={3}
-          gap={10}
-          baseColor="#7cdff3"
-          activeColor="#22b8df"
-          proximity={130}
-          speedTrigger={70}
-          shockRadius={180}
-          shockStrength={3.2}
-          resistance={820}
-          returnDuration={1.3}
-        />
-        <button
-          type="button"
-          onClick={onPostular}
-          className="os-btn-primary os-btn-lg relative z-[1] inline-flex w-full justify-center sm:w-auto"
-        >
-          POSTULARME AHORA <ArrowRight className="h-5 w-5 shrink-0" strokeWidth={2.5} />
-        </button>
+        <div className="relative z-[1] flex flex-col gap-6 sm:gap-8">
+          <div className="min-w-0 text-black">
+            <p className="text-base font-black leading-snug sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl xl:whitespace-nowrap xl:overflow-x-auto xl:pb-1 xl:[-webkit-overflow-scrolling:touch] xl:[scrollbar-width:thin]">
+              <TextType
+                text="El viaje de egresados se hace una sola vez en la vida."
+                typingSpeed={38}
+                initialDelay={400}
+                startOnVisible
+              />
+            </p>
+            <p className="mt-4 text-2xl font-black leading-none sm:text-3xl lg:text-4xl xl:text-5xl">
+              Hasta ahora.
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={onPostular}
+            className="os-btn-primary os-btn-lg inline-flex w-auto shrink-0 justify-center"
+          >
+            POSTULARME AHORA <ArrowRight className="h-5 w-5 shrink-0" strokeWidth={2.5} />
+          </button>
+        </div>
       </div>
     </div>
   );

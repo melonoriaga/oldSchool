@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { sectionNavLabel } from '../siteNav';
 import { SectionEyebrow } from './SectionEyebrow';
+import { TextType } from './ui/TextType';
 import sec6img1d from '@/assets/imageBySections/Section06/OldSchool-IMG-Sec6-01-Desktop1.jpg';
 import sec6img1m from '@/assets/imageBySections/Section06/OldSchool-IMG-Sec6-01-Mobile1.jpg';
 import sec6img2d from '@/assets/imageBySections/Section06/OldSchool-IMG-Sec6-02-Desktop1.jpg';
@@ -48,10 +49,19 @@ export function Section05() {
 
         <div className="relative z-[1] min-w-0 flex-1">
           <SectionEyebrow index={5} label={sectionNavLabel(5)} tone="light" />
-          <h2 className="os-section-h2">
+          <h2
+            className="os-section-h2"
+            aria-label="BARILOCHE NO ES UN LUGAR. ES UN SÍMBOLO."
+          >
             BARILOCHE NO ES UN LUGAR.
             <br />
-            ES UN SÍMBOLO.
+            <TextType
+              text="ES UN SÍMBOLO."
+              typingSpeed={45}
+              initialDelay={420}
+              startOnVisible
+              className="align-top"
+            />
           </h2>
         </div>
       </div>

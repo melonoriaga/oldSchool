@@ -2,6 +2,7 @@ import { sectionNavLabel } from '../siteNav';
 import { RegresadosWord } from './RegresadosWord';
 import { SectionEyebrow } from './SectionEyebrow';
 import { DotGrid } from './ui/DotGrid';
+import { ScrollSplitReveal } from './ui/ScrollSplitReveal';
 import sec7img1d from '@/assets/imageBySections/Section07/OldSchool-IMG-Sec7-01-Desktop1.jpg';
 import sec7img1m from '@/assets/imageBySections/Section07/OldSchool-IMG-Sec7-01-Mobile1.jpg';
 import sec7img2d from '@/assets/imageBySections/Section07/OldSchool-IMG-Sec7-01-Desktop2.jpg';
@@ -85,91 +86,75 @@ export function Section06() {
 
       <div className="grid grid-cols-1 items-stretch lg:grid-cols-2">
         <div className="os-band-orange relative border-b-2 border-black p-8 lg:border-r-2 lg:p-12 xl:p-16">
-          <div
-            className="os-brutal-num-sub mb-4"
-            style={{ display: 'inline', fontSize: '30px', letterSpacing: '-0.06em' }}
-          >
+          <div className="os-brutal-num-sub mb-4 !text-[40px] !tracking-[-0.06em]">
             Gen Promo 80’s
           </div>
 
           <h3 className="os-section-title mb-3 text-base lg:text-lg">La que vivió sin filtro.</h3>
 
-          <p
+          <ScrollSplitReveal
             className="os-body leading-relaxed text-sm sm:text-base lg:text-lg"
             style={{ fontSize: '16px' }}
-          >
-            Caseteras, Walkman, cartas, lentos y promesas.
-            <br />
-            Una generación con mística, códigos y amistades que todavía laten.
-            <br />
-            Para ellos diseñamos experiencias con espíritu auténtico, emoción real y memoria viva.
-          </p>
+            lines={[
+              'Caseteras, Walkman, cartas, lentos y promesas.',
+              'Una generación con mística, códigos y amistades que todavía laten.',
+              'Para ellos diseñamos experiencias con espíritu auténtico, emoción real y memoria viva.',
+            ]}
+          />
         </div>
 
         <div className="os-band-cyan relative border-b-2 border-black p-8 lg:p-12 xl:p-16">
-          <div
-            className="os-brutal-num-sub mb-4"
-            style={{ display: 'inline', fontSize: '30px', letterSpacing: '-0.06em' }}
-          >
+          <div className="os-brutal-num-sub mb-4 !text-[40px] !tracking-[-0.06em]">
             Gen Promo 90’s
           </div>
           <h3 className="os-section-title mb-3 text-base lg:text-lg">
             La que mezcló inocencia con revolución.
           </h3>
-          <p
+          <ScrollSplitReveal
             className="os-body leading-relaxed text-sm sm:text-base lg:text-lg"
             style={{ fontSize: '16px' }}
-          >
-            CD, MSN, primeras cámaras digitales, coreografías, noches eternas y amistad intensa.
-            <br />
-            Una generación que empezó a mostrarse al mundo, pero todavía sabía mirar a los ojos.
-            <br />
-            Para ellos creamos viajes con fiestas icónicas y reencuentros potentes.
-          </p>
+            lines={[
+              'CD, MSN, primeras cámaras digitales, coreografías, noches eternas y amistad intensa.',
+              'Una generación que empezó a mostrarse al mundo, pero todavía sabía mirar a los ojos.',
+              'Para ellos creamos viajes con fiestas icónicas y reencuentros potentes.',
+            ]}
+          />
         </div>
 
         <div className="col-span-1 grid grid-cols-1 items-stretch border-b-2 border-black lg:col-span-2 lg:grid-cols-3">
           <div className="os-band-navy relative min-w-0 border-b-2 border-black p-8 lg:border-b-0 lg:border-r-2 lg:p-12 xl:p-16">
-            <div
-              className="os-brutal-num-sub mb-4 text-white"
-              style={{ display: 'inline', fontSize: '30px', letterSpacing: '-0.06em' }}
-            >
+            <div className="os-brutal-num-sub mb-4 !text-[40px] !tracking-[-0.06em] text-white">
               Gen Promo 00’s
             </div>
             <h3 className="os-section-title mb-3 text-base lg:text-lg">La que creció conectada.</h3>
-            <p
+            <ScrollSplitReveal
               className="os-body leading-relaxed text-sm sm:text-base lg:text-lg"
               style={{ fontSize: '16px' }}
-            >
-              Fotolog, Messenger, redes, primeras selfies.
-              <br />
-              Una generación expresiva, intensa y protagonista.
-              <br />
-              Para ellos armamos viajes visuales, vibrantes y con energía de estreno.
-            </p>
+              lines={[
+                'Fotolog, Messenger, redes, primeras selfies.',
+                'Una generación expresiva, intensa y protagonista.',
+                'Para ellos armamos viajes visuales, vibrantes y con energía de estreno.',
+              ]}
+            />
           </div>
 
           <div className="relative flex min-w-0 flex-col justify-center border-b-2 border-black bg-[var(--os-paper)] p-8 lg:border-b-0 lg:border-r-2 lg:p-12 xl:p-16">
-            <div
-              className="os-brutal-num-sub mb-0"
-              style={{ display: 'inline', fontSize: '30px', letterSpacing: '-0.06em' }}
-            >
+            <div className="os-brutal-num-sub mb-0 !text-[40px] !tracking-[-0.06em]">
               Gen Promo 10’s
             </div>
 
             <h3 className="os-section-title mb-3 text-base lg:text-lg">
               La que empezó a vivir… y a mostrarse.
             </h3>
-            <p
+            <ScrollSplitReveal
               className="os-body leading-relaxed text-sm sm:text-base lg:text-lg"
               style={{ fontSize: '16px' }}
-            >
-              Instagram, WhatsApp, Snapchat.
-              <br />
-              Viajes en tiempo real, entre lo digital y lo real.
-              <br />
-              Para ellos diseñamos experiencias que vuelven a activar esa intensidad.
-            </p>
+              lines={[
+                'Instagram, WhatsApp, Snapchat.',
+                'Viajes en tiempo real, entre lo digital y lo real.',
+                'Para ellos diseñamos experiencias que vuelven a activar esa intensidad.',
+              ]}
+            />
           </div>
 
           <div className="relative min-h-[14rem] min-w-0 overflow-hidden lg:min-h-0 lg:h-full">

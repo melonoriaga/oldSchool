@@ -1,6 +1,7 @@
 import { sectionNavLabel } from '../siteNav';
 import { OldSchoolWord } from './OldSchoolWord';
 import { SectionEyebrow } from './SectionEyebrow';
+import { DecryptedText } from './ui/DecryptedText';
 import sec4d from '@/assets/imageBySections/Section04/OldSchool-IMG-Sec4-Desktop1.jpg';
 import sec4m from '@/assets/imageBySections/Section04/OldSchool-IMG-Sec4-Mobile1.jpg';
 
@@ -10,7 +11,10 @@ export function Section04() {
       <div className="os-section-head-row os-section-head--orange">
         <div className="max-w-3xl min-w-0 flex-1">
           <SectionEyebrow index={4} label={sectionNavLabel(4)} tone="light" />
-          <h2 className="os-section-h2">VOLVÉS DISTINTO</h2>
+          <h2 className="os-section-h2" aria-label="VOLVÉS DISTINTO">
+            <span className="whitespace-nowrap">VOLVÉS </span>
+            <DecryptedText text="DISTINTO" className="whitespace-nowrap" useOriginalCharsOnly />
+          </h2>
         </div>
       </div>
 
